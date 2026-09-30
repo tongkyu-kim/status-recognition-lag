@@ -1,0 +1,20 @@
+name: srl
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - numpy>=1.26
+  - pandas>=2.1
+  - pyarrow>=14
+  - pyyaml>=6.0
+  - scipy>=1.11
+  - statsmodels>=0.14
+  - linearmodels>=6.0
+  - matplotlib>=3.8
+  - pytest>=8
+  - ruff>=0.6
+  - pre-commit>=3.7
+  - nbstripout>=0.7
+  - pip
+  - pip:
+      - -e .

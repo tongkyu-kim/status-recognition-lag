@@ -1,0 +1,61 @@
+# Planned model specifications. Variable names refer to columns of the partner-year panel.
+# Only specs with status `ready` are estimated by scripts/09_run_models.py; everything else is
+# listed for transparency. Placeholder names (e.g., `attention`, `status_proximity`) must be
+# bound to concrete panel columns before a spec is switched to `ready`.
+#
+# Fields: outcome, regressors, controls, lags {var: [k,...]} (0 = contemporaneous),
+# polynomial {var: degree}, interactions [[a, b], ...], center_interactions,
+# entity_effects, time_effects, cov_type (clustered | robust | kernel), cluster (entity | time | twoway).
+
+defaults:
+  entity_effects: true
+  time_effects: true
+  cov_type: clustered
+  cluster: entity
+  center_interactions: true
+
+specs:
+  - name: h1_salience
+    hypothesis: H1
+    status: planned
+    outcome: attention
+    regressors: [trade_share]
+    lags: {trade_share: [1]}
+    notes: Lagged salience to reduce simultaneity; alternatives via distributed lags [0, 1, 2].
+
+  - name: h2_proximity_nonlinear
+    hypothesis: H2
+    status: planned
+    outcome: recognition
+    regressors: [status_proximity]
+    polynomial: {status_proximity: 2}
+    notes: >-
+      Recognition (not a lag measure) as outcome to avoid mechanical correlation between a
+      status-based lag measure and status on the right-hand side. Lag measures used descriptively
+      and in robustness checks. Spline / threshold forms to be compared.
+
+  - name: h3_overlap_interaction
+    hypothesis: H3
+    status: planned
+    outcome: recognition
+    regressors: [status_proximity, competitive_overlap]
+    polynomial: {status_proximity: 2}
+    interactions: [[status_proximity, competitive_overlap]]
+
+  - name: h4_interdependence_interaction
+    hypothesis: H4
+    status: planned
+    outcome: recognition
+    regressors: [status_proximity, interdependence]
+    polynomial: {status_proximity: 2}
+    interactions: [[status_proximity, interdependence]]
+
+  - name: h5_catch_up
+    hypothesis: H5
+    status: design_pending
+    outcome: recognition
+    regressors: [status_proximity]
+    notes: >-
+      Requires a definition of "sufficiently high and sustained capability" (threshold, duration)
+      fixed ex ante; candidate forms: piecewise/spline in proximity, sustained-capability indicator,
+      event-study around threshold crossing. Competitive concern enters as a separate outcome.

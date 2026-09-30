@@ -1,0 +1,44 @@
+# Project paths. Every path is RELATIVE to the repository root and uses forward slashes.
+# Code resolves these through `srl.utils.config.get_path("<section>.<key>")`; never hard-code paths.
+#
+# Raw-data layout convention (see data/README.md):
+#   data/raw/<source_id>/<YYYY-MM-DD retrieval date>/<original files>
+# where <source_id> is a key in config/sources.yaml. Raw files are immutable.
+
+data:
+  raw: data/raw
+  interim: data/interim
+  processed: data/processed
+  external: data/external
+  raw_manifest: data/raw_manifest.csv
+
+interim:
+  trade_bilateral: data/interim/trade/bilateral_trade.parquet
+  trade_products: data/interim/trade/product_trade.parquet
+  macro_indicators: data/interim/macro/indicators_long.parquet
+  documents: data/interim/text/documents.parquet
+  sentences: data/interim/text/sentences.parquet
+  mentions: data/interim/text/mentions.parquet
+  sentence_frames: data/interim/text/sentence_frames.parquet
+  coding_samples: data/interim/coding_samples
+
+processed:
+  trade_measures: data/processed/trade_measures.parquet
+  status_measures: data/processed/status_measures.parquet
+  attention_measures: data/processed/attention_measures.parquet
+  recognition_measures: data/processed/recognition_measures.parquet
+  panel: data/processed/panel_partner_year.parquet
+
+outputs:
+  tables: outputs/tables
+  figures: outputs/figures
+  models: outputs/models
+  diagnostics: outputs/diagnostics
+  logs: outputs/diagnostics/logs
+
+config:
+  countries: config/countries.yaml
+  sources: config/sources.yaml
+  analysis: config/analysis.yaml
+  models: config/models.yaml
+  recognition_frames: config/recognition_frames.yaml

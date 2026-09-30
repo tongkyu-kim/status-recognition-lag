@@ -1,0 +1,274 @@
+# Candidate data sources. EVERY entry is a candidate requiring validation before use:
+# coverage, access conditions, terms of use / licence, and redistribution rights must be checked
+# and recorded in docs/data_sources.md and docs/decisions.md.
+#
+# Fields
+#   status:     candidate | validated | in_use | rejected
+#   access:     how data will be obtained (manual download, bulk file, API) - TBD until validated
+#   url:        verified landing page, recorded only after validation (null until then)
+#   reader:     how raw files are parsed, e.g. {format: csv, encoding: utf-8, skiprows: 0}
+#   column_map: mapping from source column names to canonical names (see src/srl/cleaning/)
+# `reader` and `column_map` stay null until real files are inspected. Cleaning code raises
+# NotImplementedError while they are null, so nothing silently guesses a file layout.
+#
+# The key of each entry is the <source_id> used for data/raw/<source_id>/<YYYY-MM-DD>/.
+
+sources:
+  # ---------------------------------------------------------------- Trade
+  kcs_trade:
+    name: Korea Customs Service trade statistics
+    category: trade
+    status: candidate
+    access: TBD
+    url: null
+    licence: TBD
+    notes: Official Korean customs data; check monthly bilateral and HS-level (HSK) availability.
+    reader: null
+    column_map: null
+
+  kita_trade:
+    name: Korea International Trade Association trade statistics
+    category: trade
+    status: candidate
+    access: TBD
+    url: null
+    licence: TBD
+    notes: Derived from customs data; check redistribution terms and consistency with KCS.
+    reader: null
+    column_map: null
+
+  un_comtrade:
+    name: UN Comtrade
+    category: trade
+    status: candidate
+    access: TBD
+    url: null
+    licence: TBD
+    notes: Needed for world-level denominators (RCA, export similarity) and partner-reported flows.
+    reader: null
+    column_map: null
+
+  baci:
+    name: BACI (CEPII)
+    category: trade
+    status: candidate
+    access: TBD
+    url: null
+    licence: TBD
+    notes: Reconciled HS6 bilateral flows; annual only. Check HS revision and version pinning.
+    reader: null
+    column_map: null
+
+  # ---------------------------------------------------------------- Macro / status
+  wb_wdi:
+    name: World Bank World Development Indicators
+    category: macro
+    status: candidate
+    access: TBD
+    url: null
+    licence: TBD
+    notes: GDP per capita, manufacturing value added, high-tech export share (indicator codes to verify).
+    reader: null
+    column_map: null
+
+  imf:
+    name: International Monetary Fund datasets (e.g., WEO, trade-by-partner statistics)
+    category: macro
+    status: candidate
+    access: TBD
+    url: null
+    licence: TBD
+    notes: Specific dataset(s) to be chosen; check current names and vintages.
+    reader: null
+    column_map: null
+
+  unido:
+    name: UNIDO industrial statistics
+    category: macro
+    status: candidate
+    access: TBD
+    url: null
+    licence: TBD
+    notes: Manufacturing value added and composition by sector; competitive industrial performance.
+    reader: null
+    column_map: null
+
+  oecd:
+    name: OECD datasets (e.g., TiVA for GVC exposure, productivity)
+    category: macro
+    status: candidate
+    access: TBD
+    url: null
+    licence: TBD
+    notes: Coverage of ASEAN members varies by dataset; verify country coverage first.
+    reader: null
+    column_map: null
+
+  wipo:
+    name: WIPO IP statistics
+    category: macro
+    status: candidate
+    access: TBD
+    url: null
+    licence: TBD
+    notes: Patent counts by origin; decide office/family counting rules before use.
+    reader: null
+    column_map: null
+
+  complexity_atlas:
+    name: Atlas of Economic Complexity (Growth Lab) / Observatory of Economic Complexity
+    category: macro
+    status: candidate
+    access: TBD
+    url: null
+    licence: TBD
+    notes: Only if methodology and licence fit; otherwise compute complexity measures from trade data.
+    reader: null
+    column_map: null
+
+  # ---------------------------------------------------------------- Interdependence (FDI / GVC)
+  fdi_korea:
+    name: Korean outward/inward FDI statistics (provider to be identified)
+    category: interdependence
+    status: candidate
+    access: TBD
+    url: null
+    licence: TBD
+    notes: Candidate providers include Korean official statistics and UNCTAD bilateral FDI; validate.
+    reader: null
+    column_map: null
+
+  # ---------------------------------------------------------------- Korean government text
+  kr_presidential_office:
+    name: Korean Presidential Office releases (current and archived administrations)
+    category: government_text
+    status: candidate
+    access: TBD
+    url: null
+    licence: TBD
+    notes: Past administrations' materials may sit in presidential archives; check continuity.
+    reader: null
+    column_map: null
+
+  kr_mofa:
+    name: Ministry of Foreign Affairs (press releases, speeches, Diplomatic White Papers)
+    category: government_text
+    status: candidate
+    access: TBD
+    url: null
+    licence: TBD
+    notes: Korean and English releases differ in coverage; track language as metadata.
+    reader: null
+    column_map: null
+
+  kr_motie:
+    name: Trade/industry ministry releases (MOTIE / successor ministry)
+    category: government_text
+    status: candidate
+    access: TBD
+    url: null
+    licence: TBD
+    notes: Ministry names and remits change over time; maintain an institution crosswalk.
+    reader: null
+    column_map: null
+
+  kr_national_assembly:
+    name: National Assembly records (plenary/committee minutes)
+    category: government_text
+    status: candidate
+    access: TBD
+    url: null
+    licence: TBD
+    notes: Legislative rather than executive voice; analyse separately from executive sources.
+    reader: null
+    column_map: null
+
+  kr_other_official:
+    name: Other official government archives / portals (to be identified)
+    category: government_text
+    status: candidate
+    access: TBD
+    url: null
+    licence: TBD
+    notes: e.g., government-wide policy briefing portals; avoid double-counting syndicated releases.
+    reader: null
+    column_map: null
+
+  kr_diplomatic_events:
+    name: Bilateral visits, summits, ministerial meetings, official joint statements
+    category: events
+    status: candidate
+    access: TBD
+    url: null
+    licence: TBD
+    notes: Likely hand-compiled from official releases; requires its own coding rules.
+    reader: null
+    column_map: null
+
+  # ---------------------------------------------------------------- Historical corpora (later)
+  jp_mofa_bluebook:
+    name: Japan MOFA Diplomatic Bluebooks
+    category: historical_text
+    status: candidate
+    access: TBD
+    url: null
+    licence: TBD
+    notes: Historical extension only.
+    reader: null
+    column_map: null
+
+  jp_meti_whitepaper:
+    name: Japan METI/MITI White Papers on International Economy and Trade
+    category: historical_text
+    status: candidate
+    access: TBD
+    url: null
+    licence: TBD
+    notes: Historical extension only.
+    reader: null
+    column_map: null
+
+  us_frus:
+    name: Foreign Relations of the United States (FRUS)
+    category: historical_text
+    status: candidate
+    access: TBD
+    url: null
+    licence: TBD
+    notes: Historical extension only.
+    reader: null
+    column_map: null
+
+  us_presidential:
+    name: US presidential public papers / archives
+    category: historical_text
+    status: candidate
+    access: TBD
+    url: null
+    licence: TBD
+    notes: Historical extension only.
+    reader: null
+    column_map: null
+
+  us_ustr:
+    name: USTR reports and releases
+    category: historical_text
+    status: candidate
+    access: TBD
+    url: null
+    licence: TBD
+    notes: Historical extension only.
+    reader: null
+    column_map: null
+
+  # ---------------------------------------------------------------- Project-generated inputs
+  human_coding:
+    name: Human coding sheets returned by coders (project-generated)
+    category: internal
+    status: in_use
+    access: produced by this project; see docs/coding_protocol.md
+    url: null
+    licence: project
+    notes: Completed coding sheets are treated as raw, immutable inputs.
+    reader: null
+    column_map: null

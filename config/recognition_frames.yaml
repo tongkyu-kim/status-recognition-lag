@@ -1,0 +1,81 @@
+# Recognition-frame seed dictionary (dictionary-based BASELINE only).
+#
+# STATUS: candidate, unvalidated. Terms are seeds derived from the project's conceptual frames.
+# Before any use in analysis: (1) keyword-in-context review on the real corpus, (2) precision
+# checks against the human-coded validation sample, (3) record additions/removals in
+# docs/decisions.md with a version bump here.
+#
+# Frames describe RELATIONAL POSITIONING, not sentiment. Vertical is not "negative" and horizontal
+# is not "positive" (see docs/coding_protocol.md). Competitive/threat recognition is a separate
+# dimension; a sentence may carry several frames.
+#
+# Matching rules (srl.recognition.dictionary): English terms are matched case-insensitively on word
+# boundaries (short all-caps acronyms case-sensitively); Korean terms are matched as substrings
+# because particles attach to nouns. Overlapping matches resolve to the longest span.
+
+version: "0.1.0"
+status: candidate_unvalidated
+
+frames:
+  vertical:
+    description: Partner positioned below Korea in a developmental or hierarchical relationship.
+    subframes:
+      aid_recipient:
+        en: [aid recipient, recipient country, ODA recipient, development assistance to]
+        ko: [수원국, 원조 대상, 무상원조, 유상원조]
+      capacity_building:
+        en: [capacity building, capacity-building, human resource development, training program]
+        ko: [역량 강화, 역량강화, 인력 양성]
+      technology_transfer:
+        en: [technology transfer, transfer of technology, share our know-how]
+        ko: [기술 이전, 기술이전, 노하우 전수]
+      production_base:
+        en: [production base, manufacturing base, low-cost production]
+        ko: [생산기지, 생산 기지, 생산거점, 생산 거점]
+      emerging_market:
+        en: [emerging market, emerging economy, promising market, new market]
+        ko: [신흥시장, 신흥 시장, 신흥국, 유망 시장]
+      development_support:
+        en: [development cooperation, development support, support the development of]
+        ko: [개발협력, 개발 협력, 개발 지원, 경제발전 지원]
+
+  horizontal:
+    description: Partner positioned as a peer or co-equal partner.
+    subframes:
+      strategic_partner:
+        en: [strategic partner, strategic partnership, comprehensive strategic partnership]
+        ko: [전략적 동반자, 전략적 동반자 관계, 포괄적 전략적 동반자]
+      mutual_dependence:
+        en: [mutual dependence, interdependence, mutually dependent]
+        ko: [상호 의존, 상호의존]
+      co_development:
+        en: [co-development, joint development, common prosperity, co-prosperity]
+        ko: [공동 발전, 공동발전, 공동 번영, 공동번영]
+      joint_innovation:
+        en: [joint innovation, joint research, innovation partnership]
+        ko: [공동 연구, 공동연구, 혁신 협력, 혁신협력]
+      technology_partner:
+        en: [technology partner, technological partner, technology cooperation]
+        ko: [기술 협력, 기술협력, 기술 파트너]
+      reciprocal_cooperation:
+        en: [reciprocal, mutually beneficial, win-win, equal partnership]
+        ko: [호혜, 상호 호혜, 대등한]
+      peer:
+        en: [peer, equal footing, on par with]
+        ko: [대등, 동등한]
+
+  competitive:
+    description: >-
+      Partner recognized as a competitor, challenger or source of threat to Korea's position.
+      Coded separately from vertical/horizontal; competitive recognition implies some
+      acknowledgement of parity, but concern and recognition are analysed as distinct outcomes (H5).
+    subframes:
+      competitor:
+        en: [competitor, rival, competing economy, head-to-head competition]
+        ko: [경쟁국, 경쟁 상대, 경쟁상대]
+      catch_up_threat:
+        en: [catching up, catch up with Korea, narrowing gap, technology gap]
+        ko: [추격, 맹추격, 기술 격차, 기술격차]
+      threat:
+        en: [threat, overcapacity, dumping]
+        ko: [위협, 과잉생산, 덤핑]

@@ -1,0 +1,60 @@
+# Analysis settings. Values set to null are open design decisions; the pipeline stops with a
+# clear error when it reaches one. Record every change of a substantive setting in docs/decisions.md.
+
+seed: 20260930  # global deterministic seed (sampling, any stochastic estimation)
+
+panel:
+  name: main                 # key in config/countries.yaml -> panels
+  unit: partner_year         # directed dyad Korea -> partner, annual
+  start_year: null           # TODO: set after source coverage is verified
+  end_year: null             # TODO
+
+text:
+  include_demonyms: false          # count "Vietnamese", "Chinese", ... as country mentions?
+  aggregation_frequency: Y         # Y | Q | M
+  group_mention_allocation: none   # none | full | equal_split (ASEAN mentions -> members)
+  min_sentence_chars: 5
+
+status:
+  # Map each analytical variable to a standardized indicator name in the interim macro table
+  # (data/interim/macro/indicators_long.parquet, column `indicator`). All null until sources exist.
+  indicators:
+    gdppc: null
+    productivity: null
+    mva: null
+    hightech_export_share: null
+    patents: null
+  proximity_method: log_ratio      # ratio | log_ratio | gap | abs_log_gap (see srl.status.proximity)
+  composite:
+    method: zmean                  # zmean | pca
+    components: []                 # e.g. [gdppc_prox, mva_prox, hightech_prox]
+    min_components: 2
+
+recognition:
+  dictionary: config/recognition_frames.yaml
+  index_methods: [share, balance, logit]
+  logit_smoothing: 0.5
+
+recognition_lag:
+  # Each variant is computed side by side so operationalizations can be compared transparently.
+  # `status_col` / `recognition_col` must name panel columns; null means "not yet chosen".
+  variants:
+    - name: lag_A_pooled
+      method: A_standardized_difference
+      status_col: null
+      recognition_col: null
+      kwargs: {scope: pooled}
+    - name: lag_A_within_year
+      method: A_standardized_difference
+      status_col: null
+      recognition_col: null
+      kwargs: {scope: within_year}
+    - name: lag_B_quadratic
+      method: B_residual
+      status_col: null
+      recognition_col: null
+      kwargs: {functional_form: quadratic, time_effects: true}
+
+coding_sample:
+  size: null          # TODO: set after power / reliability planning
+  strata: [entity_id, period, source_id]

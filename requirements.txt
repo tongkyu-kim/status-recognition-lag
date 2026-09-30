@@ -1,0 +1,11 @@
+# Runtime dependencies (mirrors [project.dependencies] in pyproject.toml).
+# Before producing reported results, freeze exact versions:
+#   python -m pip freeze > requirements-lock.txt
+numpy>=1.26
+pandas>=2.1
+pyarrow>=14
+pyyaml>=6.0
+scipy>=1.11
+statsmodels>=0.14
+linearmodels>=6.0
+matplotlib>=3.8

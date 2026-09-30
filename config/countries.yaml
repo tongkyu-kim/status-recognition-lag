@@ -1,0 +1,294 @@
+# Country configuration.
+#
+# - `countries`: canonical entities keyed by ISO 3166-1 alpha-3. `aliases_en` / `aliases_ko` serve
+#   both dataset-name normalization (srl.utils.countries) and text matching (srl.text.entities).
+# - `text_patterns`: regular expressions used ONLY for text matching (e.g., Korean compound
+#   abbreviations). All patterns are candidates and must be validated with KWIC review on the corpus.
+# - `demonyms_en`: used in text matching only when `text.include_demonyms: true` (config/analysis.yaml).
+# - `role`: incumbent | partner | extension_candidate | disambiguation.
+#   `disambiguation` entities are not analysed; they exist so that, e.g., "North Korea" or
+#   "Hong Kong SAR, China" are not mis-normalized to KOR / CHN.
+# - `iso_numeric` is the ISO 3166-1 numeric code. Source-specific numeric codes (e.g., Comtrade or
+#   BACI reporter/partner codes) can differ and must be verified against each source's code list.
+#
+# To add a historical comparison case later, add a panel under `panels` and set the relevant
+# countries' role; no code changes should be needed.
+
+version: 1
+reference_state: KOR
+
+panels:
+  main:
+    description: Korea as incumbent; China and all ASEAN member states as partners.
+    incumbent: KOR
+    partners: [BRN, KHM, IDN, LAO, MYS, MMR, PHL, SGP, THA, TLS, VNM, CHN]
+  # Candidate historical extensions (not active; require separate corpora and design decisions):
+  # us_japan:     {incumbent: USA, partners: [JPN], period_hint: "1970s-1980s"}
+  # japan_korea:  {incumbent: JPN, partners: [KOR], period_hint: "1990s-2000s"}
+
+groups:
+  ASEAN:
+    aliases_en: [ASEAN, Association of Southeast Asian Nations]
+    aliases_ko: [아세안, 동남아시아국가연합]
+    text_patterns: []
+    # Accession years matter for allocating group-level mentions to members over time.
+    members:
+      IDN: 1967
+      MYS: 1967
+      PHL: 1967
+      SGP: 1967
+      THA: 1967
+      BRN: 1984
+      VNM: 1995
+      LAO: 1997
+      MMR: 1997
+      KHM: 1999
+      TLS: 2025  # admitted as 11th member in 2025; verify date and treatment of observer years
+    notes: >-
+      "Southeast Asia" / "동남아" are regional references, not ASEAN-as-institution; they are
+      deliberately not aliases here. Decide separately whether to track them (see docs/decisions.md).
+
+# Non-country spans that contain a country alias. Matched first and then discarded, so that
+# e.g. "South China Sea" / "남중국해" is not counted as a mention of China.
+shields:
+  SOUTH_CHINA_SEA:
+    aliases_en: [South China Sea]
+    aliases_ko: [남중국해]
+  EAST_CHINA_SEA:
+    aliases_en: [East China Sea]
+    aliases_ko: [동중국해]
+
+countries:
+  KOR:
+    name: Republic of Korea
+    name_ko: 대한민국
+    iso2: KR
+    iso_numeric: "410"
+    role: incumbent
+    aliases_en: [Korea, South Korea, "Korea, Rep.", "Korea, Republic of", Rep. of Korea, ROK]
+    aliases_ko: [한국]
+    text_patterns: ['우리나라']
+    demonyms_en: [Korean]
+    notes: >-
+      Unqualified "Korea" maps to KOR for dataset normalization. In text, longest-match resolution
+      ensures "North Korea" is matched as PRK first. Mentions of KOR are not partner attention.
+
+  BRN:
+    name: Brunei Darussalam
+    name_ko: 브루나이
+    iso2: BN
+    iso_numeric: "096"
+    role: partner
+    aliases_en: [Brunei, Negara Brunei Darussalam]
+    aliases_ko: [브루나이 다루살람]
+    text_patterns: []
+    demonyms_en: [Bruneian]
+
+  KHM:
+    name: Cambodia
+    name_ko: 캄보디아
+    iso2: KH
+    iso_numeric: "116"
+    role: partner
+    aliases_en: [Kingdom of Cambodia, Kampuchea]
+    aliases_ko: []
+    text_patterns: []
+    demonyms_en: [Cambodian]
+
+  IDN:
+    name: Indonesia
+    name_ko: 인도네시아
+    iso2: ID
+    iso_numeric: "360"
+    role: partner
+    aliases_en: [Republic of Indonesia]
+    aliases_ko: [인니]
+    text_patterns: []
+    demonyms_en: [Indonesian]
+    notes: "인니 is a common Korean abbreviation; check for false positives in the corpus."
+
+  LAO:
+    name: Lao PDR
+    name_ko: 라오스
+    iso2: LA
+    iso_numeric: "418"
+    role: partner
+    aliases_en: [Laos, Lao P.D.R., Lao People's Democratic Republic]
+    aliases_ko: []
+    text_patterns: []
+    demonyms_en: [Laotian]
+
+  MYS:
+    name: Malaysia
+    name_ko: 말레이시아
+    iso2: MY
+    iso_numeric: "458"
+    role: partner
+    aliases_en: []
+    aliases_ko: []
+    text_patterns: []
+    demonyms_en: [Malaysian]
+
+  MMR:
+    name: Myanmar
+    name_ko: 미얀마
+    iso2: MM
+    iso_numeric: "104"
+    role: partner
+    aliases_en: [Burma, Republic of the Union of Myanmar]
+    aliases_ko: [버마]
+    text_patterns: []
+    demonyms_en: [Burmese]
+
+  PHL:
+    name: Philippines
+    name_ko: 필리핀
+    iso2: PH
+    iso_numeric: "608"
+    role: partner
+    aliases_en: [The Philippines, "Philippines, The", Republic of the Philippines]
+    aliases_ko: []
+    text_patterns: []
+    demonyms_en: [Filipino, Philippine]
+
+  SGP:
+    name: Singapore
+    name_ko: 싱가포르
+    iso2: SG
+    iso_numeric: "702"
+    role: partner
+    aliases_en: [Republic of Singapore]
+    aliases_ko: [싱가폴]
+    text_patterns: []
+    demonyms_en: [Singaporean]
+    notes: >-
+      Above Korea on GDP per capita; "lower-ranked state" does not hold on that dimension.
+      Treatment in H2-H5 is an open design decision (docs/decisions.md).
+
+  THA:
+    name: Thailand
+    name_ko: 태국
+    iso2: TH
+    iso_numeric: "764"
+    role: partner
+    aliases_en: [Kingdom of Thailand]
+    aliases_ko: []
+    text_patterns: []
+    demonyms_en: [Thai]
+    notes: "타이 is NOT an alias: it is a substring of unrelated words (e.g., 타이어, 타이밍)."
+
+  TLS:
+    name: Timor-Leste
+    name_ko: 동티모르
+    iso2: TL
+    iso_numeric: "626"
+    role: partner
+    aliases_en: [Timor Leste, East Timor, Democratic Republic of Timor-Leste]
+    aliases_ko: [티모르레스테, 티모르-레스테]
+    text_patterns: []
+    demonyms_en: [Timorese]
+    notes: >-
+      Bare "Timor" is NOT an alias (West Timor is part of Indonesia). Independent since 2002;
+      data coverage will be sparse for early years.
+
+  VNM:
+    name: Viet Nam
+    name_ko: 베트남
+    iso2: VN
+    iso_numeric: "704"
+    role: partner
+    aliases_en: [Vietnam, Socialist Republic of Viet Nam, Socialist Republic of Vietnam]
+    aliases_ko: [월남]
+    text_patterns: ['한[·ㆍ・\-]베(?=[\s,.)·ㆍ・\-]|$)']
+    demonyms_en: [Vietnamese]
+    notes: >-
+      월남 is historical usage. The compound pattern requires punctuation and a following boundary
+      to avoid matches such as 한·베네수엘라.
+
+  CHN:
+    name: China
+    name_ko: 중국
+    iso2: CN
+    iso_numeric: "156"
+    role: partner
+    aliases_en: [People's Republic of China, "China, People's Republic of", PRC, Mainland China]
+    aliases_ko: [중화인민공화국]
+    text_patterns: ['한[·ㆍ・\-]중(?=[\s,.)·ㆍ・\-]|$)']
+    demonyms_en: [Chinese]
+    notes: >-
+      Unpunctuated compounds (한중) are NOT matched: 한중간 ("in the middle of") is a false positive.
+      The punctuated pattern excludes 한·중동, 한·중남미, 한·중앙아 via the boundary requirement.
+      Hong Kong and Macao are separate entities in most trade data (see HKG, MAC).
+
+  # --- Disambiguation entities (not analysed) ---------------------------------------------
+  PRK:
+    name: Democratic People's Republic of Korea
+    name_ko: 조선민주주의인민공화국
+    iso2: KP
+    iso_numeric: "408"
+    role: disambiguation
+    aliases_en: [North Korea, DPRK, "Korea, Dem. People's Rep.", "Korea, Democratic People's Republic of"]
+    aliases_ko: [북한]
+    text_patterns: []
+    demonyms_en: [North Korean]
+
+  HKG:
+    name: Hong Kong SAR, China
+    name_ko: 홍콩
+    iso2: HK
+    iso_numeric: "344"
+    role: disambiguation
+    aliases_en: [Hong Kong, "China, Hong Kong SAR", Hong Kong SAR]
+    aliases_ko: []
+    text_patterns: []
+    demonyms_en: []
+    notes: Re-export hub; whether to combine with CHN in trade measures is an open decision.
+
+  MAC:
+    name: Macao SAR, China
+    name_ko: 마카오
+    iso2: MO
+    iso_numeric: "446"
+    role: disambiguation
+    aliases_en: [Macao, Macau, "China, Macao SAR", Macao SAR]
+    aliases_ko: []
+    text_patterns: []
+    demonyms_en: []
+
+  # --- Extension candidates (NOT in the main panel) -----------------------------------------
+  JPN:
+    name: Japan
+    name_ko: 일본
+    iso2: JP
+    iso_numeric: "392"
+    role: extension_candidate
+    aliases_en: []
+    aliases_ko: []
+    text_patterns: []
+    demonyms_en: [Japanese]
+
+  USA:
+    name: United States
+    name_ko: 미국
+    iso2: US
+    iso_numeric: "840"
+    role: extension_candidate
+    aliases_en: [United States of America, USA, US, U.S., U.S.A.]
+    aliases_ko: []
+    text_patterns: []
+    demonyms_en: [American]
+    notes: Short all-caps acronyms are matched case-sensitively in text ("US" but not "us").
+
+  TWN:
+    name: Taiwan
+    name_ko: 대만
+    iso2: TW
+    iso_numeric: "158"
+    role: extension_candidate
+    aliases_en: [Chinese Taipei, "Taiwan, China"]
+    aliases_ko: [타이완]
+    text_patterns: []
+    demonyms_en: [Taiwanese]
+    notes: >-
+      Naming differs by source and is politically sensitive; some trade sources report Taiwan
+      under a residual category (e.g., "Other Asia, nes") - verify per source before mapping.
