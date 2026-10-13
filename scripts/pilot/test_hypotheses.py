@@ -79,9 +79,9 @@ def attention_measures() -> pd.DataFrame:
         n = d.groupby("year").size()
         for c in PARTNERS:
             k = (d[f"mentions_{c}"] > 0).groupby(d["year"]).sum()
-            out.append(pd.DataFrame({"iso3": c, "year": n.index, "measure": name,
+            out.append(pd.DataFrame({"iso3": c, "year": n.index.to_numpy(), "measure": name,
                                      "value": np.log((k.reindex(n.index, fill_value=0) + 0.5)
-                                                     / (n - k.reindex(n.index, fill_value=0) + 0.5)),
+                                                     / (n - k.reindex(n.index, fill_value=0) + 0.5)).to_numpy(),
                                      "n_docs": n.to_numpy()}))
     a = pd.concat(out)
     a = a[(a["measure"] != "att_mofa") | (a["year"] >= 2000)]  # MOFA ko inventory complete from 2000
