@@ -1,0 +1,58 @@
+# Case definitions for the revised status-recognition project.
+# See docs/research_design.md (v2) and docs/case_selection.md for rationale.
+# Added 2026-10-13 as part of the recognition-turning-points overhaul (docs/decision_log.md D001).
+
+cases:
+  usa_jpn:
+    incumbent: USA
+    challenger: JPN
+    role: historical_extension
+    note: >
+      Included in the broader comparative framework only to the extent historical data support
+      comparable operationalization (per the overhaul brief, Section I.2). Not a primary case.
+    material_data: available (WDI GDPpc/productivity 1960-, Atlas ECI/SITC 1962-, Atlas HS92 1995-)
+    media_data: not yet collected (English-language US press/government text is not in the current
+      corpus; Japan Diet speech-count data already collected under source_id jp_diet covers only
+      Japanese parliamentary mentions of Korea, not US material)
+    survey_data: not yet identified
+
+  jpn_kor:
+    incumbent: JPN
+    challenger: KOR
+    role: primary_case
+    material_data: available (WDI, Atlas SITC 1962-, Atlas HS92 1995-)
+    media_data: >
+      Korean-side recognition corpus exists (kr_mofa, kr_motie, kr_presidential_office, Korean
+      language only). Japanese-side recognition corpus (how Japan's government/media describe
+      Korea) is NOT yet collected -- this is required to test the core question ("does the
+      incumbent's recognition lag") and is the single largest acquisition gap for this case.
+    survey_data: >
+      EAI/Genron Korea-Japan Joint Perception Survey is the strongest known candidate (annual,
+      both directions, includes relative-status-adjacent items). Access terms not yet verified in
+      this pass -- see docs/data_access_requirements.md.
+
+  kor_chn:
+    incumbent: KOR
+    challenger: CHN
+    role: primary_case
+    material_data: available (WDI, Atlas SITC 1962-, Atlas HS92 1995-)
+    media_data: >
+      Korean-side recognition corpus exists (same sources as jpn_kor). This is the one direction
+      where the existing corpus directly matches the case (Korea is the incumbent here, and the
+      existing text IS Korean-government text about China).
+    survey_data: not yet identified; Pew Research Center and WVS are candidates (see
+      docs/data_access_requirements.md)
+
+  kor_vnm:
+    incumbent: KOR
+    challenger: VNM
+    role: exploratory_extension
+    note: >
+      Contrasting case of developmental hierarchy without clear material parity (per overhaul
+      brief Section I.2) -- useful as a negative/comparison case for the recognition-turning-point
+      framework, not expected to show a T3 (peer-recognition transition).
+    material_data: available (WDI, Atlas SITC 1962-, Atlas HS92 1995-; VNM also already a partner
+      in the legacy 12-partner panel, see legacy/)
+    media_data: available (Korean-side corpus already covers VNM mentions, legacy pilot measured
+      this directly -- see legacy/README.md)
+    survey_data: not yet identified

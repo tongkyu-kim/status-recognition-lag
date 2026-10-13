@@ -1,9 +1,23 @@
 # Status Proximity and Recognition Lag in Changing Economic Hierarchies
 
+> **2026-10-13 -- project reframed.** The organizing question is now *when does a rising state
+> become recognized as a peer, and why does recognition sometimes lag material convergence even
+> after it occurs* -- turning points and the Korean concept of 무시 (musi: neglect, dismissal,
+> status denial, delayed recognition, status reproduction), not a single continuous "lag" variable.
+> Primary cases: Japan->Korea and Korea->China (see `config/cases.yaml`, `docs/case_selection.md`,
+> `docs/theoretical_framework.md`). The original H1-H5 project below is preserved unchanged and
+> was NOT reinterpreted as evidence for the new framework -- see `legacy/README.md` for its
+> results and `outputs/reports/research_overhaul_report.md` for a full account of what changed,
+> what remains unverified, and what requires manual action. The description immediately below
+> (through "Current status") documents the **original** project as background; for the current
+> one read, in order: `docs/theoretical_framework.md`, `docs/case_selection.md`,
+> `docs/measurement_protocol.md` (design only, not yet implemented), and
+> `docs/data_access_requirements.md`.
+
 Research code and documentation for an international political economy project on how
 governments recognize states that are converging on them economically.
 
-## Research question
+## Research question (legacy framing -- see notice above for the current one)
 
 When lower-ranked states converge toward an incumbent's material and industrial position, does
 the incumbent's **political recognition** of them adjust more slowly than their **objective

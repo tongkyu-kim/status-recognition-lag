@@ -1,0 +1,51 @@
+# Sector definitions for industrial-crossover analysis (docs/research_design.md v2, Section V.11).
+# Product codes verified against data/raw/complexity_atlas/2026-09-30/meta/productHs92_level4.json
+# and productSitc_level4.json. Computed series: outputs/exploratory/crossover_*.csv,
+# data/processed/industrial_crossover_candidates.csv (full provenance, reliability, limitations).
+
+sectors:
+  shipbuilding:
+    hs92_l4: ["8901"]
+    hs92_product_ids: ["product-HS92-1782"]
+    hs92_label: "Cruise ships, excursion boats, ferry boats, cargo ships, barges and similar vessels"
+    sitc_l4: ["7932"]
+    sitc_product_ids: ["product-SITC-1340"]
+    sitc_label: "Ships, boats and other vessels"
+    reliability:
+      hs92_1995_2024: reliable
+      sitc_pre_1992: unreliable -- implausible break, see data/processed/industrial_crossover_candidates.csv
+    excludes: ["warships (SITC 7931)", "vessels for breaking up (SITC 7933 / HS 8908)",
+               "tugs and special-purpose vessels (SITC 7938)"]
+
+  semiconductors:
+    hs92_l4: ["8541", "8542"]
+    hs92_product_ids: ["product-HS92-1744", "product-HS92-1745"]
+    hs92_label: "Diodes/transistors/semiconductor devices + electronic integrated circuits"
+    sitc_l4: null  # not mapped in this pass; SITC semiconductor categories need verification
+    reliability:
+      hs92_1995_2024: reliable as export-value series; NOT segment-specific (memory vs logic vs
+        foundry) and export value conflates design/fabrication with assembly/test/re-export
+    caveat: >
+      Do not interpret China's export-value share as indigenous design/fabrication capability
+      without a capability-specific indicator (patents, domestic value-added, fab-node data).
+
+  batteries:
+    hs92_l4: ["8507"]
+    hs92_product_ids: ["product-HS92-1710"]
+    hs92_label: "Electric storage batteries (rechargeable), including separators"
+    excludes: ["primary (non-rechargeable) cells and batteries (HS 8506)"]
+    reliability:
+      hs92_1995_2024: reliable
+
+  displays_optics:
+    hs92_l4: ["9013"]
+    hs92_product_ids: ["product-HS92-1802"]
+    hs92_label: "Liquid crystal devices, lasers (excl. laser diodes), other optical instruments"
+    reliability:
+      hs92_1995_2024: UNRELIABLE -- noisy composite category (bundles lasers and generic optics
+        with LCDs) AND Korea's series shows an implausible single-year collapse in 2000; do not
+        use without a display-specific product code or an industry source (DisplaySearch/Omdia).
+    status: needs_replacement_indicator
+
+# Candidate sectors named in the overhaul brief but not yet investigated:
+#   - none further specified; the brief named shipbuilding, semiconductors, displays, batteries only.
