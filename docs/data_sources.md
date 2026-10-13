@@ -1,93 +1,70 @@
 # Data sources
 
-**Every source below is a candidate that needs validation.** Before a source is used:
+The machine-readable catalog is `metadata/source_catalog.csv` / `.json`, generated from
+`config/sources.yaml` by `python scripts/acquire/build_catalog.py`. This page summarizes it. What was
+collected and what is missing: [data_collection_status.md](data_collection_status.md). What a human
+still has to do: [manual_data_tasks.md](manual_data_tasks.md).
 
-1. confirm coverage (partners, years, frequency, product level) and record it here;
-2. read and record the terms of use and licence, including redistribution rights for the
-   replication package;
-3. record the access method and the verified landing page in `config/sources.yaml` (the `url`
-   stays `null` until then);
-4. deposit files by hand under `data/raw/<source_id>/<YYYY-MM-DD>/` and register them
-   (`make register-raw`);
-5. log the decision in [decisions.md](decisions.md) and set `status: validated` in
-   `config/sources.yaml`.
+## Rules (D015)
 
-No scrapers or automated downloaders exist in this repository. A connector may be added only
-after step 5, and only if the provider's terms allow automated access.
+- **Source hierarchy.** Tier 1 (World Bank, IMF, UN Comtrade, OECD, UNCTAD, WTO, WIPO, Korean
+  ministries, Presidential Archives, National Assembly) comes first. Tier 2 (Atlas/Growth Lab,
+  BACI) is used where Tier 1 lacks the series. Tier 3 (blogs, Kaggle, mirrors, Wikipedia) is used
+  only to locate originals.
+- **Access.** Documented APIs, public bulk endpoints, or public pages allowed by robots.txt.
+  Logins, keys, CAPTCHAs, guestbook or terms forms, and HTTP 403 blocks are not bypassed; they
+  become manual tasks.
+- **Storage.** `data/raw/<source_id>/<YYYY-MM-DD>/`, written once (`srl.acquisition.fetch.save_raw`).
+  Every request is logged in `metadata/download_log.csv`, and every raw file is checksummed in
+  `data/raw_manifest.csv` (`python tasks.py register-raw`).
+- **Status values:** `validated` (retrieved), `partial` (part retrieved), `manual` (needs a
+  human), `candidate` (not yet checked), `rejected`.
 
-Validation record template (copy per source):
+## Sources by construct
 
-```text
-source_id:          e.g. baci
-validated_on:       YYYY-MM-DD
-coverage:           partners / years / frequency / classification & revision
-access:             manual download | bulk file | documented API (version)
-licence / terms:    summary + where recorded
-redistribution:     allowed? derived data only? not allowed?
-known issues:       e.g. mirror discrepancies, re-exports, revisions, confidentiality suppression
-```
+| Construct | source_id | Status | What we have | Script |
+|---|---|---|---|---|
+| A objective status | `wb_wdi` | validated | 29 WDI series, panel + HKG/MAC/JPN/USA/WLD, 1960–2025 | `acq_wdi.py` |
+| A / C complexity, overlap | `complexity_atlas` | validated | ECI/COI (HS92 1995–2024, SITC 1962–2024), PCI (HS4), country × HS4 exports and RCA, Korea × partner HS4 flows | `acq_atlas.py` |
+| A patents | `wipo` | manual | Resident and non-resident applications via WDI; PCT and technology fields manual (M5) | — |
+| C / D trade | `un_comtrade` | partial | Bilateral totals 1988–2025 (reporter + mirror); HS2 Korea ↔ partner (quota-limited) | `acq_comtrade.py` |
+| C trade (HS6) | `baci` | candidate | Deferred (size); task C2 | — |
+| D FDI | `oecd_fdi` | validated | FDI flows, positions and income by counterpart; reporters KOR, JPN, USA; BMD4 + BMD3 history | `acq_oecd_fdi.py` |
+| D FDI | `unctad` | partial | Aggregate FDI flows and stocks (bulk); bilateral tables manual (M4) | `acq_unctad.py` |
+| D FDI (Korean ODI) | `fdi_korea` | partial | Korea Eximbank quarterly/annual reports 2008–2026 (data.go.kr 3040164); parsed annual gross ODI by major destination 2015–2025 | `acq_koreaexim_odi.py`, `build_odi_reports.py` |
+| E / F government text | `kr_mofa` | validated | 13 boards inventoried (2000–2026); full text for speeches, summits, work plans and alias hits; Diplomatic White Papers | `acq_kr_mofa.py` |
+| E / F government text | `kr_motie` | validated | motir.go.kr press releases 2014–2026 (inventory; text for alias hits) | `acq_kr_motie.py` |
+| E / F government text | `kr_policy_briefing` | partial | korea.kr trade/industry lineage 2008–2014 (inventory; HWP text for title hits) | `acq_kr_policy_briefing.py` |
+| E / F government text | `kr_presidential_office` | validated | Presidential Archives speech inventory (1948–2025), texts 1988–2025; president.go.kr 2025– | `acq_kr_presidential.py` |
+| E legislative text | `kr_national_assembly` | manual | Open API needs a key (M6) | — |
+| G claimed status | `partner_gov_text` | partial | Feasibility samples (CHN, VNM, KHM, IDN, SGP) | ad hoc |
+| H formal transitions | `wb_income_class` | validated | OGHIST FY89–FY25 + official FY26/FY27 notes | `acq_wb_income.py` |
+| H formal transitions | `event_sources` | validated | WTO member pages, UN LDC list, Korea FTA portal pages | ad hoc |
+| Historical (JPN → KOR) | `jp_diet` | validated | Diet API mention counts 1980–2010 | `acq_jp_diet_counts.py` |
+| Historical | `jp_mofa_bluebook`, `jp_meti_whitepaper` | manual | HTTP 403 (M9) | — |
+| Historical (US → JPN) | `us_frus` | validated | TEI XML repository located; not cloned | — |
+| Public discourse | `youtube` | manual | Pipeline ready; API key needed (Y1) | `scripts/youtube/run_youtube.py` |
 
----
+## Institutional naming (Korean government text)
 
-## Trade
-
-**Needed:** monthly or annual bilateral Korean exports and imports by partner; HS-level trade if
-available (for overlap measures, also world-level HS exports of all countries).
-
-| source_id | Candidate source | Intended use | Open questions |
+| Period | Foreign ministry | Trade/industry ministry | Where the text is |
 |---|---|---|---|
-| `kcs_trade` | Korea Customs Service | Korea's bilateral trade, monthly, HS (national HSK lines) | Access route; historical depth; HS revision handling |
-| `kita_trade` | Korea International Trade Association | Cross-check of KCS; convenient aggregates | Redistribution terms; consistency with KCS |
-| `un_comtrade` | UN Comtrade | Partner-reported (mirror) flows; world denominators | Access tier; reporting gaps for some ASEAN members |
-| `baci` | BACI (CEPII) | Reconciled HS6 bilateral flows for RCA/ESI/EXPY | Annual only; version pinning; licence terms |
+| 1998-02 – 2013-03 | 외교통상부 (MOFAT; incl. 통상교섭본부 trade negotiations) | 산업자원부 (MOCIE, to 2008-02), then 지식경제부 (MKE) | MOFA archive (from 2000); korea.kr (MOCIE from 2008-01 only, MKE) |
+| 2013-03 – 2025 | 외교부 (MOFA) | 산업통상자원부 (MOTIE; trade negotiations moved here) | MOFA archive; motir.go.kr (from 2014-03); korea.kr 2013–14 |
+| 2025 – | 외교부 | 산업통상부 (site title at retrieval; domain motir.go.kr) | MOFA archive; motir.go.kr |
 
-Notes: Hong Kong/Macao re-exports (CHN vs. HKG) and Taiwan's reporting label need explicit rules.
-Mirror statistics are a robustness check, not the default.
+Agencies are never silently merged. `institution` is the analytical grouping (MOFA / MOTIE /
+President), `institution_label` preserves the name at the time, and `source_id` preserves the
+archive the document came from.
 
-## Macro / status indicators
+## Licence summary
 
-| source_id | Candidate source | Intended use | Open questions |
-|---|---|---|---|
-| `wb_wdi` | World Bank WDI | GDP per capita, MVA, high-tech export share | Exact indicator codes and vintages; coverage for Myanmar and Timor-Leste |
-| `imf` | IMF datasets | Macro cross-checks; trade-by-partner statistics | Dataset names and vintages |
-| `unido` | UNIDO industrial statistics | MVA and its sectoral composition | Access and licence; sector detail for small economies |
-| `oecd` | OECD (TiVA, productivity) | GVC exposure; productivity | ASEAN coverage by dataset |
-| `wipo` | WIPO IP statistics | Patent-based capability | Counting rules (office, families, by origin) |
-| `complexity_atlas` | Atlas of Economic Complexity / OEC | Complexity cross-checks | Licence; methodology vs. own computation |
-
-## Interdependence (FDI / GVC)
-
-| source_id | Candidate source | Intended use | Open questions |
-|---|---|---|---|
-| `fdi_korea` | Korean outward/inward FDI statistics (provider TBD); UNCTAD bilateral FDI | FDI exposure | Flows vs. stocks; reporting basis; suppression |
-
-## Government text (Korea)
-
-| source_id | Candidate source | Intended use | Open questions |
-|---|---|---|---|
-| `kr_presidential_office` | Presidential Office releases, speeches; archived material of past administrations | Attention; recognition | Archive continuity across administrations |
-| `kr_mofa` | Ministry of Foreign Affairs: press releases, speeches, Diplomatic White Papers | Attention; recognition | Korean vs. English coverage; document types |
-| `kr_motie` | Trade/industry ministry releases (MOTIE / successor) | Economic framing of partners | Ministry renamings; institution crosswalk |
-| `kr_national_assembly` | National Assembly plenary/committee minutes | Legislative framing (separate analysis) | Volume; speaker attribution |
-| `kr_other_official` | Other official portals/archives | Coverage gaps | Duplicate syndicated releases |
-| `kr_diplomatic_events` | Summits, visits, ministerial meetings, joint statements | Event counts; partnership tiers | Hand-coding rules; completeness |
-
-Deposit format: text files plus a `metadata.csv` sidecar (schema in `data/README.md`). Check
-licence terms for Korean public-sector works before redistributing any text. Derived measures
-are the default for the replication package.
-
-## Historical corpora (later extensions)
-
-| source_id | Candidate source | Case |
+| Source | Terms | Redistribution in the replication package |
 |---|---|---|
-| `jp_mofa_bluebook` | Japan MOFA Diplomatic Bluebooks | Japan → Korea |
-| `jp_meti_whitepaper` | METI/MITI White Papers on International Economy and Trade | Japan → Korea |
-| `us_frus` | Foreign Relations of the United States | US → Japan |
-| `us_presidential` | US presidential public papers / archives | US → Japan |
-| `us_ustr` | USTR reports and releases | US → Japan |
-
-## Project-generated inputs
-
-| source_id | Description |
-|---|---|
-| `human_coding` | Completed human coding sheets ([coding_protocol.md](coding_protocol.md)), treated as immutable raw inputs |
+| World Bank WDI, income classes | CC BY 4.0 | yes, with attribution |
+| Atlas (Growth Lab) | CC0 bulk files; cite Growth Lab | yes, with citation |
+| UN Comtrade | UN Comtrade terms | derived data only |
+| OECD | OECD terms (CC BY 4.0 for most data) | yes, with attribution |
+| UNCTADstat | free use with attribution | yes |
+| Korean government texts | Public-sector works; KOGL type per item | derived measures; full text only where the KOGL type allows |
+| YouTube | YouTube API Services Terms | comment IDs and derived labels only |

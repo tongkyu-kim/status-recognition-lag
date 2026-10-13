@@ -1,267 +1,476 @@
-# Candidate data sources. EVERY entry is a candidate requiring validation before use:
-# coverage, access conditions, terms of use / licence, and redistribution rights must be checked
-# and recorded in docs/data_sources.md and docs/decisions.md.
+# Data sources: single source of truth for the source catalog
+# (metadata/source_catalog.csv|json are generated from this file by scripts/acquire/build_catalog.py).
 #
-# Fields
-#   status:     candidate | validated | in_use | rejected
-#   access:     how data will be obtained (manual download, bulk file, API) - TBD until validated
-#   url:        verified landing page, recorded only after validation (null until then)
-#   reader:     how raw files are parsed, e.g. {format: csv, encoding: utf-8, skiprows: 0}
-#   column_map: mapping from source column names to canonical names (see src/srl/cleaning/)
-# `reader` and `column_map` stay null until real files are inspected. Cleaning code raises
-# NotImplementedError while they are null, so nothing silently guesses a file layout.
-#
+# status:  candidate   - not yet checked; url must stay null
+#          validated   - authority, access route and terms checked; raw files retrieved
+#          partial     - validated, but only part of the needed data could be retrieved automatically
+#          manual      - validated source whose retrieval requires a human (login, key, CAPTCHA, 403)
+#          rejected    - checked and not usable
+# `reader` / `column_map` stay null until the cleaning code needs them (src/srl/cleaning/).
 # The key of each entry is the <source_id> used for data/raw/<source_id>/<YYYY-MM-DD>/.
+# Validation of every non-candidate entry happened on 2026-09-30 (docs/decisions.md D015).
 
 sources:
-  # ---------------------------------------------------------------- Trade
-  kcs_trade:
-    name: Korea Customs Service trade statistics
-    category: trade
-    status: candidate
-    access: TBD
-    url: null
-    licence: TBD
-    notes: Official Korean customs data; check monthly bilateral and HS-level (HSK) availability.
-    reader: null
-    column_map: null
-
-  kita_trade:
-    name: Korea International Trade Association trade statistics
-    category: trade
-    status: candidate
-    access: TBD
-    url: null
-    licence: TBD
-    notes: Derived from customs data; check redistribution terms and consistency with KCS.
-    reader: null
-    column_map: null
-
-  un_comtrade:
-    name: UN Comtrade
-    category: trade
-    status: candidate
-    access: TBD
-    url: null
-    licence: TBD
-    notes: Needed for world-level denominators (RCA, export similarity) and partner-reported flows.
-    reader: null
-    column_map: null
-
-  baci:
-    name: BACI (CEPII)
-    category: trade
-    status: candidate
-    access: TBD
-    url: null
-    licence: TBD
-    notes: Reconciled HS6 bilateral flows; annual only. Check HS revision and version pinning.
-    reader: null
-    column_map: null
-
-  # ---------------------------------------------------------------- Macro / status
+  # ================================================================ Macro / status
   wb_wdi:
-    name: World Bank World Development Indicators
+    name: World Bank World Development Indicators (API v2)
     category: macro
-    status: candidate
-    access: TBD
-    url: null
-    licence: TBD
-    notes: GDP per capita, manufacturing value added, high-tech export share (indicator codes to verify).
+    construct: [A_objective_status, D_interdependence]
+    status: validated
+    access: documented public API (api.worldbank.org/v2), no key
+    url: https://api.worldbank.org/v2/country/KOR/indicator/NY.GDP.PCAP.CD?format=json
+    licence: CC BY 4.0 (World Bank Open Data terms)
+    redistribution: allowed with attribution
+    coverage: {countries: "panel + HKG, MAC, JPN, USA, WLD", years: "1960-2025", frequency: annual}
+    variables: "29 indicators: GDP, GDPpc (current/const/PPP), GNIpc Atlas, population, GDP per worker, MVA (level/share), high-tech exports, manufactures share, merchandise trade, FDI in/outflows, patents (WIPO-sourced), R&D"
+    unit: see indicator metadata (meta/)
+    script: scripts/acquire/acq_wdi.py
+    notes: Database vintage recorded in wdi_source_record.json (lastupdated 2026-07-13).
     reader: null
     column_map: null
 
-  imf:
-    name: International Monetary Fund datasets (e.g., WEO, trade-by-partner statistics)
-    category: macro
-    status: candidate
-    access: TBD
-    url: null
-    licence: TBD
-    notes: Specific dataset(s) to be chosen; check current names and vintages.
-    reader: null
-    column_map: null
-
-  unido:
-    name: UNIDO industrial statistics
-    category: macro
-    status: candidate
-    access: TBD
-    url: null
-    licence: TBD
-    notes: Manufacturing value added and composition by sector; competitive industrial performance.
-    reader: null
-    column_map: null
-
-  oecd:
-    name: OECD datasets (e.g., TiVA for GVC exposure, productivity)
-    category: macro
-    status: candidate
-    access: TBD
-    url: null
-    licence: TBD
-    notes: Coverage of ASEAN members varies by dataset; verify country coverage first.
-    reader: null
-    column_map: null
-
-  wipo:
-    name: WIPO IP statistics
-    category: macro
-    status: candidate
-    access: TBD
-    url: null
-    licence: TBD
-    notes: Patent counts by origin; decide office/family counting rules before use.
+  wb_income_class:
+    name: World Bank country income classifications (OGHIST, CLASS, FY26/FY27 notes)
+    category: classifications
+    construct: [H_formal_transitions]
+    status: validated
+    access: direct file download (datacatalogfiles.worldbank.org; documents.worldbank.org)
+    url: https://datacatalog.worldbank.org/search/dataset/0037712
+    licence: CC BY 4.0
+    redistribution: allowed with attribution
+    coverage: {countries: all economies, years: "FY1989-FY2027", frequency: annual (fiscal year)}
+    variables: income group (L/LM/UM/H), thresholds, lending category
+    unit: category; thresholds in current US$ (Atlas GNI per capita)
+    script: scripts/acquire/acq_wb_income.py
+    notes: >-
+      OGHIST.xlsx on the catalog ends at FY25; FY26 and FY27 changes taken from the official
+      classification notes (PDF). Data-catalog API rate-limits aggressively (HTTP 429).
     reader: null
     column_map: null
 
   complexity_atlas:
-    name: Atlas of Economic Complexity (Growth Lab) / Observatory of Economic Complexity
+    name: Atlas of Economic Complexity (Harvard Growth Lab) - GraphQL API
+    category: complexity
+    construct: [A_objective_status, C_competitive_overlap, D_interdependence]
+    status: validated
+    access: documented public GraphQL API (atlas.hks.harvard.edu/api/graphql), no key, <=120 req/min
+    url: https://atlas.hks.harvard.edu/api/graphql
+    licence: "Atlas data; bulk files on Harvard Dataverse are CC0 1.0. Cite Growth Lab (2026)."
+    redistribution: allowed with citation
+    coverage: {countries: "panel + JPN, USA (ECI: all ranked countries)", years: "HS92 1995-2024; SITC 1962-2024", frequency: annual}
+    variables: ECI, COI, PCI (HS4), country x HS4 exports/imports/RCA/market share, Korea x partner HS4 bilateral flows
+    unit: current US$
+    script: scripts/acquire/acq_atlas.py
+    notes: Bulk Dataverse files (HS6 bilateral) sit behind a guestbook form -> manual task M3.
+    reader: null
+    column_map: null
+
+  wipo:
+    name: WIPO IP Statistics Data Center
+    category: patents
+    construct: [A_objective_status]
+    status: manual
+    access: interactive data center (no documented bulk API)
+    url: https://www3.wipo.int/ipstats/ips-search/
+    licence: WIPO terms of use (free use with attribution)
+    redistribution: derived data
+    coverage: {countries: all, years: "1980-", frequency: annual}
+    variables: resident/non-resident applications, grants, PCT filings, technology fields
+    unit: counts
+    script: null
+    notes: Resident and non-resident patent applications are already retrieved via WDI (IP.PAT.RESD/NRES, WIPO-sourced). PCT and technology-field series -> manual task M5.
+    reader: null
+    column_map: null
+
+  unido:
+    name: UNIDO industrial statistics (INDSTAT / CIP)
     category: macro
+    construct: [A_objective_status]
     status: candidate
     access: TBD
     url: null
     licence: TBD
-    notes: Only if methodology and licence fit; otherwise compute complexity measures from trade data.
+    notes: WDI MVA series cover the need for now; sector detail optional (manual task C-list).
     reader: null
     column_map: null
 
-  # ---------------------------------------------------------------- Interdependence (FDI / GVC)
+  imf:
+    name: IMF datasets (WEO; Direct Investment Positions by counterpart)
+    category: macro
+    construct: [A_objective_status, D_interdependence]
+    status: candidate
+    access: TBD (api.imf.org SDMX reachable; dataset not yet chosen)
+    url: null
+    licence: TBD
+    notes: Candidate cross-check for partner-reported FDI positions (CDIS successor).
+    reader: null
+    column_map: null
+
+  # ================================================================ Trade
+  un_comtrade:
+    name: UN Comtrade (public preview API)
+    category: trade
+    construct: [C_competitive_overlap, D_interdependence]
+    status: partial
+    access: keyless public preview API (1 period/call, <=500 records/call, call-volume quota with Retry-After)
+    url: https://comtradeapi.un.org/public/v1/preview/C/A/HS
+    licence: UN Comtrade terms of use (attribution; bulk redistribution of raw extracts restricted)
+    redistribution: derived data only
+    coverage: {countries: "panel (reporter and partner) + World", years: "1988-2025", frequency: annual}
+    variables: bilateral totals (reporter- and partner-reported), HS2 bilateral Korea<->partner (both directions)
+    unit: current US$ (primaryValue)
+    script: scripts/acquire/acq_comtrade.py
+    notes: Totals matrix complete. HS2 dyads complete for partners fetched before quota stops; rerun is resumable. Full API (free key) -> manual task M1.
+    reader: null
+    column_map: null
+
+  kcs_trade:
+    name: Korea Customs Service trade statistics (unipass / data.go.kr API)
+    category: trade
+    construct: [D_interdependence]
+    status: manual
+    access: data.go.kr Open API requires a free service key (login)
+    url: https://unipass.customs.go.kr/ets/
+    licence: KOGL / data.go.kr terms
+    redistribution: derived data
+    notes: Needed only for monthly or HSK 10-digit Korean detail -> manual task M2 (optional).
+    reader: null
+    column_map: null
+
+  kita_trade:
+    name: Korea International Trade Association (K-stat)
+    category: trade
+    construct: [D_interdependence]
+    status: candidate
+    access: TBD (web interface; membership for some tables)
+    url: null
+    licence: TBD
+    notes: Derived from customs data; low priority given Comtrade + Atlas coverage.
+    reader: null
+    column_map: null
+
+  baci:
+    name: BACI (CEPII) reconciled HS6 bilateral trade
+    category: trade
+    construct: [C_competitive_overlap]
+    status: candidate
+    access: TBD (direct zip download, ~2+ GB per HS vintage)
+    url: null
+    licence: TBD (Etalab open licence reported; verify)
+    notes: Deferred - size in a Dropbox-synced repo; Atlas HS4 covers overlap measures for now (optional task C2).
+    reader: null
+    column_map: null
+
+  # ================================================================ FDI
+  oecd_fdi:
+    name: OECD FDI statistics by counterpart area (BMD4; historical BMD3)
+    category: fdi
+    construct: [D_interdependence]
+    status: validated
+    access: documented public SDMX API (sdmx.oecd.org/public/rest), no key
+    url: https://sdmx.oecd.org/public/rest/data/OECD.DAF.INV,DSD_FDI@DF_FDI_POS_CTRY,1.0
+    licence: OECD terms (CC BY 4.0 for most data)
+    redistribution: allowed with attribution
+    coverage: {countries: "reporters KOR, JPN, USA x counterparts panel + HKG, W", years: "BMD3 ~1985-2013; BMD4 2005-", frequency: annual}
+    variables: FDI flows, positions, income by counterpart; inward/outward; directional and asset/liability principles
+    unit: see UNIT_MEASURE (USD millions / national currency)
+    script: scripts/acquire/acq_oecd_fdi.py
+    notes: Reporter-side confidentiality suppression for some dyad-years.
+    reader: null
+    column_map: null
+
+  unctad:
+    name: UNCTADstat bulk downloads
+    category: fdi
+    construct: [D_interdependence]
+    status: partial
+    access: public bulk-download endpoint (unctadstat-api.unctad.org); unctad.org main site blocks automation (403)
+    url: https://unctadstat.unctad.org/datacentre/
+    licence: UNCTADstat terms (free use with attribution)
+    redistribution: allowed with attribution
+    coverage: {countries: all economies, years: "1970-", frequency: annual}
+    variables: FDI inward/outward flows and stocks (aggregate, not bilateral)
+    unit: current US$ millions
+    script: scripts/acquire/acq_unctad.py
+    notes: Bilateral FDI tables (2014 release) are on unctad.org -> manual task M4.
+    reader: null
+    column_map: null
+
   fdi_korea:
-    name: Korean outward/inward FDI statistics (provider to be identified)
+    name: Korea Eximbank overseas direct investment reports (data.go.kr file dataset 3040164)
+    category: fdi
+    construct: [D_interdependence]
+    status: partial
+    access: data.go.kr file download (anonymous, the page's own download flow; CAPTCHA limit check honoured)
+    url: https://www.data.go.kr/data/3040164/fileData.do
+    licence: "data.go.kr: 이용허락범위 제한 없음 (no restriction), free"
+    redistribution: allowed
+    coverage: {countries: "major destinations (VNM, CHN, SGP, IDN always; MYS, MMR, KHM, THA, PHL sometimes; LAO, BRN, TLS never)", years: "reports 2008Q2-2026Q2; parsed annual series 2015-2025", frequency: quarterly reports}
+    variables: gross ODI (총투자) by region, major destination country, industry, investor size, equity share; new affiliates
+    unit: US$ million (reports); thousand US$ (annual 경영분석 books)
+    script: scripts/acquire/acq_koreaexim_odi.py; parsed by scripts/acquire/build_odi_reports.py
+    notes: >-
+      75 of 76 listed releases downloaded (20141114 has no file on the portal). Reports before 2015
+      give country figures mostly in narrative text (bespoke parsing needed); OECD BMD3 covers those
+      years. The full country x year database for small partners (LAO, BRN, TLS) remains on
+      stats.koreaexim.go.kr (manual task M4).
+    reader: null
+    column_map: null
+
+  oecd:
+    name: OECD TiVA 2025 (GVC exposure)
     category: interdependence
+    construct: [D_interdependence]
     status: candidate
-    access: TBD
+    access: SDMX dataflows DSD_TIVA_* located, not yet downloaded
     url: null
     licence: TBD
-    notes: Candidate providers include Korean official statistics and UNCTAD bilateral FDI; validate.
+    notes: Covers KOR, CHN and most ASEAN members; next-step task (docs/data_collection_status.md).
     reader: null
     column_map: null
 
-  # ---------------------------------------------------------------- Korean government text
-  kr_presidential_office:
-    name: Korean Presidential Office releases (current and archived administrations)
-    category: government_text
-    status: candidate
-    access: TBD
-    url: null
-    licence: TBD
-    notes: Past administrations' materials may sit in presidential archives; check continuity.
-    reader: null
-    column_map: null
-
+  # ================================================================ Korean government text
   kr_mofa:
-    name: Ministry of Foreign Affairs (press releases, speeches, Diplomatic White Papers)
+    name: Ministry of Foreign Affairs web archive (www.mofa.go.kr boards)
     category: government_text
-    status: candidate
-    access: TBD
-    url: null
-    licence: TBD
-    notes: Korean and English releases differ in coverage; track language as metadata.
+    construct: [E_government_attention, F_recognized_status]
+    status: validated
+    access: "public web pages; robots.txt 'Allow: /'; polite crawl (~1 req/1.2 s)"
+    url: https://www.mofa.go.kr/www/brd/m_4080/list.do
+    licence: Korean public-sector works; KOGL type per page where marked
+    redistribution: derived measures; full texts only where KOGL type permits
+    coverage: {countries: n/a, years: "2000-2026 (Korean press releases); board-specific", frequency: document}
+    variables: title, date, department, body text, attachments list, board, language
+    unit: document
+    script: scripts/acquire/acq_kr_mofa.py
+    notes: Inventory of 13 boards complete; full text for all speeches/summit/plan boards and for alias hits of large boards; Diplomatic White Paper PDFs.
     reader: null
     column_map: null
 
   kr_motie:
-    name: Trade/industry ministry releases (MOTIE / successor ministry)
+    name: Trade/industry ministry web archive (www.motir.go.kr, formerly www.motie.go.kr)
     category: government_text
-    status: candidate
-    access: TBD
-    url: null
-    licence: TBD
-    notes: Ministry names and remits change over time; maintain an institution crosswalk.
+    construct: [E_government_attention, F_recognized_status]
+    status: validated
+    access: public web pages; robots.txt allows all but /kor/search
+    url: https://www.motir.go.kr/kor/article/ATCL3f49a5a8c
+    licence: Korean public-sector works (KOGL)
+    redistribution: derived measures
+    coverage: {countries: n/a, years: "2014-03 to 2026-09 on site", frequency: document}
+    variables: title, date, department, HTML body (often a summary), attachment names
+    unit: document
+    script: scripts/acquire/acq_kr_motie.py
+    notes: HTML bodies are summaries; full text is in PDF/HWP attachments (not bulk-downloaded yet).
+    reader: null
+    column_map: null
+
+  kr_policy_briefing:
+    name: 정책브리핑 (www.korea.kr) - trade/industry ministry releases 2008-2014 (repCode A00015)
+    category: government_text
+    construct: [E_government_attention, F_recognized_status]
+    status: partial
+    access: public web pages; robots.txt allows all but /totalSearch.do
+    url: https://www.korea.kr/briefing/pressReleaseList.do
+    licence: KOGL per item
+    redistribution: derived measures
+    coverage: {countries: n/a, years: "2008-2014 (MOCIE Jan-Feb 2008, MKE, early MOTIE)", frequency: document}
+    variables: title, date, ministry label at the time; HWP attachment text for title-alias hits
+    unit: document
+    script: scripts/acquire/acq_kr_policy_briefing.py
+    notes: Bodies are stubs 2008-13; text only for 158 title hits. Nothing under A00015 before 2008.
+    reader: null
+    column_map: null
+
+  kr_presidential_office:
+    name: Presidential speeches - Presidential Archives (pa.go.kr) and Presidential Office (president.go.kr)
+    category: government_text
+    construct: [E_government_attention, F_recognized_status]
+    status: validated
+    access: public web pages; site Excel export of the speech inventory; Office board JSON used by the public page
+    url: https://www.pa.go.kr/research/contents/speech/index.jsp
+    licence: Korean public-sector works
+    redistribution: derived measures
+    coverage: {countries: n/a, years: "1948-2025 inventory; texts 1988-2025 (Roh Tae-woo..Yoon) + 2025- Office", frequency: document}
+    variables: title, date, president, speech type, venue, bibliographic source, text
+    unit: document
+    script: scripts/acquire/acq_kr_presidential.py
+    notes: Office briefings/speeches of Moon/Yoon eras are archived web snapshots (manual task M7).
     reader: null
     column_map: null
 
   kr_national_assembly:
-    name: National Assembly records (plenary/committee minutes)
+    name: National Assembly Open API (열린국회정보) - plenary and committee minutes
     category: government_text
-    status: candidate
-    access: TBD
-    url: null
-    licence: TBD
-    notes: Legislative rather than executive voice; analyse separately from executive sources.
+    construct: [E_government_attention]
+    status: manual
+    access: Open API; keyless use limited to 5 rows/call (sample mode); free key needs registration
+    url: https://open.assembly.go.kr/portal/data/service/selectAPIServicePage.do/OR137O001023MZ19321
+    licence: 열린국회정보 terms
+    redistribution: derived measures
+    notes: likms.assembly.go.kr /record/ disallowed by robots.txt -> manual task M6.
     reader: null
     column_map: null
 
   kr_other_official:
-    name: Other official government archives / portals (to be identified)
+    name: Other official Korean portals (to be identified)
     category: government_text
     status: candidate
     access: TBD
     url: null
     licence: TBD
-    notes: e.g., government-wide policy briefing portals; avoid double-counting syndicated releases.
+    notes: korea.kr is now its own source (kr_policy_briefing).
     reader: null
     column_map: null
 
   kr_diplomatic_events:
-    name: Bilateral visits, summits, ministerial meetings, official joint statements
+    name: Bilateral visits, summits, ministerial meetings, joint statements (hand-coded)
     category: events
     status: candidate
-    access: TBD
+    access: to be coded from kr_mofa / kr_presidential_office documents
     url: null
     licence: TBD
-    notes: Likely hand-compiled from official releases; requires its own coding rules.
+    notes: Summit boards (m_28650, m_29514) and joint statements are in the MOFA corpus.
     reader: null
     column_map: null
 
-  # ---------------------------------------------------------------- Historical corpora (later)
+  event_sources:
+    name: Official pages evidencing formal status transitions (WTO, UN LDC list, Korea FTA portal)
+    category: classifications
+    construct: [H_formal_transitions]
+    status: validated
+    access: public web pages / PDF
+    url: https://www.wto.org/english/thewto_e/whatis_e/tif_e/org6_e.htm
+    licence: respective publishers' terms
+    redistribution: facts (dates) only
+    coverage: {countries: panel, years: "1995-2029", frequency: event}
+    variables: WTO accession date, LDC inclusion/graduation schedule, Korea FTA entry into force
+    unit: date
+    script: ad hoc (see metadata/download_log.csv; parsed by scripts/acquire/build_prelim.py)
+    notes: wto_country_LAO.html is a soft-404 page kept for provenance; wto_country_LAO_v2.html is correct.
+    reader: null
+    column_map: null
+
+  # ================================================================ Partner-state text (feasibility)
+  partner_gov_text:
+    name: Partner-government official sites (feasibility samples)
+    category: partner_text
+    construct: [G_claimed_status]
+    status: partial
+    access: public web pages (landing-page samples only)
+    url: https://en.baochinhphu.vn/
+    licence: respective governments' terms
+    redistribution: derived measures only
+    notes: See docs/data_collection_status.md, section "Partner-state status claims".
+    reader: null
+    column_map: null
+
+  # ================================================================ Historical
+  jp_diet:
+    name: Japan National Diet Record API (国会会議録検索システム)
+    category: historical_text
+    construct: [E_government_attention]
+    status: validated
+    access: documented public API (kokkai.ndl.go.jp/api), no key
+    url: https://kokkai.ndl.go.jp/api.html
+    licence: NDL terms (proceedings are public records)
+    redistribution: derived measures
+    coverage: {countries: n/a, years: "1947-", frequency: speech}
+    variables: speech text, speaker, party, house, committee, date
+    unit: speech
+    script: scripts/acquire/acq_jp_diet_counts.py
+    notes: Feasibility counts only (Korea mentions 1980-2010).
+    reader: null
+    column_map: null
+
+  historical:
+    name: Historical-extension feasibility samples (FRUS repo, govinfo PPP, Japan MOFA/METI)
+    category: historical_text
+    status: partial
+    access: mixed; Japan MOFA and METI return HTTP 403 to automated clients
+    url: https://github.com/HistoryAtState/frus
+    licence: US government works are public domain; Japanese sites per their terms
+    redistribution: "US: allowed; JP: derived measures"
+    notes: Samples only.
+    reader: null
+    column_map: null
+
   jp_mofa_bluebook:
     name: Japan MOFA Diplomatic Bluebooks
     category: historical_text
-    status: candidate
-    access: TBD
-    url: null
-    licence: TBD
-    notes: Historical extension only.
+    status: manual
+    access: HTTP 403 to automated clients (2026-09-30)
+    url: https://www.mofa.go.jp/policy/other/bluebook/index.html
+    licence: MOFA Japan terms
+    redistribution: derived measures
+    notes: Manual task M9.
     reader: null
     column_map: null
 
   jp_meti_whitepaper:
-    name: Japan METI/MITI White Papers on International Economy and Trade
+    name: Japan METI/MITI White Papers on International Economy and Trade (通商白書)
     category: historical_text
-    status: candidate
-    access: TBD
-    url: null
-    licence: TBD
-    notes: Historical extension only.
+    status: manual
+    access: HTTP 403 to automated clients (2026-09-30)
+    url: https://www.meti.go.jp/report/gaisei/index.html
+    licence: METI terms
+    redistribution: derived measures
+    notes: Manual task M9.
     reader: null
     column_map: null
 
   us_frus:
-    name: Foreign Relations of the United States (FRUS)
+    name: Foreign Relations of the United States (TEI XML on GitHub)
     category: historical_text
-    status: candidate
-    access: TBD
-    url: null
-    licence: TBD
-    notes: Historical extension only.
+    status: validated
+    access: public GitHub repository (git clone); history.state.gov
+    url: https://github.com/HistoryAtState/frus
+    licence: public domain (US government work)
+    redistribution: allowed
+    notes: Not cloned yet (several GB); next-step task.
     reader: null
     column_map: null
 
   us_presidential:
-    name: US presidential public papers / archives
+    name: Public Papers of the Presidents (govinfo)
     category: historical_text
     status: candidate
-    access: TBD
+    access: govinfo collection pages reachable; API needs an api.data.gov key
     url: null
-    licence: TBD
-    notes: Historical extension only.
+    licence: public domain
+    notes: Candidate for US -> Japan extension.
     reader: null
     column_map: null
 
   us_ustr:
-    name: USTR reports and releases
+    name: USTR reports and releases (e.g., National Trade Estimate reports)
     category: historical_text
     status: candidate
     access: TBD
     url: null
-    licence: TBD
+    licence: public domain
     notes: Historical extension only.
     reader: null
     column_map: null
 
-  # ---------------------------------------------------------------- Project-generated inputs
+  # ================================================================ YouTube (public discourse)
+  youtube:
+    name: YouTube Data API v3 (search, videos, channels, commentThreads, comments, captions.list)
+    category: public_text
+    construct: [P_public_attention, P_public_recognition]
+    status: partial
+    access: official API with a Google Cloud API key (configured 2026-09-30 in .env)
+    url: https://developers.google.com/youtube/v3
+    licence: YouTube API Services Terms of Service and Developer Policies
+    redistribution: comment IDs and derived labels only; no raw comment corpus redistribution
+    coverage: {countries: "pilot VNM, CHN, KHM, SGP", years: "2010-2026", frequency: comment}
+    variables: see docs/youtube_data_design.md
+    unit: video / comment
+    script: scripts/youtube/run_youtube.py
+    notes: Pilot run 2026-09-30 (collection run folder data/raw/youtube/2026-09-30/); see docs/youtube_collection_status.md.
+    reader: null
+    column_map: null
+
+  # ================================================================ Project-generated inputs
   human_coding:
     name: Human coding sheets returned by coders (project-generated)
     category: internal

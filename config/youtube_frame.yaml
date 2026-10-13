@@ -1,0 +1,147 @@
+# YouTube sampling frame v1: pre-registered collection protocol.
+#
+# Fixed on 2026-09-30 BEFORE any frame search was run. Do not edit a rule after results
+# are seen; to change one, bump `protocol_version`, record the reason in docs/decisions.md, and
+# keep the old outputs. Everything that influences which videos enter the sample lives in
+# this file, so its SHA-256 is stored in every freeze record.
+
+protocol_version: 3
+# v3 (2026-10-02, PI decision, before any frame comment download; docs/decisions.md D026):
+#   - single-character hanja country forms (中, 泰, 越) count as the country when NOT glued to a
+#     preceding Hangul/Latin/digit character ("中 쓰촨성", "北-中", "中에 특사" -> include;
+#     "진행中" -> still manual review);
+#   - country named only in TAGS -> excluded as incidental (reason logged);
+#   - country named only in the DESCRIPTION -> still manual review.
+#   Already-frozen samples are unaffected (they froze with no pending review items).
+# v2 (2026-09-30, after day-1 SEARCH results, before any comment download): the v1 dense-cell trigger
+# used search.list pageInfo.totalResults, which proved meaningless for channel+date-filtered queries
+# (e.g. ~19,800 reported vs 0-1 videos per sampled day). v2 triggers only on observed pagination.
+# v1 day-sample cells (CHN_P4_MBC, CHN_P4_YTN, CHN_P4_TVCHOSUN) revert to census from their cached
+# page 1; their day pages stay in the raw audit trail (docs/decisions.md D024).
+fixed_on: "2026-09-30"
+collection_id: "2026-09-30"          # raw cache folder data/raw/youtube_frame/<collection_id>/
+
+# ---------------------------------------------------------------- 1. Channel whitelist
+# Criterion (not a hand-picked subset): every Korean national broadcaster with a news licence:
+# the three terrestrial networks, the two 24-hour news channels and the four general-programming
+# (종합편성) channels. The official news channel of each; entertainment/drama sub-channels are
+# excluded. Channel ids were taken from cached channels.list responses (no extra quota).
+# `created` = YouTube channel creation date; no upload can predate it, so cells whose window
+# ends before it are recorded as "channel_not_on_youtube" and never searched.
+channels:
+  - {key: KBS,      name: "KBS News",        id: UCcQTRi69dsVYHN3exePtZ1A, handle: "@newskbs",        type: terrestrial,     created: "2013-08-06"}
+  - {key: MBC,      name: "MBCNEWS",         id: UCF4Wxdo3inmxP-Y59wXDsFw, handle: "@mbcnews11",      type: terrestrial,     created: "2006-11-05"}
+  - {key: SBS,      name: "SBS 뉴스",         id: UCkinYTS9IHqOEwR1Sze2JTw, handle: "@sbsnews8",       type: terrestrial,     created: "2014-05-02"}
+  - {key: YTN,      name: "YTN",             id: UChlgI3UHCOnwUGzWzbJ3H5w, handle: "@ytnnews24",      type: news_24h,        created: "2013-05-23"}
+  - {key: YONHAPTV, name: "연합뉴스TV",        id: UCTHCOPwqNfZ0uiKOvFyhGwg, handle: "@yonhapnewstv23", type: news_24h,        created: "2015-01-05"}
+  - {key: JTBC,     name: "JTBC News",       id: UCsU-I-vHLiaMfV_ceaYz5rQ, handle: "@jtbc_news",      type: general_program, created: "2012-02-21"}
+  - {key: TVCHOSUN, name: "뉴스TVCHOSUN",     id: UCWlV3Lz_55UaX4JsMj-z__Q, handle: "@tvchosunnews",   type: general_program, created: "2012-08-23"}
+  - {key: CHANNELA, name: "채널A News",       id: UCfq4V1DAuaojnr2ryvWNysw, handle: "@channela-news",  type: general_program, created: "2012-05-21"}
+  - {key: MBN,      name: "MBN News",        id: UCG9aFJTZ-lMCHAiO1KJsirg, handle: "@mbn",            type: general_program, created: "2006-03-05"}
+
+# ---------------------------------------------------------------- 2. Countries and search terms
+# `query`: the ONLY search term (standard Korean country name; no issue keywords).
+# `title_include`: forms that, in the TITLE, establish substantive discussion automatically.
+# `title_review`: ambiguous forms (e.g. 中 also means "during") -> manual review, never auto-include.
+countries:
+  VNM: {name: Viet Nam,  query: 베트남,     title_include: [베트남, 월남, 한-베, 한·베],    title_review: [越]}
+  CHN: {name: China,     query: 중국,       title_include: [중국, 한중, 미중, 한·중, 한-중, 韓中, 美中, 中國], title_review: [中]}
+  LAO: {name: Lao PDR,   query: 라오스,     title_include: [라오스],                        title_review: []}
+  THA: {name: Thailand,  query: 태국,       title_include: [태국],                          title_review: [泰]}
+  MMR: {name: Myanmar,   query: 미얀마,     title_include: [미얀마, 버마],                   title_review: []}
+  KHM: {name: Cambodia,  query: 캄보디아,   title_include: [캄보디아],                      title_review: []}
+  IDN: {name: Indonesia, query: 인도네시아, title_include: [인도네시아, 인니],               title_review: []}
+
+# ---------------------------------------------------------------- 3. Events (a priori rule)
+# Event = World Bank income-group UPGRADE (effective 1 July; data/interim/prelim/event_transitions.csv,
+# verified from official files). For each partner, the FIRST upward transition whose full
+# [-24, +24]-month window lies between YouTube's Korean launch (2008-01-23) and the collection
+# start date. Applying the rule to the panel:
+#   VNM 2010-07-01 (L->LM)   CHN 2011-07-01 (LM->UM)   LAO 2011-07-01 (L->LM)   THA 2011-07-01 (LM->UM)
+#   MMR 2015-07-01 (L->LM)   KHM 2016-07-01 (L->LM)    IDN 2020-07-01 (LM->UM; reverted 2021-07, re-upgraded 2023-07)
+# Not eligible: TLS (2008 event: window starts 2006), MYS (1993), SGP/BRN (no change),
+#   PHL and VNM FY27 (2026-07-01): +13..+24 window ends 2028-07 -> scheduled extension.
+event_rule: first_wb_income_upgrade_with_full_window
+youtube_kr_launch: "2008-01-23"
+events:
+  VNM: {date: "2010-07-01", change: "low -> lower_middle (FY11)"}
+  CHN: {date: "2011-07-01", change: "lower_middle -> upper_middle (FY12)"}
+  LAO: {date: "2011-07-01", change: "low -> lower_middle (FY12)"}
+  THA: {date: "2011-07-01", change: "lower_middle -> upper_middle (FY12)"}
+  MMR: {date: "2015-07-01", change: "low -> lower_middle (FY16)"}
+  KHM: {date: "2016-07-01", change: "low -> lower_middle (FY17)"}
+  IDN: {date: "2020-07-01", change: "lower_middle -> upper_middle (FY21)"}
+
+# ---------------------------------------------------------------- 4. Windows (identical for all)
+# Months relative to the event month (month 0 = the month containing the event date; excluded).
+# Boundaries are calendar months in Korea time (UTC+9).
+windows:
+  P1: {from_month: -24, to_month: -13}
+  P2: {from_month: -12, to_month: -1}
+  P3: {from_month: 1,   to_month: 12}
+  P4: {from_month: 13,  to_month: 24}
+
+# ---------------------------------------------------------------- 5. Search rule
+search:
+  part: snippet
+  type: video
+  order: date
+  maxResults: 50
+  regionCode: KR
+  # A cell = country x period x channel. Pagination runs to exhaustion. When page tokens run out
+  # while pages are still full (YouTube caps a query at ~500 results), the SAME query continues
+  # with publishedBefore = oldest publishedAt retrieved so far (date cursor). The cell is a census
+  # of search-retrievable videos.
+  date_cursor_continuation: true
+  max_pages_per_cell: 40            # safety stop (2,000 results); a cell hitting it is flagged "capped"
+  # Dense-cell rule (same for every cell): if census pagination reaches max_census_pages without
+  # finishing (v2; v1 also used page-1 totalResults, see protocol_version note),
+  # the cell switches to a DAY-CLUSTER probability sample: `days_per_cell` calendar days (KST)
+  # drawn without replacement (seed + hash of cell id), each day searched to exhaustion.
+  # Inclusion probability of every video in the cell = days_per_cell / days_in_window.
+  # Probe pages retrieved before the switch stay in the universe as excluded
+  # ("dense_cell_probe_not_in_probability_sample") unless the video is also in a sampled day.
+  dense_cell_rule:
+    total_results_threshold: null    # v2: not used (pageInfo.totalResults is unreliable)
+    max_census_pages: 10             # census still unfinished after 10 pages (500 videos) -> day sample
+    days_per_cell: 24
+
+# ---------------------------------------------------------------- 6. Inclusion rules (in order)
+inclusion:
+  whitelist_channel: true            # snippet.channelId must be a whitelisted id
+  within_window: true                # publishedAt (KST) inside the cell window
+  korean_language:                   # defaultAudioLanguage/defaultLanguage starts with "ko",
+    hangul_share_title_min: 0.5      #   or >= 50% of title letters are Hangul
+  format:
+    min_duration_s: 61               # <= 60 s or '#shorts' tag -> Shorts (excluded)
+    max_duration_s: 3600             # > 60 min -> full-programme / live-stream replay (excluded)
+    exclude_live_or_upcoming: true
+  substantive:                       # country form in TITLE -> include
+                                     # country only in description/tags, or only an ambiguous
+                                     #   title form -> manual review (never silently excluded)
+                                     # country absent from title, description and tags -> exclude
+                                     #   (search matched on other metadata; incidental)
+    review_if_description_or_tags_only: true   # v1-v2; v3 reviews description-only, excludes tags-only
+    hanja_token_include: true                  # v3: unglued title_review forms auto-include
+    tags_only: exclude                         # v3
+
+# ---------------------------------------------------------------- 7. Sampling within country x period
+# Census where the included set is small; otherwise simple random sampling without replacement,
+# identical ceiling for every country x period (pooled over channels). Probability = n / N.
+sampling:
+  max_videos_per_country_period: 150
+  seed: 20260930                     # per-cell seed = seed + stable hash(country, period)
+
+# ---------------------------------------------------------------- 8. Comments
+comments:
+  scope: top_level_only              # all top-level comments of every sampled video; reply_count kept
+  order: time
+  textFormat: plainText
+  maxResults: 100
+
+# ---------------------------------------------------------------- 9. Quota policy
+quota:
+  daily_units: 10000
+  max_search_requests_per_day: 75
+  reserve_units: 700                 # never spent (errors, reruns)
+  min_units_to_start_cell: 400       # do not start a new search cell without room for ~3 pages

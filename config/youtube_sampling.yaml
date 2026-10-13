@@ -1,0 +1,67 @@
+# YouTube sampling, quota and privacy settings. Every rule here is recorded with each derived
+# corpus (outputs/diagnostics/youtube_sampling_log.csv) so samples can be regenerated exactly.
+
+seed: 20260930                     # same global seed as config/analysis.yaml
+
+api:
+  base_url: https://www.googleapis.com/youtube/v3
+  key_env_var: YOUTUBE_API_KEY     # read from the environment or a git-ignored .env file only
+  daily_quota_units: 10000         # default project quota; raise only via Google's audit form
+  quota_reserve_units: 500         # stop before exhausting the day's quota
+  min_interval_seconds: 0.5
+  # Documented costs (units): search.list 100 per page; videos.list 1 per page (<=50 ids);
+  # commentThreads.list 1 per page (<=100 threads); comments.list 1 per page; channels.list 1.
+  cost: {search: 100, videos: 1, commentThreads: 1, comments: 1, channels: 1}
+
+video_selection:
+  published_after: "2010-01-01T00:00:00Z"
+  published_before: "2026-12-31T23:59:59Z"
+  min_comment_count: 1             # videos with comments disabled/zero are kept in metadata only
+  exclude_shorts_seconds: null     # null = keep Shorts; set e.g. 60 to exclude after the pilot
+
+comments:
+  order: relevance                 # relevance | time (relevance surfaces top-liked threads first)
+  max_top_level_per_video: 1000    # hard cap at collection (Corpus B uses a lower analytic cap)
+  fetch_replies: true              # replies beyond those embedded in commentThreads -> comments.list
+  max_replies_per_thread: 100
+  pilot_max_top_level_per_video: 300
+  # Which videos get comment collection. Screening is on content WORDS (economic/status topic
+  # present and the country named in title+description), never on the coded frame, so frame
+  # contrasts remain possible. Stratified by year bin so the pilot is not all 2023-26 virals.
+  selection:
+    require_country_name: true
+    relevance_pattern: "경제|산업|제조|수출|수입|무역|투자|기업|성장|GDP|반도체|전기차|배터리|공장|시장|기술|발전|선진국|중진국|강국|추월|따라잡|경쟁|공급망|삼성|현대|LG|원조|ODA|새마을|생산기지|인건비|임금|소득|부자|가난|개발|굴기|주식|증시|환율|물가"
+    year_bins: [[2010, 2015], [2016, 2019], [2020, 2022], [2023, 2026]]
+    pilot_per_year_bin: 10         # top-N by comment count per country x year bin
+
+corpora:
+  A_full:
+    description: All collected comments (descriptive volume only).
+  B_equal_video:
+    description: Random sample of up to N top-level comments per video (replies excluded).
+    max_top_level_per_video: 200
+  C_equal_country_year:
+    description: Random sample of up to N top-level comments per country-year, after applying the
+      Corpus B per-video cap so single videos cannot fill a cell.
+    max_per_country_year: 1000
+  D_high_engagement:
+    description: Top-K comments by like count per video (robustness only; never the sole sample).
+    top_k_per_video: 50
+
+privacy:
+  # Author channel ids are hashed with a project salt for duplicate/bot detection only; display
+  # names, profile images and channel URLs are never written to interim/processed data.
+  hash_author_ids: true
+  salt_env_var: SRL_HASH_SALT
+  keep_author_display_name: false
+  # Minimization happens BEFORE writing to disk: commenter display names, profile images and
+  # channel URLs are dropped and commenter channel ids hashed (srl.youtube.api). The raw layer is
+  # therefore "API response minus commenter identity fields" - a deliberate, documented deviation
+  # from byte-identical raw storage (docs/decisions.md D017).
+  minimize_at_ingest: true
+
+coding_sample:
+  stratify_by: [country, year_bin, video_frame, engagement_bin]
+  year_bins: [[2010, 2015], [2016, 2019], [2020, 2022], [2023, 2026]]
+  engagement_quantile: 0.8         # top 20% by likes within video = "high engagement"
+  pilot_n_per_major_case: 200

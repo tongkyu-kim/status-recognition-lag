@@ -1,0 +1,323 @@
+# Manual data tasks (single source for metadata/manual_actions.csv and docs/manual_data_tasks.md;
+# regenerate both with: python scripts/acquire/build_catalog.py).
+# class A = must be done by a human (login, key, CAPTCHA, blocked automation, terms form)
+#       B = recommended manual validation
+#       C = optional enhancement
+# After downloading, put files under the destination (a NEW dated folder), then run
+#   python tasks.py register-raw
+
+tasks:
+  # ------------------------------------------------------------------ A: must be done manually
+  - id: Y1
+    class: A
+    priority: DONE
+    source: YouTube Data API v3 (Google Cloud) - DONE 2026-09-30 (key in .env; regenerate after pilot, it was pasted in chat)
+    url: https://console.cloud.google.com/apis/library/youtube.googleapis.com
+    instructions: >-
+      Sign in to Google Cloud -> create (or pick) a project -> APIs & Services -> Library -> enable
+      "YouTube Data API v3" -> Credentials -> Create credentials -> API key -> restrict the key to
+      the YouTube Data API v3. Put it in a file named .env at the repository root (git-ignored) as
+      YOUTUBE_API_KEY=<key>. Then run: python scripts/youtube/run_youtube.py plan search --pilot --run <YYYY-MM-DD>
+      (day 1) and: python scripts/youtube/run_youtube.py videos channels comments build sample --pilot --run <same date> (day 2).
+    file: none (credential)
+    preferred_filename: .env (line YOUTUBE_API_KEY=...)
+    destination: repository root (never commit)
+    why: The YouTube public-recognition pilot cannot run without a key; no HTML scraping is permitted.
+
+  - id: M1
+    class: A
+    priority: HIGH
+    source: UN Comtrade (full API, free registration)
+    url: https://comtradedeveloper.un.org/
+    instructions: >-
+      Register (free) at comtradeplus.un.org, subscribe to the "comtrade - v1" free product in the
+      developer portal, copy the primary key into .env as COMTRADE_API_KEY=<key>. The keyed API allows
+      up to 250,000 records per call, which makes HS6 world-export files for the 13 panel countries
+      (needed for HS6 export similarity) feasible. Tell Claude/the pipeline to switch
+      scripts/acquire/acq_comtrade.py to the keyed endpoint (https://comtradeapi.un.org/data/v1/get/C/A/HS).
+    file: none (credential)
+    preferred_filename: .env (line COMTRADE_API_KEY=...)
+    destination: repository root (never commit)
+    why: The keyless preview caps 500 records/call and throttles after ~190 calls; HS6 overlap measures need the keyed API (or BACI, task C2).
+
+  - id: M3
+    class: A
+    priority: MEDIUM
+    source: Harvard Growth Lab - International Trade Data (HS92) on Harvard Dataverse
+    url: https://doi.org/10.7910/DVN/T4CHWJ
+    instructions: >-
+      Open the DOI, click "Access Dataset" -> download these files individually, completing the
+      guestbook form when asked: hs92_country_product_year_6.csv (1.0 GB), hs92_country_year.csv,
+      hs92_product_year_6.csv, hs92_data_dictionary.csv. Optional (large): hs92_country_country_product_year_6_2010_2019.csv
+      and _2020_2024.csv for HS6 bilateral flows. Also download growth_proj_eci_rankings.csv from
+      doi:10.7910/DVN/XTAQMC and product_hs92.csv from doi:10.7910/DVN/3BAL1O.
+    file: hs92_country_product_year_6.csv (+ listed files)
+    preferred_filename: keep original names
+    destination: data/raw/complexity_atlas_dataverse/<YYYY-MM-DD>/
+    why: HS6 country-product exports for export-similarity robustness; the API was used for HS4 only. The guestbook form is a terms/identity step we do not bypass.
+
+  - id: M4
+    class: A
+    priority: MEDIUM
+    source: Korean outward FDI - small partners / full country table (Korea Eximbank) and UNCTAD bilateral FDI
+    url: https://stats.koreaexim.go.kr/
+    instructions: >-
+      PARTLY DONE: the quarterly reports on data.go.kr (dataset 3040164, pointed out by the PI) were
+      downloaded automatically and parsed for 2015-2025 (major destinations only).
+      Remaining: (a) Korea Eximbank: 해외투자통계 -> 국가별 -> select all years (1980-latest), all countries,
+      amounts on both 신고(declared) and 투자(invested) basis -> export Excel. Repeat for 국가별 x 업종별
+      if available. (b) UNCTAD Bilateral FDI Statistics 2014 (covers 2001-2012):
+      https://unctad.org/topic/investment/investment-statistics-and-trends -> "Bilateral FDI
+      statistics" -> download the Excel files for Korea, China, Viet Nam, Indonesia, Thailand,
+      Malaysia, Philippines, Singapore, Cambodia, Lao PDR, Myanmar, Brunei (keep the file names as listed on the page).
+    file: Excel exports
+    preferred_filename: koreaexim_odi_by_country_<years>.xlsx; UNCTAD files keep original names
+    destination: data/raw/fdi_korea/<YYYY-MM-DD>/ and data/raw/unctad_bilateral/<YYYY-MM-DD>/
+    why: OECD BMD4 by counterpart starts ~2005 and has suppressed cells; Korean-reported ODI goes back to 1980. unctad.org returns HTTP 403 to automated clients.
+
+  - id: M5
+    class: A
+    priority: LOW
+    source: WIPO IP Statistics Data Center
+    url: https://www3.wipo.int/ipstats/ips-search/
+    instructions: >-
+      Indicator "Patent applications" -> Report type "Total count by applicant's origin" (and
+      "Resident applications per country of origin") -> select the 13 panel countries (+JPN, USA)
+      -> years 1980-latest -> Export CSV. Repeat for "PCT international applications by origin"
+      and, optionally, "Patent applications by technology field" (35 WIPO fields).
+    file: CSV exports
+    preferred_filename: wipo_<indicator>_<report>.csv
+    destination: data/raw/wipo/<YYYY-MM-DD>/
+    why: WDI already holds resident/non-resident applications (WIPO-sourced); PCT and technology fields add capability detail.
+
+  - id: M6
+    class: A
+    priority: MEDIUM
+    source: National Assembly Open API (열린국회정보)
+    url: https://open.assembly.go.kr/portal/openapi/main.do
+    instructions: >-
+      Log in / register -> 마이페이지 -> 인증키 발급 (free). Store as ASSEMBLY_API_KEY=<key> in .env.
+      Relevant services: 위원회 회의록 (https://open.assembly.go.kr/portal/data/service/selectAPIServicePage.do/OR137O001023MZ19321)
+      and 본회의 회의록 (also on data.go.kr: https://www.data.go.kr/data/15126007/openapi.do). Check in
+      the service page whether full text or only PDF links are returned before scaling.
+    file: none (credential)
+    preferred_filename: .env (line ASSEMBLY_API_KEY=...)
+    destination: repository root
+    why: Keyless calls return at most 5 rows; likms.assembly.go.kr/record/ is disallowed by robots.txt.
+
+  - id: M7
+    class: A
+    priority: MEDIUM
+    source: Presidential Office web archives (Moon, Yoon administrations) - Presidential Archives web archive
+    url: https://www.pa.go.kr/
+    instructions: >-
+      On pa.go.kr use 대통령기록 -> 웹기록 (archived Cheong Wa Dae / Office websites). For 2017-2025,
+      locate the briefing boards (브리핑, 대변인 브리핑, 정상회담 결과) and check whether pages can be
+      saved as HTML. If a list is only browsable interactively, save the list pages (Ctrl+S) per year.
+    file: saved HTML pages
+    preferred_filename: office_<admin>_<board>_pNNN.html
+    destination: data/raw/kr_presidential_office/<YYYY-MM-DD>/office_archive/
+    why: Speech texts are covered (pa.go.kr speech DB), but Office briefings/summit readouts before 2025 are not.
+
+  - id: M8
+    class: A
+    priority: MEDIUM
+    source: Partner governments blocking automation
+    url: https://www.presidenri.go.id/ ; https://www.mfaic.gov.kh/ ; https://mofa.gov.vn/
+    instructions: >-
+      presidenri.go.id (Indonesia, Cloudflare challenge), mfaic.gov.kh (Cambodia, 'Request Rejected'),
+      mofa.gov.vn English (404 at retrieval) cannot be collected automatically. For the feasibility
+      sample, open each site in a browser, find the speeches / press-release section, and save 5-10
+      English-language items per year for 2015, 2020, 2025 (Save Page As -> HTML complete).
+    file: saved HTML
+    preferred_filename: <ISO>_<site>_<YYYY-MM-DD>_<slug>.html
+    destination: data/raw/partner_gov_text/<YYYY-MM-DD>/manual/
+    why: Needed to judge whether claimed-status coding (construct G) is feasible for IDN, KHM, VNM.
+
+  - id: M9
+    class: A
+    priority: LOW
+    source: Japan MOFA Diplomatic Bluebooks; METI White Papers (通商白書)
+    url: https://www.mofa.go.jp/mofaj/gaiko/bluebook/index.html ; https://www.meti.go.jp/report/gaisei/index.html
+    instructions: >-
+      Both return HTTP 403 to automated clients. In a browser, download the Korea sections
+      (朝鮮半島 / 韓国) of the Diplomatic Bluebook for 1985, 1990, 1995, 2000, 2005, 2010 and the
+      通商白書 chapters on Asian/NIEs competition for the same years (PDF).
+    file: PDFs
+    preferred_filename: jp_bluebook_<year>_<section>.pdf ; jp_tsuhaku_<year>_<chapter>.pdf
+    destination: data/raw/jp_mofa_bluebook/<YYYY-MM-DD>/ ; data/raw/jp_meti_whitepaper/<YYYY-MM-DD>/
+    why: Japan -> Korea extension (only if that case is taken up).
+
+  - id: M2
+    class: A
+    priority: LOW
+    source: Korea Customs Service trade statistics (data.go.kr API)
+    url: https://www.data.go.kr/
+    instructions: >-
+      Log in to data.go.kr -> search "관세청 국가별 수출입실적" / "관세청 품목별 국가별 수출입실적" ->
+      활용신청 (apply) -> store the service key as KCS_API_KEY=<key> in .env. Only needed for monthly
+      or HSK 10-digit Korean data. (Dataset ids were not verified here - pick the 관세청 provider entries.)
+    file: none (credential)
+    preferred_filename: .env
+    destination: repository root
+    why: Monthly Korea-partner trade (optional; annual Comtrade/Atlas suffice for the panel).
+
+  - id: W1
+    class: A
+    priority: MEDIUM
+    source: Korean Diplomatic White Papers 1990-2025 - OCR of scanned editions (LibreOffice part DONE 2026-10-02)
+    url: data/interim/text/white_papers_index.csv (status per file); raw PDFs in data/raw/kr_mofa/2026-09-30/white_papers/
+    instructions: >-
+      Text corpus built for 183 files (1998-2008, 2011-2017, 2019, 2021-2025; LibreOffice converted
+      old HWP/.doc). Remaining: 105 image-only PDFs (status needs_ocr) for 1990-1997, 2009, 2010, 2018,
+      2020, plus 6 zip members from 1999-2000 that failed conversion. Either approve installing
+      Tesseract OCR with Korean data (winget UB-Mannheim.TesseractOCR + kor.traineddata) so Claude can
+      OCR them, or OCR them yourself (e.g. Acrobat "Recognize text") and save OCR'd copies as NEW files.
+    file: OCR'd PDFs or text (never overwrite the originals)
+    preferred_filename: wp_<seq>_<file_seq>_ocr.pdf or .txt
+    destination: data/raw/kr_mofa_white_papers_ocr/<YYYY-MM-DD>/
+    why: Completes the only official ANNUAL text series back to 1990 (pre-1998 editions are all scans).
+
+  # ------------------------------------------------------------------ B: recommended validation
+  - id: V1
+    class: B
+    priority: HIGH
+    source: Strategic-partnership upgrades (Korea x partner)
+    url: https://www.mofa.go.kr/www/brd/m_4080/list.do
+    instructions: >-
+      data/interim/prelim/event_transitions.csv rows with verification=candidate_unverified list
+      candidate upgrades (e.g. VNM 2009/2022, IDN 2006/2017, CHN 2008, ASEAN CSP 2024, KHM/PHL 2024).
+      For each, find the joint statement in the MOFA corpus (data/interim/prelim/gov_documents_korea.csv,
+      search the title for 공동성명 / 공동선언 + country) and record the exact date and wording.
+    file: none
+    preferred_filename: edit event_transitions verification via a new events_manual.csv
+    destination: data/external/events_manual.csv
+    why: Partnership upgrades are key events for the event-study design; dates must come from official texts.
+
+  - id: V2
+    class: B
+    priority: HIGH
+    source: Country alias precision (text matching)
+    url: outputs/diagnostics/gov_mention_surface_counts.csv
+    instructions: >-
+      Review keyword-in-context samples for ambiguous aliases (인니, 버마, 월남, 'Lao', 'Burma',
+      'PRC', 한·중 compounds; 중국 inside 남중국해 is shielded). Record false-positive rates.
+    file: none
+    preferred_filename: docs/decisions.md entry
+    destination: docs/decisions.md
+    why: Attention measures depend on mention counts (D009).
+
+  - id: V3
+    class: B
+    priority: MEDIUM
+    source: MOTIE/MOTIR attention measurement
+    url: https://www.motir.go.kr/kor/article/ATCL3f49a5a8c
+    instructions: >-
+      Compare 50 random MOTIR releases' HTML summary vs. PDF attachment: how often is a partner
+      mentioned in the attachment but not in the summary? Decide whether bulk attachment download
+      (~30k PDFs, ~9 GB) is needed (task C4).
+    file: none
+    preferred_filename: n/a
+    destination: docs/decisions.md
+    why: MOTIR HTML bodies are summaries; country mentions are under-counted.
+
+  - id: V4
+    class: B
+    priority: MEDIUM
+    source: Trade series breaks
+    url: outputs/diagnostics/trade_quality.csv
+    instructions: >-
+      Inspect flagged mirror gaps and HS revision years (H0->H1 1996, H2 2002, H3 2007, H4 2012,
+      H5 2017, H6 2022) for suspicious jumps, esp. LAO, MMR, KHM, TLS (sparse reporting).
+    file: none
+    preferred_filename: n/a
+    destination: docs/decisions.md
+    why: Interdependence measures should not reflect reporting changes.
+
+  - id: V5
+    class: B
+    priority: MEDIUM
+    source: MOFA archive completeness
+    url: https://www.mofa.go.kr/www/brd/m_4080/list.do
+    instructions: >-
+      The Korean press-release board starts 2000-01; check whether 1998-1999 (MOFAT) releases exist
+      elsewhere (e.g. archived site via 국가기록원 웹기록 or the Presidential Archives) and whether yearly
+      counts in outputs/diagnostics/gov_corpus_coverage.csv show migration gaps.
+    file: none
+    preferred_filename: n/a
+    destination: docs/decisions.md
+    why: Attention denominators require a complete inventory.
+
+  - id: Y2
+    class: B
+    priority: HIGH
+    source: YouTube pilot manual inspection (after Y1)
+    url: data/interim/coding_samples/youtube_comment_coding_sheet.csv
+    instructions: >-
+      Code 100-200 comments per major pilot case (VNM, CHN; then KHM, SGP) with
+      docs/youtube_coding_protocol.md; two coders on a 50-comment overlap; compute Krippendorff's alpha.
+    file: coding sheet
+    preferred_filename: youtube_comment_coding_<coder>_<date>.csv
+    destination: data/raw/human_coding/<YYYY-MM-DD>/
+    why: Stop condition 3 (recognition vs dismissal codable reliably) can only be tested by humans.
+
+  - id: Y3
+    class: B
+    priority: MEDIUM
+    source: YouTube video frames (after Y1)
+    url: data/interim/coding_samples/youtube_video_coding_sheet.csv
+    instructions: Code video_frame for all pilot videos from title + description (+ transcript if obtained, Y4).
+    file: coding sheet
+    preferred_filename: youtube_video_coding_<coder>_<date>.csv
+    destination: data/raw/human_coding/<YYYY-MM-DD>/
+    why: Frames are the stimulus variable for H-P3 to H-P5.
+
+  # ------------------------------------------------------------------ C: optional enhancements
+  - id: Y4
+    class: C
+    priority: LOW
+    source: YouTube transcripts
+    url: https://www.youtube.com/
+    instructions: >-
+      The official API cannot return caption text for third-party videos. For a small subset of
+      pilot videos whose frame is ambiguous, open the video, use "Show transcript", and copy the
+      text into <video_id>.txt.
+    file: text files
+    preferred_filename: <video_id>.txt
+    destination: data/raw/youtube_transcripts_manual/<YYYY-MM-DD>/
+    why: Frame coding "not from title alone"; transcripts help only for ambiguous cases.
+
+  - id: C2
+    class: C
+    priority: MEDIUM
+    source: BACI (CEPII) HS92 / HS17
+    url: https://www.cepii.fr/CEPII/en/bdd_modele/bdd_modele_item.asp?id=37
+    instructions: >-
+      Download BACI_HS92_V<latest>.zip (~2+ GB) from the CEPII page, check the licence text on the
+      page, and store OUTSIDE Dropbox if space is a concern (set SRL_PROJECT_ROOT or symlink data/raw/baci).
+    file: BACI_HS92_V<version>.zip
+    preferred_filename: original
+    destination: data/raw/baci/<YYYY-MM-DD>/
+    why: Reconciled HS6 bilateral flows for all countries (RCA/similarity at HS6).
+
+  - id: C3
+    class: C
+    priority: LOW
+    source: GVC / TiVA
+    url: https://sdmx.oecd.org/public/rest/dataflow/OECD.STI.PIE/DSD_TIVA_MAINLV@DF_MAINLV
+    instructions: Automatable (public SDMX); scheduled as a next step rather than manual.
+    file: n/a
+    preferred_filename: n/a
+    destination: data/raw/oecd_tiva/<YYYY-MM-DD>/
+    why: Value-added exposure measures (interdependence).
+
+  - id: C4
+    class: C
+    priority: MEDIUM
+    source: MOTIR press-release attachments (full text)
+    url: https://www.motir.go.kr/kor/article/ATCL3f49a5a8c
+    instructions: Automatable but large (~30k PDF/HWP, ~9 GB); decide after V3 and storage check.
+    file: attachments
+    preferred_filename: <seq>_<n>.<ext>
+    destination: data/raw/kr_motie/<YYYY-MM-DD>/attachments/
+    why: Full-text attention measures for the trade/industry ministry.

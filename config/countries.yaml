@@ -113,7 +113,7 @@ countries:
     iso2: LA
     iso_numeric: "418"
     role: partner
-    aliases_en: [Laos, Lao P.D.R., Lao People's Democratic Republic]
+    aliases_en: [Laos, Lao P.D.R., Lao People's Democratic Republic, "Lao People's Dem. Rep."]
     aliases_ko: []
     text_patterns: []
     demonyms_en: [Laotian]

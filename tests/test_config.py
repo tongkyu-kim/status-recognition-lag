@@ -37,14 +37,19 @@ def test_main_panel_definition():
         assert iso3 not in partners
 
 
-def test_sources_are_candidates_without_invented_urls():
+def test_sources_status_contract():
+    """Candidates carry no URL (nothing invented); checked sources record URL, access and licence
+    (docs/decisions.md D015 supersedes D003)."""
     sources = load_config("sources")["sources"]
     required = {"name", "category", "status", "access", "url", "licence", "reader", "column_map"}
+    allowed = {"candidate", "validated", "partial", "manual", "rejected", "in_use"}
     for sid, spec in sources.items():
         assert required <= set(spec), sid
-        if spec["category"] != "internal":
-            assert spec["status"] == "candidate", sid
+        assert spec["status"] in allowed, sid
+        if spec["status"] == "candidate":
             assert spec["url"] is None, f"{sid}: record URLs only after validation"
+        elif spec["category"] != "internal":
+            assert spec["url"] and spec["access"] and spec["licence"], sid
 
 
 def test_model_specs_and_frames_load():

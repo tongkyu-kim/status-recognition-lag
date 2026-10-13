@@ -52,6 +52,25 @@ nonlinear.
 - **Possible historical extensions** (not yet in scope): US → Japan (1970s–1980s);
   Japan → Korea (1990s–2000s).
 
+## Data acquisition (2026-09-30)
+
+Public data are retrieved by `scripts/acquire/acq_*.py` (polite, robots-aware, write-once; D015).
+Low-risk derived files are built by `scripts/acquire/build_prelim.py` and
+`build_gov_documents.py`, diagnostics by `quality_checks.py`, and the catalog by `build_catalog.py`.
+Start with:
+
+- [docs/data_collection_status.md](docs/data_collection_status.md): what we have and what is missing
+- [docs/manual_data_tasks.md](docs/manual_data_tasks.md): what a human must retrieve, and how
+- [docs/data_sources.md](docs/data_sources.md) and `metadata/source_catalog.csv`: sources and terms
+
+## Public-discourse extension (YouTube)
+
+Digitally expressed public recognition in Korean YouTube comments, compared with government
+recognition (H-P1 to H-P5). Official YouTube Data API v3 only; commenter identities are minimized at
+ingest. See [docs/youtube_data_design.md](docs/youtube_data_design.md),
+[docs/youtube_coding_protocol.md](docs/youtube_coding_protocol.md) and
+[docs/youtube_collection_status.md](docs/youtube_collection_status.md). Needs an API key (task Y1).
+
 ## Repository structure
 
 ```text

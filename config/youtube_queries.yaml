@@ -1,0 +1,134 @@
+# Korean-language YouTube search dictionary (YouTube Data API v3, search.list).
+#
+# Queries are built as  template.format(ko=<country Korean name>)  where the Korean name comes from
+# `name_ko` in config/countries.yaml (single source of truth for country names).
+#
+# Each template carries a `family`. The family records WHY a query exists (the retrieval intent);
+# it is NOT the video's frame. Video frames (A-F in docs/youtube_data_design.md) are coded later
+# from title + description + transcript. Keeping retrieval intent separate from coded frame lets us
+# measure how much each query family over-selects provocative content (selection diagnostics).
+#
+# Families
+#   profile      general country-economic profile (neutral background)
+#   upgrading    neutral economic-upgrading / growth information
+#   sector       entry into specific (incl. Korean status-bearing) industries
+#   competition  competitive comparison with Korea
+#   overtaking   catching-up / overtaking / status-claim wording
+#   deference    learning from / assistance by Korea (development cooperation)
+#   dependence   Korean-firm dependence on partner production / supply chains
+#
+# Balance rule: every country gets profile + upgrading + sector queries, so provocative families
+# (competition / overtaking) never form the whole corpus. See config/youtube_sampling.yaml for
+# per-family quotas.
+
+version: 1
+language: ko
+defaults:
+  regionCode: KR
+  relevanceLanguage: ko
+  type: video
+  safeSearch: none
+  orders: [relevance]          # add viewCount / date as robustness passes (quota permitting)
+
+templates:
+  profile:
+    - "{ko} 경제"
+    - "{ko} 경제 현황"
+    - "{ko} 경제 구조"
+  upgrading:
+    - "{ko} 경제성장"
+    - "{ko} 경제 발전"
+    - "{ko} 제조업"
+    - "{ko} 산업 발전"
+    - "{ko} 수출"
+    - "{ko} 외국인 투자"
+    - "{ko} 기술력"
+  sector:
+    - "{ko} 반도체"
+    - "{ko} 전기차"
+    - "{ko} 배터리"
+    - "{ko} 자동차 산업"
+    - "{ko} 조선업"
+    - "{ko} 스마트폰"
+    - "{ko} 철강"
+  competition:
+    - "{ko} 한국 경쟁"
+    - "{ko} 산업 경쟁력"
+    - "{ko} 한국 비교"
+  overtaking:
+    - "{ko} 한국 추월"
+    - "{ko} 한국 따라잡기"
+    - "{ko} 한국 따라잡는다"
+    - "{ko} 선진국"
+    - "{ko} 중진국"
+    - "{ko} 글로벌 강국"
+    - "{ko} 제조업 강국"
+    - "{ko} 기술 강국"
+    - "{ko} 경제 강국"
+  deference:
+    - "{ko} 한국 발전 경험"
+    - "{ko} 한국에서 배운다"
+    - "{ko} 한국 원조"
+    - "{ko} 새마을운동"
+    - "{ko} ODA"
+  dependence:
+    - "{ko} 한국 기업 진출"
+    - "{ko} 생산기지"
+    - "{ko} 공급망"
+    - "{ko} 삼성"
+
+# Country-specific additions (same family semantics). Candidates only: check yield and relevance
+# in the pilot and prune those that retrieve off-topic content.
+country_extra:
+  CHN:
+    sector: ["중국 AI", "중국 디스플레이", "중국 로봇", "중국 우주"]
+    overtaking: ["중국 굴기", "중국 제조 2025", "중국 기술 추월", "중국 반도체 추격"]
+    competition: ["중국 한국 기술격차", "한중 기술 경쟁"]
+  VNM:
+    upgrading: ["베트남 경제 성장률", "베트남 GDP"]
+    dependence: ["베트남 삼성 공장", "베트남 한국 기업"]
+    overtaking: ["베트남 제2의 중국", "포스트 차이나 베트남"]
+  IDN:
+    sector: ["인도네시아 니켈", "인도네시아 배터리 산업"]
+    upgrading: ["인도네시아 신수도"]
+  MYS:
+    sector: ["말레이시아 반도체 패키징"]
+  THA:
+    sector: ["태국 자동차 허브"]
+  SGP:
+    competition: ["싱가포르 1인당 GDP", "싱가포르 한국 비교"]
+    upgrading: ["싱가포르 금융 허브"]
+  KHM:
+    deference: ["캄보디아 한국 도움"]
+  LAO:
+    upgrading: ["라오스 고속철도"]
+
+# Pilot configuration (docs/youtube_data_design.md section "Pilot").
+# Quota arithmetic (default 10,000 units/day, 500 reserve): search.list = 100 units/page.
+#   core templates: 14 per country x 4 countries                 = 56 searches
+#   year windows:   2 templates x 9 two-year windows x VNM, CHN  = 36 searches
+#   total 92 searches = 9,200 units -> day 1; videos/channels/comments -> day 2.
+# The full template set (all families, all templates) is tier "full" (~4 days for 4 countries).
+pilot:
+  countries: [VNM, CHN, KHM, SGP]
+  tier: core                  # core | full
+  core_templates:             # balanced across retrieval families; neutral families included
+    profile: ["{ko} 경제"]
+    upgrading: ["{ko} 경제성장", "{ko} 제조업", "{ko} 산업 발전"]
+    sector: ["{ko} 반도체", "{ko} 전기차"]
+    competition: ["{ko} 한국 경쟁"]
+    overtaking: ["{ko} 한국 추월", "{ko} 선진국", "{ko} 제조업 강국"]
+    deference: ["{ko} 한국 발전 경험", "{ko} 새마을운동"]
+    dependence: ["{ko} 한국 기업 진출", "{ko} 생산기지"]
+  # Time-windowed searches (publishedAfter/publishedBefore) for dense cases, so recent uploads do
+  # not crowd out earlier years in relevance ranking. One neutral + one overtaking template.
+  year_sliced:
+    countries: [VNM, CHN]
+    years: [2010, 2026]
+    window_years: 2           # 1 = annual (tier full)
+    templates:
+      - "{ko} 경제성장"
+      - "{ko} 한국 추월"
+  max_pages_per_query: 1      # 50 results/page
+  comments:
+    max_videos_per_country: 40   # videos with the most comments among the pilot hits

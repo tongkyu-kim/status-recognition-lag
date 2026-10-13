@@ -47,3 +47,7 @@ desktop.ini
 *conflicted copy*
 .dropbox
 .dropbox.attr
+
+# ---- Large local provenance logs (summaries are tracked; see metadata/README.md) --------
+metadata/download_log.csv
+metadata/youtube_quota_log.csv

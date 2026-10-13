@@ -1,0 +1,308 @@
+timestamp_utc,quota_day_pt,endpoint,cell_id,country,period,channel,query,page_token,cursor_published_before,page_no,units,items_returned,status,cache_file,note
+2026-09-30T07:01:23+00:00,2026-09-30,search,VNM_P1_MBC,VNM,P1,MBC,베트남,,,1,100,0,ok,search/VNM_P1_MBC/p01.json,new=0 totalResults~0
+2026-09-30T07:01:23+00:00,2026-09-30,search,VNM_P1_MBN,VNM,P1,MBN,베트남,,,1,100,0,ok,search/VNM_P1_MBN/p01.json,new=0 totalResults~0
+2026-09-30T07:01:24+00:00,2026-09-30,search,VNM_P2_MBC,VNM,P2,MBC,베트남,,,1,100,0,ok,search/VNM_P2_MBC/p01.json,new=0 totalResults~0
+2026-09-30T07:01:24+00:00,2026-09-30,search,VNM_P2_MBN,VNM,P2,MBN,베트남,,,1,100,0,ok,search/VNM_P2_MBN/p01.json,new=0 totalResults~0
+2026-09-30T07:01:25+00:00,2026-09-30,search,VNM_P3_MBC,VNM,P3,MBC,베트남,,,1,100,0,ok,search/VNM_P3_MBC/p01.json,new=0 totalResults~0
+2026-09-30T07:01:25+00:00,2026-09-30,search,VNM_P3_MBN,VNM,P3,MBN,베트남,,,1,100,0,ok,search/VNM_P3_MBN/p01.json,new=0 totalResults~0
+2026-09-30T07:01:26+00:00,2026-09-30,search,VNM_P4_MBC,VNM,P4,MBC,베트남,,,1,100,0,ok,search/VNM_P4_MBC/p01.json,new=0 totalResults~0
+2026-09-30T07:01:27+00:00,2026-09-30,search,VNM_P4_JTBC,VNM,P4,JTBC,베트남,,,1,100,0,ok,search/VNM_P4_JTBC/p01.json,new=0 totalResults~6
+2026-09-30T07:01:27+00:00,2026-09-30,search,VNM_P4_CHANNELA,VNM,P4,CHANNELA,베트남,,,1,100,0,ok,search/VNM_P4_CHANNELA/p01.json,new=0 totalResults~9
+2026-09-30T07:01:28+00:00,2026-09-30,search,VNM_P4_MBN,VNM,P4,MBN,베트남,,,1,100,0,ok,search/VNM_P4_MBN/p01.json,new=0 totalResults~6
+2026-09-30T07:01:28+00:00,2026-09-30,search,CHN_P1_MBC,CHN,P1,MBC,중국,,,1,100,0,ok,search/CHN_P1_MBC/p01.json,new=0 totalResults~0
+2026-09-30T07:01:29+00:00,2026-09-30,search,CHN_P1_MBN,CHN,P1,MBN,중국,,,1,100,0,ok,search/CHN_P1_MBN/p01.json,new=0 totalResults~0
+2026-09-30T07:01:30+00:00,2026-09-30,search,CHN_P2_MBC,CHN,P2,MBC,중국,,,1,100,0,ok,search/CHN_P2_MBC/p01.json,new=0 totalResults~0
+2026-09-30T07:01:30+00:00,2026-09-30,search,CHN_P2_MBN,CHN,P2,MBN,중국,,,1,100,0,ok,search/CHN_P2_MBN/p01.json,new=0 totalResults~0
+2026-09-30T07:01:31+00:00,2026-09-30,search,CHN_P3_MBC,CHN,P3,MBC,중국,,,1,100,0,ok,search/CHN_P3_MBC/p01.json,new=0 totalResults~0
+2026-09-30T07:01:31+00:00,2026-09-30,search,CHN_P3_JTBC,CHN,P3,JTBC,중국,,,1,100,7,ok,search/CHN_P3_JTBC/p01.json,new=7 totalResults~57
+2026-09-30T07:01:32+00:00,2026-09-30,search,CHN_P3_CHANNELA,CHN,P3,CHANNELA,중국,,,1,100,24,ok,search/CHN_P3_CHANNELA/p01.json,new=24 totalResults~76
+2026-09-30T07:01:32+00:00,2026-09-30,search,CHN_P3_MBN,CHN,P3,MBN,중국,,,1,100,2,ok,search/CHN_P3_MBN/p01.json,new=2 totalResults~82
+2026-09-30T07:01:33+00:00,2026-09-30,search,CHN_P4_MBC,CHN,P4,MBC,중국,,,1,100,50,ok,search/CHN_P4_MBC/p01.json,new=50 totalResults~19816
+2026-09-30T07:01:33+00:00,2026-09-30,search,CHN_P4_MBC,CHN,P4,MBC,중국,,,1,100,0,ok,search/CHN_P4_MBC/d20120809_p01.json,day_sample 20120809 totalResults~0
+2026-09-30T07:01:34+00:00,2026-09-30,search,CHN_P4_MBC,CHN,P4,MBC,중국,,,1,100,0,ok,search/CHN_P4_MBC/d20120820_p01.json,day_sample 20120820 totalResults~0
+2026-09-30T07:01:34+00:00,2026-09-30,search,CHN_P4_MBC,CHN,P4,MBC,중국,,,1,100,0,ok,search/CHN_P4_MBC/d20120830_p01.json,day_sample 20120830 totalResults~0
+2026-09-30T07:01:35+00:00,2026-09-30,search,CHN_P4_MBC,CHN,P4,MBC,중국,,,1,100,0,ok,search/CHN_P4_MBC/d20120907_p01.json,day_sample 20120907 totalResults~0
+2026-09-30T07:01:35+00:00,2026-09-30,search,CHN_P4_MBC,CHN,P4,MBC,중국,,,1,100,0,ok,search/CHN_P4_MBC/d20120910_p01.json,day_sample 20120910 totalResults~0
+2026-09-30T07:01:36+00:00,2026-09-30,search,CHN_P4_MBC,CHN,P4,MBC,중국,,,1,100,0,ok,search/CHN_P4_MBC/d20120925_p01.json,day_sample 20120925 totalResults~0
+2026-09-30T07:01:36+00:00,2026-09-30,search,CHN_P4_MBC,CHN,P4,MBC,중국,,,1,100,0,ok,search/CHN_P4_MBC/d20120926_p01.json,day_sample 20120926 totalResults~0
+2026-09-30T07:01:37+00:00,2026-09-30,search,CHN_P4_MBC,CHN,P4,MBC,중국,,,1,100,0,ok,search/CHN_P4_MBC/d20121009_p01.json,day_sample 20121009 totalResults~0
+2026-09-30T07:01:37+00:00,2026-09-30,search,CHN_P4_MBC,CHN,P4,MBC,중국,,,1,100,0,ok,search/CHN_P4_MBC/d20121025_p01.json,day_sample 20121025 totalResults~0
+2026-09-30T07:01:38+00:00,2026-09-30,search,CHN_P4_MBC,CHN,P4,MBC,중국,,,1,100,0,ok,search/CHN_P4_MBC/d20121104_p01.json,day_sample 20121104 totalResults~0
+2026-09-30T07:01:38+00:00,2026-09-30,search,CHN_P4_MBC,CHN,P4,MBC,중국,,,1,100,0,ok,search/CHN_P4_MBC/d20121205_p01.json,day_sample 20121205 totalResults~0
+2026-09-30T07:01:39+00:00,2026-09-30,search,CHN_P4_MBC,CHN,P4,MBC,중국,,,1,100,0,ok,search/CHN_P4_MBC/d20121226_p01.json,day_sample 20121226 totalResults~0
+2026-09-30T07:01:39+00:00,2026-09-30,search,CHN_P4_MBC,CHN,P4,MBC,중국,,,1,100,0,ok,search/CHN_P4_MBC/d20130110_p01.json,day_sample 20130110 totalResults~0
+2026-09-30T07:01:40+00:00,2026-09-30,search,CHN_P4_MBC,CHN,P4,MBC,중국,,,1,100,0,ok,search/CHN_P4_MBC/d20130201_p01.json,day_sample 20130201 totalResults~0
+2026-09-30T07:01:40+00:00,2026-09-30,search,CHN_P4_MBC,CHN,P4,MBC,중국,,,1,100,0,ok,search/CHN_P4_MBC/d20130212_p01.json,day_sample 20130212 totalResults~0
+2026-09-30T07:01:41+00:00,2026-09-30,search,CHN_P4_MBC,CHN,P4,MBC,중국,,,1,100,0,ok,search/CHN_P4_MBC/d20130214_p01.json,day_sample 20130214 totalResults~0
+2026-09-30T07:01:41+00:00,2026-09-30,search,CHN_P4_MBC,CHN,P4,MBC,중국,,,1,100,0,ok,search/CHN_P4_MBC/d20130305_p01.json,day_sample 20130305 totalResults~0
+2026-09-30T07:01:42+00:00,2026-09-30,search,CHN_P4_MBC,CHN,P4,MBC,중국,,,1,100,0,ok,search/CHN_P4_MBC/d20130324_p01.json,day_sample 20130324 totalResults~0
+2026-09-30T07:01:42+00:00,2026-09-30,search,CHN_P4_MBC,CHN,P4,MBC,중국,,,1,100,1,ok,search/CHN_P4_MBC/d20130407_p01.json,day_sample 20130407 totalResults~815
+2026-09-30T07:01:43+00:00,2026-09-30,search,CHN_P4_MBC,CHN,P4,MBC,중국,,,1,100,1,ok,search/CHN_P4_MBC/d20130524_p01.json,day_sample 20130524 totalResults~106
+2026-09-30T07:01:43+00:00,2026-09-30,search,CHN_P4_MBC,CHN,P4,MBC,중국,,,1,100,1,ok,search/CHN_P4_MBC/d20130611_p01.json,day_sample 20130611 totalResults~106
+2026-09-30T07:01:44+00:00,2026-09-30,search,CHN_P4_MBC,CHN,P4,MBC,중국,,,1,100,0,ok,search/CHN_P4_MBC/d20130629_p01.json,day_sample 20130629 totalResults~80
+2026-09-30T07:01:44+00:00,2026-09-30,search,CHN_P4_MBC,CHN,P4,MBC,중국,,,1,100,1,ok,search/CHN_P4_MBC/d20130702_p01.json,day_sample 20130702 totalResults~80
+2026-09-30T07:01:45+00:00,2026-09-30,search,CHN_P4_MBC,CHN,P4,MBC,중국,,,1,100,0,ok,search/CHN_P4_MBC/d20130706_p01.json,day_sample 20130706 totalResults~80
+2026-09-30T07:01:46+00:00,2026-09-30,search,CHN_P4_YTN,CHN,P4,YTN,중국,,,1,100,50,ok,search/CHN_P4_YTN/p01.json,new=50 totalResults~94139
+2026-09-30T07:01:47+00:00,2026-09-30,search,CHN_P4_YTN,CHN,P4,YTN,중국,,,1,100,0,ok,search/CHN_P4_YTN/d20120905_p01.json,day_sample 20120905 totalResults~0
+2026-09-30T07:01:47+00:00,2026-09-30,search,CHN_P4_YTN,CHN,P4,YTN,중국,,,1,100,0,ok,search/CHN_P4_YTN/d20120930_p01.json,day_sample 20120930 totalResults~0
+2026-09-30T07:01:47+00:00,2026-09-30,search,CHN_P4_YTN,CHN,P4,YTN,중국,,,1,100,0,ok,search/CHN_P4_YTN/d20121006_p01.json,day_sample 20121006 totalResults~0
+2026-09-30T07:01:48+00:00,2026-09-30,search,CHN_P4_YTN,CHN,P4,YTN,중국,,,1,100,0,ok,search/CHN_P4_YTN/d20121017_p01.json,day_sample 20121017 totalResults~0
+2026-09-30T07:01:48+00:00,2026-09-30,search,CHN_P4_YTN,CHN,P4,YTN,중국,,,1,100,0,ok,search/CHN_P4_YTN/d20121109_p01.json,day_sample 20121109 totalResults~0
+2026-09-30T07:01:49+00:00,2026-09-30,search,CHN_P4_YTN,CHN,P4,YTN,중국,,,1,100,0,ok,search/CHN_P4_YTN/d20121118_p01.json,day_sample 20121118 totalResults~0
+2026-09-30T07:01:49+00:00,2026-09-30,search,CHN_P4_YTN,CHN,P4,YTN,중국,,,1,100,0,ok,search/CHN_P4_YTN/d20121211_p01.json,day_sample 20121211 totalResults~0
+2026-09-30T07:01:50+00:00,2026-09-30,search,CHN_P4_YTN,CHN,P4,YTN,중국,,,1,100,0,ok,search/CHN_P4_YTN/d20130118_p01.json,day_sample 20130118 totalResults~0
+2026-09-30T07:01:50+00:00,2026-09-30,search,CHN_P4_YTN,CHN,P4,YTN,중국,,,1,100,0,ok,search/CHN_P4_YTN/d20130119_p01.json,day_sample 20130119 totalResults~0
+2026-09-30T07:01:51+00:00,2026-09-30,search,CHN_P4_YTN,CHN,P4,YTN,중국,,,1,100,0,ok,search/CHN_P4_YTN/d20130121_p01.json,day_sample 20130121 totalResults~0
+2026-09-30T07:01:52+00:00,2026-09-30,search,CHN_P4_YTN,CHN,P4,YTN,중국,,,1,100,0,ok,search/CHN_P4_YTN/d20130208_p01.json,day_sample 20130208 totalResults~0
+2026-09-30T07:01:52+00:00,2026-09-30,search,CHN_P4_YTN,CHN,P4,YTN,중국,,,1,100,0,ok,search/CHN_P4_YTN/d20130221_p01.json,day_sample 20130221 totalResults~0
+2026-09-30T07:01:52+00:00,2026-09-30,search,CHN_P4_YTN,CHN,P4,YTN,중국,,,1,100,0,ok,search/CHN_P4_YTN/d20130303_p01.json,day_sample 20130303 totalResults~0
+2026-09-30T07:01:53+00:00,2026-09-30,search,CHN_P4_YTN,CHN,P4,YTN,중국,,,1,100,0,ok,search/CHN_P4_YTN/d20130330_p01.json,day_sample 20130330 totalResults~0
+2026-09-30T07:01:53+00:00,2026-09-30,search,CHN_P4_YTN,CHN,P4,YTN,중국,,,1,100,0,ok,search/CHN_P4_YTN/d20130425_p01.json,day_sample 20130425 totalResults~0
+2026-09-30T07:01:54+00:00,2026-09-30,search,CHN_P4_YTN,CHN,P4,YTN,중국,,,1,100,0,ok,search/CHN_P4_YTN/d20130505_p01.json,day_sample 20130505 totalResults~0
+2026-09-30T07:01:54+00:00,2026-09-30,search,CHN_P4_YTN,CHN,P4,YTN,중국,,,1,100,0,ok,search/CHN_P4_YTN/d20130511_p01.json,day_sample 20130511 totalResults~0
+2026-09-30T07:01:55+00:00,2026-09-30,search,CHN_P4_YTN,CHN,P4,YTN,중국,,,1,100,0,ok,search/CHN_P4_YTN/d20130519_p01.json,day_sample 20130519 totalResults~0
+2026-09-30T07:01:55+00:00,2026-09-30,search,CHN_P4_YTN,CHN,P4,YTN,중국,,,1,100,0,ok,search/CHN_P4_YTN/d20130531_p01.json,day_sample 20130531 totalResults~0
+2026-09-30T07:01:56+00:00,2026-09-30,search,CHN_P4_YTN,CHN,P4,YTN,중국,,,1,100,0,ok,search/CHN_P4_YTN/d20130606_p01.json,day_sample 20130606 totalResults~0
+2026-09-30T07:01:56+00:00,2026-09-30,search,CHN_P4_YTN,CHN,P4,YTN,중국,,,1,100,0,ok,search/CHN_P4_YTN/d20130619_p01.json,day_sample 20130619 totalResults~64727
+2026-09-30T07:01:57+00:00,2026-09-30,search,CHN_P4_YTN,CHN,P4,YTN,중국,,,1,100,16,ok,search/CHN_P4_YTN/d20130702_p01.json,day_sample 20130702 totalResults~64727
+2026-09-30T07:01:57+00:00,2026-09-30,search,CHN_P4_YTN,CHN,P4,YTN,중국,,,1,100,4,ok,search/CHN_P4_YTN/d20130715_p01.json,day_sample 20130715 totalResults~64727
+2026-09-30T07:01:58+00:00,2026-09-30,search,CHN_P4_YTN,CHN,P4,YTN,중국,,,1,100,2,ok,search/CHN_P4_YTN/d20130728_p01.json,day_sample 20130728 totalResults~64727
+2026-09-30T07:01:59+00:00,2026-09-30,search,CHN_P4_JTBC,CHN,P4,JTBC,중국,,,1,100,8,ok,search/CHN_P4_JTBC/p01.json,new=8 totalResults~67
+2026-09-30T07:01:59+00:00,2026-09-30,search,CHN_P4_TVCHOSUN,CHN,P4,TVCHOSUN,중국,,,1,100,50,ok,search/CHN_P4_TVCHOSUN/p01.json,new=50 totalResults~6306
+2026-09-30T07:01:59+00:00,2026-09-30,search,CHN_P4_TVCHOSUN,CHN,P4,TVCHOSUN,중국,,,1,100,0,ok,search/CHN_P4_TVCHOSUN/d20120905_p01.json,day_sample 20120905 totalResults~17
+2026-09-30T07:02:00+00:00,2026-09-30,search,CHN_P4_TVCHOSUN,CHN,P4,TVCHOSUN,중국,,,1,100,0,ok,search/CHN_P4_TVCHOSUN/d20121009_p01.json,day_sample 20121009 totalResults~17
+2026-09-30T07:02:00+00:00,2026-09-30,search,CHN_P4_TVCHOSUN,CHN,P4,TVCHOSUN,중국,,,1,100,0,ok,search/CHN_P4_TVCHOSUN/d20121018_p01.json,day_sample 20121018 totalResults~34
+2026-09-30T07:02:01+00:00,2026-09-30,search,CHN_P4_TVCHOSUN,CHN,P4,TVCHOSUN,중국,,,1,100,0,ok,search/CHN_P4_TVCHOSUN/d20121125_p01.json,day_sample 20121125 totalResults~20
+2026-09-30T07:02:01+00:00,2026-09-30,search,CHN_P4_TVCHOSUN,CHN,P4,TVCHOSUN,중국,,,1,100,0,ok,search/CHN_P4_TVCHOSUN/d20121213_p01.json,day_sample 20121213 totalResults~20
+2026-09-30T07:02:02+00:00,2026-09-30,videos,,,,,,,,,1,50,ok,videos/b_aaa37afaebc5.json,requested=50
+2026-09-30T07:02:03+00:00,2026-09-30,videos,,,,,,,,,1,50,ok,videos/b_27726911e0e7.json,requested=50
+2026-09-30T07:02:03+00:00,2026-09-30,videos,,,,,,,,,1,50,ok,videos/b_87ad5f5e3546.json,requested=50
+2026-09-30T07:02:04+00:00,2026-09-30,videos,,,,,,,,,1,50,ok,videos/b_e30d85c71db8.json,requested=50
+2026-09-30T07:02:04+00:00,2026-09-30,videos,,,,,,,,,1,12,ok,videos/b_384267261a73.json,requested=12
+2026-10-01T08:15:04+00:00,2026-10-01,search,CHN_P4_MBC,CHN,P4,MBC,중국,CDIQAA,,2,100,18,ok,search/CHN_P4_MBC/p02.json,new=18 totalResults~19840
+2026-10-01T08:15:04+00:00,2026-10-01,search,CHN_P4_YTN,CHN,P4,YTN,중국,CDIQAA,,2,100,50,ok,search/CHN_P4_YTN/p02.json,new=50 totalResults~94271
+2026-10-01T08:15:05+00:00,2026-10-01,search,CHN_P4_YTN,CHN,P4,YTN,중국,CGQQAA,,3,100,26,ok,search/CHN_P4_YTN/p03.json,new=26 totalResults~94271
+2026-10-01T08:15:05+00:00,2026-10-01,search,CHN_P4_TVCHOSUN,CHN,P4,TVCHOSUN,중국,CDIQAA,,2,100,5,ok,search/CHN_P4_TVCHOSUN/p02.json,new=5 totalResults~6295
+2026-10-01T08:15:06+00:00,2026-10-01,search,CHN_P4_CHANNELA,CHN,P4,CHANNELA,중국,,,1,100,50,ok,search/CHN_P4_CHANNELA/p01.json,new=50 totalResults~70360
+2026-10-01T08:15:06+00:00,2026-10-01,search,CHN_P4_CHANNELA,CHN,P4,CHANNELA,중국,CDIQAA,,2,100,12,ok,search/CHN_P4_CHANNELA/p02.json,new=12 totalResults~70361
+2026-10-01T08:15:07+00:00,2026-10-01,search,CHN_P4_MBN,CHN,P4,MBN,중국,,,1,100,8,ok,search/CHN_P4_MBN/p01.json,new=8 totalResults~115
+2026-10-01T08:15:08+00:00,2026-10-01,search,LAO_P1_MBC,LAO,P1,MBC,라오스,,,1,100,0,ok,search/LAO_P1_MBC/p01.json,new=0 totalResults~0
+2026-10-01T08:15:08+00:00,2026-10-01,search,LAO_P1_MBN,LAO,P1,MBN,라오스,,,1,100,0,ok,search/LAO_P1_MBN/p01.json,new=0 totalResults~0
+2026-10-01T08:15:08+00:00,2026-10-01,search,LAO_P2_MBC,LAO,P2,MBC,라오스,,,1,100,0,ok,search/LAO_P2_MBC/p01.json,new=0 totalResults~0
+2026-10-01T08:15:09+00:00,2026-10-01,search,LAO_P2_MBN,LAO,P2,MBN,라오스,,,1,100,0,ok,search/LAO_P2_MBN/p01.json,new=0 totalResults~0
+2026-10-01T08:15:10+00:00,2026-10-01,search,LAO_P3_MBC,LAO,P3,MBC,라오스,,,1,100,0,ok,search/LAO_P3_MBC/p01.json,new=0 totalResults~0
+2026-10-01T08:15:10+00:00,2026-10-01,search,LAO_P3_JTBC,LAO,P3,JTBC,라오스,,,1,100,0,ok,search/LAO_P3_JTBC/p01.json,new=0 totalResults~0
+2026-10-01T08:15:11+00:00,2026-10-01,search,LAO_P3_CHANNELA,LAO,P3,CHANNELA,라오스,,,1,100,0,ok,search/LAO_P3_CHANNELA/p01.json,new=0 totalResults~2
+2026-10-01T08:15:11+00:00,2026-10-01,search,LAO_P3_MBN,LAO,P3,MBN,라오스,,,1,100,0,ok,search/LAO_P3_MBN/p01.json,new=0 totalResults~3
+2026-10-01T08:15:12+00:00,2026-10-01,search,LAO_P4_MBC,LAO,P4,MBC,라오스,,,1,100,2,ok,search/LAO_P4_MBC/p01.json,new=2 totalResults~19
+2026-10-01T08:15:12+00:00,2026-10-01,search,LAO_P4_YTN,LAO,P4,YTN,라오스,,,1,100,3,ok,search/LAO_P4_YTN/p01.json,new=3 totalResults~58
+2026-10-01T08:15:13+00:00,2026-10-01,search,LAO_P4_JTBC,LAO,P4,JTBC,라오스,,,1,100,0,ok,search/LAO_P4_JTBC/p01.json,new=0 totalResults~0
+2026-10-01T08:15:13+00:00,2026-10-01,search,LAO_P4_TVCHOSUN,LAO,P4,TVCHOSUN,라오스,,,1,100,12,ok,search/LAO_P4_TVCHOSUN/p01.json,new=12 totalResults~31
+2026-10-01T08:15:14+00:00,2026-10-01,search,LAO_P4_CHANNELA,LAO,P4,CHANNELA,라오스,,,1,100,7,ok,search/LAO_P4_CHANNELA/p01.json,new=7 totalResults~51
+2026-10-01T08:15:14+00:00,2026-10-01,search,LAO_P4_MBN,LAO,P4,MBN,라오스,,,1,100,1,ok,search/LAO_P4_MBN/p01.json,new=1 totalResults~4
+2026-10-01T08:15:15+00:00,2026-10-01,search,THA_P1_MBC,THA,P1,MBC,태국,,,1,100,0,ok,search/THA_P1_MBC/p01.json,new=0 totalResults~0
+2026-10-01T08:15:15+00:00,2026-10-01,search,THA_P1_MBN,THA,P1,MBN,태국,,,1,100,0,ok,search/THA_P1_MBN/p01.json,new=0 totalResults~0
+2026-10-01T08:15:16+00:00,2026-10-01,search,THA_P2_MBC,THA,P2,MBC,태국,,,1,100,0,ok,search/THA_P2_MBC/p01.json,new=0 totalResults~0
+2026-10-01T08:15:16+00:00,2026-10-01,search,THA_P2_MBN,THA,P2,MBN,태국,,,1,100,0,ok,search/THA_P2_MBN/p01.json,new=0 totalResults~0
+2026-10-01T08:15:17+00:00,2026-10-01,search,THA_P3_MBC,THA,P3,MBC,태국,,,1,100,0,ok,search/THA_P3_MBC/p01.json,new=0 totalResults~0
+2026-10-01T08:15:17+00:00,2026-10-01,search,THA_P3_JTBC,THA,P3,JTBC,태국,,,1,100,2,ok,search/THA_P3_JTBC/p01.json,new=2 totalResults~9
+2026-10-01T08:15:18+00:00,2026-10-01,search,THA_P3_CHANNELA,THA,P3,CHANNELA,태국,,,1,100,2,ok,search/THA_P3_CHANNELA/p01.json,new=2 totalResults~10
+2026-10-01T08:15:18+00:00,2026-10-01,search,THA_P3_MBN,THA,P3,MBN,태국,,,1,100,5,ok,search/THA_P3_MBN/p01.json,new=5 totalResults~17
+2026-10-01T08:15:19+00:00,2026-10-01,search,THA_P4_MBC,THA,P4,MBC,태국,,,1,100,1,ok,search/THA_P4_MBC/p01.json,new=1 totalResults~38
+2026-10-01T08:15:20+00:00,2026-10-01,search,THA_P4_YTN,THA,P4,YTN,태국,,,1,100,5,ok,search/THA_P4_YTN/p01.json,new=5 totalResults~5579
+2026-10-01T08:15:20+00:00,2026-10-01,search,THA_P4_JTBC,THA,P4,JTBC,태국,,,1,100,0,ok,search/THA_P4_JTBC/p01.json,new=0 totalResults~11
+2026-10-01T08:15:21+00:00,2026-10-01,search,THA_P4_TVCHOSUN,THA,P4,TVCHOSUN,태국,,,1,100,0,ok,search/THA_P4_TVCHOSUN/p01.json,new=0 totalResults~56
+2026-10-01T08:15:21+00:00,2026-10-01,search,THA_P4_CHANNELA,THA,P4,CHANNELA,태국,,,1,100,2,ok,search/THA_P4_CHANNELA/p01.json,new=2 totalResults~33
+2026-10-01T08:15:22+00:00,2026-10-01,search,THA_P4_MBN,THA,P4,MBN,태국,,,1,100,1,ok,search/THA_P4_MBN/p01.json,new=1 totalResults~22
+2026-10-01T08:15:22+00:00,2026-10-01,search,MMR_P1_KBS,MMR,P1,KBS,미얀마,,,1,100,2,ok,search/MMR_P1_KBS/p01.json,new=2 totalResults~19
+2026-10-01T08:15:23+00:00,2026-10-01,search,MMR_P1_MBC,MMR,P1,MBC,미얀마,,,1,100,3,ok,search/MMR_P1_MBC/p01.json,new=3 totalResults~65
+2026-10-01T08:15:23+00:00,2026-10-01,search,MMR_P1_SBS,MMR,P1,SBS,미얀마,,,1,100,0,ok,search/MMR_P1_SBS/p01.json,new=0 totalResults~2
+2026-10-01T08:15:24+00:00,2026-10-01,search,MMR_P1_YTN,MMR,P1,YTN,미얀마,,,1,100,44,ok,search/MMR_P1_YTN/p01.json,new=44 totalResults~28106
+2026-10-01T08:15:25+00:00,2026-10-01,search,MMR_P1_JTBC,MMR,P1,JTBC,미얀마,,,1,100,0,ok,search/MMR_P1_JTBC/p01.json,new=0 totalResults~3
+2026-10-01T08:15:25+00:00,2026-10-01,search,MMR_P1_TVCHOSUN,MMR,P1,TVCHOSUN,미얀마,,,1,100,0,ok,search/MMR_P1_TVCHOSUN/p01.json,new=0 totalResults~20
+2026-10-01T08:15:26+00:00,2026-10-01,search,MMR_P1_CHANNELA,MMR,P1,CHANNELA,미얀마,,,1,100,0,ok,search/MMR_P1_CHANNELA/p01.json,new=0 totalResults~5
+2026-10-01T08:15:26+00:00,2026-10-01,search,MMR_P1_MBN,MMR,P1,MBN,미얀마,,,1,100,2,ok,search/MMR_P1_MBN/p01.json,new=2 totalResults~3
+2026-10-01T08:15:27+00:00,2026-10-01,search,MMR_P2_KBS,MMR,P2,KBS,미얀마,,,1,100,4,ok,search/MMR_P2_KBS/p01.json,new=4 totalResults~21
+2026-10-01T08:15:27+00:00,2026-10-01,search,MMR_P2_MBC,MMR,P2,MBC,미얀마,,,1,100,10,ok,search/MMR_P2_MBC/p01.json,new=10 totalResults~88
+2026-10-01T08:15:28+00:00,2026-10-01,search,MMR_P2_SBS,MMR,P2,SBS,미얀마,,,1,100,1,ok,search/MMR_P2_SBS/p01.json,new=1 totalResults~19
+2026-10-01T08:15:28+00:00,2026-10-01,search,MMR_P2_YTN,MMR,P2,YTN,미얀마,,,1,100,50,ok,search/MMR_P2_YTN/p01.json,new=50 totalResults~57021
+2026-10-01T08:15:29+00:00,2026-10-01,search,MMR_P2_YTN,MMR,P2,YTN,미얀마,CDIQAA,,2,100,44,ok,search/MMR_P2_YTN/p02.json,new=44 totalResults~57021
+2026-10-01T08:15:30+00:00,2026-10-01,search,MMR_P2_YONHAPTV,MMR,P2,YONHAPTV,미얀마,,,1,100,12,ok,search/MMR_P2_YONHAPTV/p01.json,new=12 totalResults~139
+2026-10-01T08:15:30+00:00,2026-10-01,search,MMR_P2_JTBC,MMR,P2,JTBC,미얀마,,,1,100,1,ok,search/MMR_P2_JTBC/p01.json,new=1 totalResults~8
+2026-10-01T08:15:31+00:00,2026-10-01,search,MMR_P2_TVCHOSUN,MMR,P2,TVCHOSUN,미얀마,,,1,100,1,ok,search/MMR_P2_TVCHOSUN/p01.json,new=1 totalResults~13
+2026-10-01T08:15:31+00:00,2026-10-01,search,MMR_P2_CHANNELA,MMR,P2,CHANNELA,미얀마,,,1,100,4,ok,search/MMR_P2_CHANNELA/p01.json,new=4 totalResults~45
+2026-10-01T08:15:32+00:00,2026-10-01,search,MMR_P2_MBN,MMR,P2,MBN,미얀마,,,1,100,0,ok,search/MMR_P2_MBN/p01.json,new=0 totalResults~5
+2026-10-01T08:15:32+00:00,2026-10-01,search,MMR_P3_KBS,MMR,P3,KBS,미얀마,,,1,100,3,ok,search/MMR_P3_KBS/p01.json,new=3 totalResults~61
+2026-10-01T08:15:33+00:00,2026-10-01,search,MMR_P3_MBC,MMR,P3,MBC,미얀마,,,1,100,6,ok,search/MMR_P3_MBC/p01.json,new=6 totalResults~48
+2026-10-01T08:15:33+00:00,2026-10-01,search,MMR_P3_SBS,MMR,P3,SBS,미얀마,,,1,100,23,ok,search/MMR_P3_SBS/p01.json,new=23 totalResults~1204
+2026-10-01T08:15:34+00:00,2026-10-01,search,MMR_P3_YTN,MMR,P3,YTN,미얀마,,,1,100,50,ok,search/MMR_P3_YTN/p01.json,new=50 totalResults~73263
+2026-10-01T08:15:34+00:00,2026-10-01,search,MMR_P3_YTN,MMR,P3,YTN,미얀마,CDIQAA,,2,100,25,ok,search/MMR_P3_YTN/p02.json,new=25 totalResults~73262
+2026-10-01T08:15:35+00:00,2026-10-01,search,MMR_P3_YONHAPTV,MMR,P3,YONHAPTV,미얀마,,,1,100,50,ok,search/MMR_P3_YONHAPTV/p01.json,new=50 totalResults~23900
+2026-10-01T08:15:35+00:00,2026-10-01,search,MMR_P3_YONHAPTV,MMR,P3,YONHAPTV,미얀마,CDIQAA,,2,100,11,ok,search/MMR_P3_YONHAPTV/p02.json,new=11 totalResults~23900
+2026-10-01T08:15:36+00:00,2026-10-01,search,MMR_P3_JTBC,MMR,P3,JTBC,미얀마,,,1,100,0,ok,search/MMR_P3_JTBC/p01.json,new=0 totalResults~6
+2026-10-01T08:15:36+00:00,2026-10-01,search,MMR_P3_TVCHOSUN,MMR,P3,TVCHOSUN,미얀마,,,1,100,2,ok,search/MMR_P3_TVCHOSUN/p01.json,new=2 totalResults~22
+2026-10-01T08:15:37+00:00,2026-10-01,search,MMR_P3_CHANNELA,MMR,P3,CHANNELA,미얀마,,,1,100,1,ok,search/MMR_P3_CHANNELA/p01.json,new=1 totalResults~19
+2026-10-01T08:15:37+00:00,2026-10-01,search,MMR_P3_MBN,MMR,P3,MBN,미얀마,,,1,100,3,ok,search/MMR_P3_MBN/p01.json,new=3 totalResults~45
+2026-10-01T08:15:38+00:00,2026-10-01,search,MMR_P4_KBS,MMR,P4,KBS,미얀마,,,1,100,6,ok,search/MMR_P4_KBS/p01.json,new=6 totalResults~67
+2026-10-01T08:15:39+00:00,2026-10-01,search,MMR_P4_MBC,MMR,P4,MBC,미얀마,,,1,100,11,ok,search/MMR_P4_MBC/p01.json,new=11 totalResults~1083
+2026-10-01T08:15:39+00:00,2026-10-01,search,MMR_P4_SBS,MMR,P4,SBS,미얀마,,,1,100,16,ok,search/MMR_P4_SBS/p01.json,new=16 totalResults~1351
+2026-10-01T08:15:40+00:00,2026-10-01,search,MMR_P4_YTN,MMR,P4,YTN,미얀마,,,1,100,50,ok,search/MMR_P4_YTN/p01.json,new=50 totalResults~73357
+2026-10-01T08:15:40+00:00,2026-10-01,search,MMR_P4_YTN,MMR,P4,YTN,미얀마,CDIQAA,,2,100,34,ok,search/MMR_P4_YTN/p02.json,new=34 totalResults~73357
+2026-10-01T08:15:41+00:00,2026-10-01,search,MMR_P4_YONHAPTV,MMR,P4,YONHAPTV,미얀마,,,1,100,50,ok,search/MMR_P4_YONHAPTV/p01.json,new=50 totalResults~32904
+2026-10-01T08:15:41+00:00,2026-10-01,search,MMR_P4_YONHAPTV,MMR,P4,YONHAPTV,미얀마,CDIQAA,,2,100,8,ok,search/MMR_P4_YONHAPTV/p02.json,new=8 totalResults~32905
+2026-10-01T08:15:42+00:00,2026-10-01,search,MMR_P4_JTBC,MMR,P4,JTBC,미얀마,,,1,100,21,ok,search/MMR_P4_JTBC/p01.json,new=21 totalResults~145
+2026-10-01T08:15:42+00:00,2026-10-01,search,MMR_P4_TVCHOSUN,MMR,P4,TVCHOSUN,미얀마,,,1,100,21,ok,search/MMR_P4_TVCHOSUN/p01.json,new=21 totalResults~74
+2026-10-01T08:15:43+00:00,2026-10-01,search,MMR_P4_CHANNELA,MMR,P4,CHANNELA,미얀마,,,1,100,10,ok,search/MMR_P4_CHANNELA/p01.json,new=10 totalResults~72
+2026-10-01T08:15:43+00:00,2026-10-01,search,MMR_P4_MBN,MMR,P4,MBN,미얀마,,,1,100,1,ok,search/MMR_P4_MBN/p01.json,new=1 totalResults~45
+2026-10-01T08:15:44+00:00,2026-10-01,videos,,,,,,,,,1,50,ok,videos/b_3dc8186c50c5.json,requested=50
+2026-10-01T08:15:45+00:00,2026-10-01,videos,,,,,,,,,1,50,ok,videos/b_be1fad89e842.json,requested=50
+2026-10-01T08:15:45+00:00,2026-10-01,videos,,,,,,,,,1,50,ok,videos/b_052aee323baa.json,requested=50
+2026-10-01T08:15:46+00:00,2026-10-01,videos,,,,,,,,,1,50,ok,videos/b_4bdde4912f97.json,requested=50
+2026-10-01T08:15:46+00:00,2026-10-01,videos,,,,,,,,,1,50,ok,videos/b_1bd67cd86fc4.json,requested=50
+2026-10-01T08:15:47+00:00,2026-10-01,videos,,,,,,,,,1,50,ok,videos/b_6d43ffee96f3.json,requested=50
+2026-10-01T08:15:47+00:00,2026-10-01,videos,,,,,,,,,1,50,ok,videos/b_e513b434c722.json,requested=50
+2026-10-01T08:15:48+00:00,2026-10-01,videos,,,,,,,,,1,50,ok,videos/b_2e2706629fd4.json,requested=50
+2026-10-01T08:15:48+00:00,2026-10-01,videos,,,,,,,,,1,50,ok,videos/b_de941be80bcf.json,requested=50
+2026-10-01T08:15:49+00:00,2026-10-01,videos,,,,,,,,,1,50,ok,videos/b_23c9d66e1411.json,requested=50
+2026-10-01T08:15:49+00:00,2026-10-01,videos,,,,,,,,,1,50,ok,videos/b_81cc5cf59efe.json,requested=50
+2026-10-01T08:15:50+00:00,2026-10-01,videos,,,,,,,,,1,50,ok,videos/b_a622d2f65876.json,requested=50
+2026-10-01T08:15:50+00:00,2026-10-01,videos,,,,,,,,,1,50,ok,videos/b_26e54c47bcf0.json,requested=50
+2026-10-01T08:15:51+00:00,2026-10-01,videos,,,,,,,,,1,50,ok,videos/b_6a60a1da229b.json,requested=50
+2026-10-01T08:15:52+00:00,2026-10-01,videos,,,,,,,,,1,50,ok,videos/b_92f616a18bf4.json,requested=50
+2026-10-01T08:15:52+00:00,2026-10-01,videos,,,,,,,,,1,11,ok,videos/b_2882b3d6ce22.json,requested=11
+2026-10-02T08:15:09+00:00,2026-10-02,search,KHM_P1_KBS,KHM,P1,KBS,캄보디아,,,1,100,3,ok,search/KHM_P1_KBS/p01.json,new=3 totalResults~29
+2026-10-02T08:15:09+00:00,2026-10-02,search,KHM_P1_MBC,KHM,P1,MBC,캄보디아,,,1,100,0,ok,search/KHM_P1_MBC/p01.json,new=0 totalResults~32
+2026-10-02T08:15:10+00:00,2026-10-02,search,KHM_P1_SBS,KHM,P1,SBS,캄보디아,,,1,100,1,ok,search/KHM_P1_SBS/p01.json,new=1 totalResults~18
+2026-10-02T08:15:10+00:00,2026-10-02,search,KHM_P1_YTN,KHM,P1,YTN,캄보디아,,,1,100,18,ok,search/KHM_P1_YTN/p01.json,new=18 totalResults~22522
+2026-10-02T08:15:11+00:00,2026-10-02,search,KHM_P1_YONHAPTV,KHM,P1,YONHAPTV,캄보디아,,,1,100,7,ok,search/KHM_P1_YONHAPTV/p01.json,new=7 totalResults~549
+2026-10-02T08:15:11+00:00,2026-10-02,search,KHM_P1_JTBC,KHM,P1,JTBC,캄보디아,,,1,100,0,ok,search/KHM_P1_JTBC/p01.json,new=0 totalResults~3
+2026-10-02T08:15:12+00:00,2026-10-02,search,KHM_P1_TVCHOSUN,KHM,P1,TVCHOSUN,캄보디아,,,1,100,3,ok,search/KHM_P1_TVCHOSUN/p01.json,new=3 totalResults~21
+2026-10-02T08:15:13+00:00,2026-10-02,search,KHM_P1_CHANNELA,KHM,P1,CHANNELA,캄보디아,,,1,100,2,ok,search/KHM_P1_CHANNELA/p01.json,new=2 totalResults~7
+2026-10-02T08:15:13+00:00,2026-10-02,search,KHM_P1_MBN,KHM,P1,MBN,캄보디아,,,1,100,0,ok,search/KHM_P1_MBN/p01.json,new=0 totalResults~12
+2026-10-02T08:15:14+00:00,2026-10-02,search,KHM_P2_KBS,KHM,P2,KBS,캄보디아,,,1,100,7,ok,search/KHM_P2_KBS/p01.json,new=7 totalResults~61
+2026-10-02T08:15:14+00:00,2026-10-02,search,KHM_P2_MBC,KHM,P2,MBC,캄보디아,,,1,100,1,ok,search/KHM_P2_MBC/p01.json,new=1 totalResults~17
+2026-10-02T08:15:15+00:00,2026-10-02,search,KHM_P2_SBS,KHM,P2,SBS,캄보디아,,,1,100,6,ok,search/KHM_P2_SBS/p01.json,new=6 totalResults~87
+2026-10-02T08:15:15+00:00,2026-10-02,search,KHM_P2_YTN,KHM,P2,YTN,캄보디아,,,1,100,30,ok,search/KHM_P2_YTN/p01.json,new=30 totalResults~42026
+2026-10-02T08:15:17+00:00,2026-10-02,search,KHM_P2_YONHAPTV,KHM,P2,YONHAPTV,캄보디아,,,1,100,16,ok,search/KHM_P2_YONHAPTV/p01.json,new=16 totalResults~13025
+2026-10-02T08:15:17+00:00,2026-10-02,search,KHM_P2_JTBC,KHM,P2,JTBC,캄보디아,,,1,100,0,ok,search/KHM_P2_JTBC/p01.json,new=0 totalResults~2
+2026-10-02T08:15:18+00:00,2026-10-02,search,KHM_P2_TVCHOSUN,KHM,P2,TVCHOSUN,캄보디아,,,1,100,1,ok,search/KHM_P2_TVCHOSUN/p01.json,new=1 totalResults~25
+2026-10-02T08:15:19+00:00,2026-10-02,search,KHM_P2_CHANNELA,KHM,P2,CHANNELA,캄보디아,,,1,100,0,ok,search/KHM_P2_CHANNELA/p01.json,new=0 totalResults~6
+2026-10-02T08:15:19+00:00,2026-10-02,search,KHM_P2_MBN,KHM,P2,MBN,캄보디아,,,1,100,1,ok,search/KHM_P2_MBN/p01.json,new=1 totalResults~33
+2026-10-02T08:15:20+00:00,2026-10-02,search,KHM_P3_KBS,KHM,P3,KBS,캄보디아,,,1,100,1,ok,search/KHM_P3_KBS/p01.json,new=1 totalResults~59
+2026-10-02T08:15:20+00:00,2026-10-02,search,KHM_P3_MBC,KHM,P3,MBC,캄보디아,,,1,100,1,ok,search/KHM_P3_MBC/p01.json,new=1 totalResults~12
+2026-10-02T08:15:21+00:00,2026-10-02,search,KHM_P3_SBS,KHM,P3,SBS,캄보디아,,,1,100,7,ok,search/KHM_P3_SBS/p01.json,new=7 totalResults~89
+2026-10-02T08:15:21+00:00,2026-10-02,search,KHM_P3_YTN,KHM,P3,YTN,캄보디아,,,1,100,15,ok,search/KHM_P3_YTN/p01.json,new=15 totalResults~13535
+2026-10-02T08:15:22+00:00,2026-10-02,search,KHM_P3_YONHAPTV,KHM,P3,YONHAPTV,캄보디아,,,1,100,12,ok,search/KHM_P3_YONHAPTV/p01.json,new=12 totalResults~8488
+2026-10-02T08:15:23+00:00,2026-10-02,search,KHM_P3_JTBC,KHM,P3,JTBC,캄보디아,,,1,100,0,ok,search/KHM_P3_JTBC/p01.json,new=0 totalResults~19
+2026-10-02T08:15:24+00:00,2026-10-02,search,KHM_P3_TVCHOSUN,KHM,P3,TVCHOSUN,캄보디아,,,1,100,3,ok,search/KHM_P3_TVCHOSUN/p01.json,new=3 totalResults~63
+2026-10-02T08:15:24+00:00,2026-10-02,search,KHM_P3_CHANNELA,KHM,P3,CHANNELA,캄보디아,,,1,100,0,ok,search/KHM_P3_CHANNELA/p01.json,new=0 totalResults~19
+2026-10-02T08:15:25+00:00,2026-10-02,search,KHM_P3_MBN,KHM,P3,MBN,캄보디아,,,1,100,0,ok,search/KHM_P3_MBN/p01.json,new=0 totalResults~17
+2026-10-02T08:15:26+00:00,2026-10-02,search,KHM_P4_KBS,KHM,P4,KBS,캄보디아,,,1,100,8,ok,search/KHM_P4_KBS/p01.json,new=8 totalResults~5257
+2026-10-02T08:15:26+00:00,2026-10-02,search,KHM_P4_MBC,KHM,P4,MBC,캄보디아,,,1,100,0,ok,search/KHM_P4_MBC/p01.json,new=0 totalResults~22
+2026-10-02T08:15:27+00:00,2026-10-02,search,KHM_P4_SBS,KHM,P4,SBS,캄보디아,,,1,100,6,ok,search/KHM_P4_SBS/p01.json,new=6 totalResults~59
+2026-10-02T08:15:27+00:00,2026-10-02,search,KHM_P4_YTN,KHM,P4,YTN,캄보디아,,,1,100,13,ok,search/KHM_P4_YTN/p01.json,new=13 totalResults~10687
+2026-10-02T08:15:28+00:00,2026-10-02,search,KHM_P4_YONHAPTV,KHM,P4,YONHAPTV,캄보디아,,,1,100,18,ok,search/KHM_P4_YONHAPTV/p01.json,new=18 totalResults~11335
+2026-10-02T08:15:29+00:00,2026-10-02,search,KHM_P4_JTBC,KHM,P4,JTBC,캄보디아,,,1,100,6,ok,search/KHM_P4_JTBC/p01.json,new=6 totalResults~75
+2026-10-02T08:15:29+00:00,2026-10-02,search,KHM_P4_TVCHOSUN,KHM,P4,TVCHOSUN,캄보디아,,,1,100,1,ok,search/KHM_P4_TVCHOSUN/p01.json,new=1 totalResults~65
+2026-10-02T08:15:30+00:00,2026-10-02,search,KHM_P4_CHANNELA,KHM,P4,CHANNELA,캄보디아,,,1,100,2,ok,search/KHM_P4_CHANNELA/p01.json,new=2 totalResults~57
+2026-10-02T08:15:30+00:00,2026-10-02,search,KHM_P4_MBN,KHM,P4,MBN,캄보디아,,,1,100,2,ok,search/KHM_P4_MBN/p01.json,new=2 totalResults~46
+2026-10-02T08:15:31+00:00,2026-10-02,search,IDN_P1_KBS,IDN,P1,KBS,인도네시아,,,1,100,50,ok,search/IDN_P1_KBS/p01.json,new=50 totalResults~57929
+2026-10-02T08:15:32+00:00,2026-10-02,search,IDN_P1_KBS,IDN,P1,KBS,인도네시아,CDIQAA,,2,100,50,ok,search/IDN_P1_KBS/p02.json,new=50 totalResults~57929
+2026-10-02T08:15:32+00:00,2026-10-02,search,IDN_P1_KBS,IDN,P1,KBS,인도네시아,CGQQAA,,3,100,38,ok,search/IDN_P1_KBS/p03.json,new=38 totalResults~57929
+2026-10-02T08:15:33+00:00,2026-10-02,search,IDN_P1_MBC,IDN,P1,MBC,인도네시아,,,1,100,50,ok,search/IDN_P1_MBC/p01.json,new=50 totalResults~21852
+2026-10-02T08:15:34+00:00,2026-10-02,search,IDN_P1_MBC,IDN,P1,MBC,인도네시아,CDIQAA,,2,100,42,ok,search/IDN_P1_MBC/p02.json,new=42 totalResults~21852
+2026-10-02T08:15:34+00:00,2026-10-02,search,IDN_P1_SBS,IDN,P1,SBS,인도네시아,,,1,100,50,ok,search/IDN_P1_SBS/p01.json,new=50 totalResults~15191
+2026-10-02T08:15:35+00:00,2026-10-02,search,IDN_P1_SBS,IDN,P1,SBS,인도네시아,CDIQAA,,2,100,30,ok,search/IDN_P1_SBS/p02.json,new=30 totalResults~15191
+2026-10-02T08:15:36+00:00,2026-10-02,search,IDN_P1_YTN,IDN,P1,YTN,인도네시아,,,1,100,50,ok,search/IDN_P1_YTN/p01.json,new=50 totalResults~111477
+2026-10-02T08:15:36+00:00,2026-10-02,search,IDN_P1_YTN,IDN,P1,YTN,인도네시아,CDIQAA,,2,100,50,ok,search/IDN_P1_YTN/p02.json,new=50 totalResults~111482
+2026-10-02T08:15:37+00:00,2026-10-02,search,IDN_P1_YTN,IDN,P1,YTN,인도네시아,CGQQAA,,3,100,50,ok,search/IDN_P1_YTN/p03.json,new=50 totalResults~111475
+2026-10-02T08:15:37+00:00,2026-10-02,search,IDN_P1_YTN,IDN,P1,YTN,인도네시아,CJYBEAA,,4,100,47,ok,search/IDN_P1_YTN/p04.json,new=47 totalResults~111482
+2026-10-02T08:15:38+00:00,2026-10-02,search,IDN_P1_YONHAPTV,IDN,P1,YONHAPTV,인도네시아,,,1,100,50,ok,search/IDN_P1_YONHAPTV/p01.json,new=50 totalResults~66277
+2026-10-02T08:15:38+00:00,2026-10-02,search,IDN_P1_YONHAPTV,IDN,P1,YONHAPTV,인도네시아,CDIQAA,,2,100,50,ok,search/IDN_P1_YONHAPTV/p02.json,new=50 totalResults~66279
+2026-10-02T08:15:39+00:00,2026-10-02,search,IDN_P1_YONHAPTV,IDN,P1,YONHAPTV,인도네시아,CGQQAA,,3,100,50,ok,search/IDN_P1_YONHAPTV/p03.json,new=50 totalResults~66279
+2026-10-02T08:15:40+00:00,2026-10-02,search,IDN_P1_YONHAPTV,IDN,P1,YONHAPTV,인도네시아,CJYBEAA,,4,100,1,ok,search/IDN_P1_YONHAPTV/p04.json,new=1 totalResults~66278
+2026-10-02T08:15:41+00:00,2026-10-02,search,IDN_P1_JTBC,IDN,P1,JTBC,인도네시아,,,1,100,50,ok,search/IDN_P1_JTBC/p01.json,new=50 totalResults~27028
+2026-10-02T08:15:42+00:00,2026-10-02,search,IDN_P1_JTBC,IDN,P1,JTBC,인도네시아,CDIQAA,,2,100,50,ok,search/IDN_P1_JTBC/p02.json,new=50 totalResults~27028
+2026-10-02T08:15:42+00:00,2026-10-02,search,IDN_P1_JTBC,IDN,P1,JTBC,인도네시아,CGQQAA,,3,100,14,ok,search/IDN_P1_JTBC/p03.json,new=14 totalResults~27028
+2026-10-02T08:15:44+00:00,2026-10-02,search,IDN_P1_TVCHOSUN,IDN,P1,TVCHOSUN,인도네시아,,,1,100,47,ok,search/IDN_P1_TVCHOSUN/p01.json,new=47 totalResults~164
+2026-10-02T08:15:45+00:00,2026-10-02,search,IDN_P1_CHANNELA,IDN,P1,CHANNELA,인도네시아,,,1,100,36,ok,search/IDN_P1_CHANNELA/p01.json,new=36 totalResults~9270
+2026-10-02T08:15:45+00:00,2026-10-02,search,IDN_P1_MBN,IDN,P1,MBN,인도네시아,,,1,100,50,ok,search/IDN_P1_MBN/p01.json,new=50 totalResults~3165
+2026-10-02T08:15:46+00:00,2026-10-02,search,IDN_P1_MBN,IDN,P1,MBN,인도네시아,CDIQAA,,2,100,16,ok,search/IDN_P1_MBN/p02.json,new=16 totalResults~3165
+2026-10-02T08:15:47+00:00,2026-10-02,search,IDN_P2_KBS,IDN,P2,KBS,인도네시아,,,1,100,50,ok,search/IDN_P2_KBS/p01.json,new=50 totalResults~56121
+2026-10-02T08:15:47+00:00,2026-10-02,search,IDN_P2_KBS,IDN,P2,KBS,인도네시아,CDIQAA,,2,100,11,ok,search/IDN_P2_KBS/p02.json,new=11 totalResults~56121
+2026-10-02T08:15:48+00:00,2026-10-02,search,IDN_P2_MBC,IDN,P2,MBC,인도네시아,,,1,100,40,ok,search/IDN_P2_MBC/p01.json,new=40 totalResults~44780
+2026-10-02T08:15:48+00:00,2026-10-02,search,IDN_P2_SBS,IDN,P2,SBS,인도네시아,,,1,100,7,ok,search/IDN_P2_SBS/p01.json,new=7 totalResults~2025
+2026-10-02T08:15:49+00:00,2026-10-02,search,IDN_P2_YTN,IDN,P2,YTN,인도네시아,,,1,100,34,ok,search/IDN_P2_YTN/p01.json,new=34 totalResults~96037
+2026-10-02T08:15:50+00:00,2026-10-02,search,IDN_P2_YONHAPTV,IDN,P2,YONHAPTV,인도네시아,,,1,100,50,ok,search/IDN_P2_YONHAPTV/p01.json,new=50 totalResults~64569
+2026-10-02T08:15:50+00:00,2026-10-02,search,IDN_P2_YONHAPTV,IDN,P2,YONHAPTV,인도네시아,CDIQAA,,2,100,17,ok,search/IDN_P2_YONHAPTV/p02.json,new=17 totalResults~64572
+2026-10-02T08:15:51+00:00,2026-10-02,search,IDN_P2_JTBC,IDN,P2,JTBC,인도네시아,,,1,100,42,ok,search/IDN_P2_JTBC/p01.json,new=42 totalResults~32334
+2026-10-02T08:15:51+00:00,2026-10-02,search,IDN_P2_TVCHOSUN,IDN,P2,TVCHOSUN,인도네시아,,,1,100,3,ok,search/IDN_P2_TVCHOSUN/p01.json,new=3 totalResults~69
+2026-10-02T08:15:52+00:00,2026-10-02,search,IDN_P2_CHANNELA,IDN,P2,CHANNELA,인도네시아,,,1,100,8,ok,search/IDN_P2_CHANNELA/p01.json,new=8 totalResults~81
+2026-10-02T08:15:52+00:00,2026-10-02,search,IDN_P2_MBN,IDN,P2,MBN,인도네시아,,,1,100,15,ok,search/IDN_P2_MBN/p01.json,new=15 totalResults~829
+2026-10-02T08:15:53+00:00,2026-10-02,search,IDN_P3_KBS,IDN,P3,KBS,인도네시아,,,1,100,41,ok,search/IDN_P3_KBS/p01.json,new=41 totalResults~136151
+2026-10-02T08:15:54+00:00,2026-10-02,search,IDN_P3_MBC,IDN,P3,MBC,인도네시아,,,1,100,50,ok,search/IDN_P3_MBC/p01.json,new=50 totalResults~198702
+2026-10-02T08:15:54+00:00,2026-10-02,search,IDN_P3_MBC,IDN,P3,MBC,인도네시아,CDIQAA,,2,100,5,ok,search/IDN_P3_MBC/p02.json,new=2 totalResults~198703
+2026-10-02T08:15:56+00:00,2026-10-02,search,IDN_P3_SBS,IDN,P3,SBS,인도네시아,,,1,100,45,ok,search/IDN_P3_SBS/p01.json,new=45 totalResults~28712
+2026-10-02T08:15:57+00:00,2026-10-02,search,IDN_P3_YTN,IDN,P3,YTN,인도네시아,,,1,100,50,ok,search/IDN_P3_YTN/p01.json,new=50 totalResults~315709
+2026-10-02T08:15:57+00:00,2026-10-02,search,IDN_P3_YTN,IDN,P3,YTN,인도네시아,CDIQAA,,2,100,29,ok,search/IDN_P3_YTN/p02.json,new=29 totalResults~315707
+2026-10-02T08:16:06+00:00,2026-10-02,videos,,,,,,,,,1,50,ok,videos/b_b66abbfb204b.json,requested=50
+2026-10-02T08:16:06+00:00,2026-10-02,videos,,,,,,,,,1,50,ok,videos/b_43752f9c1525.json,requested=50
+2026-10-02T08:16:07+00:00,2026-10-02,videos,,,,,,,,,1,50,ok,videos/b_283cf05d77f8.json,requested=50
+2026-10-02T08:16:07+00:00,2026-10-02,videos,,,,,,,,,1,50,ok,videos/b_571674a9d904.json,requested=50
+2026-10-02T08:16:08+00:00,2026-10-02,videos,,,,,,,,,1,50,ok,videos/b_598a636f1924.json,requested=50
+2026-10-02T08:16:08+00:00,2026-10-02,videos,,,,,,,,,1,50,ok,videos/b_3134a0571255.json,requested=50
+2026-10-02T08:16:09+00:00,2026-10-02,videos,,,,,,,,,1,50,ok,videos/b_7513c197fcf5.json,requested=50
+2026-10-02T08:16:10+00:00,2026-10-02,videos,,,,,,,,,1,50,ok,videos/b_ab2d60a70561.json,requested=50
+2026-10-02T08:16:10+00:00,2026-10-02,videos,,,,,,,,,1,50,ok,videos/b_92f5be8a1c90.json,requested=50
+2026-10-02T08:16:11+00:00,2026-10-02,videos,,,,,,,,,1,50,ok,videos/b_81817aced569.json,requested=50
+2026-10-02T08:16:11+00:00,2026-10-02,videos,,,,,,,,,1,50,ok,videos/b_1312ed615eb4.json,requested=50
+2026-10-02T08:16:12+00:00,2026-10-02,videos,,,,,,,,,1,50,ok,videos/b_3e45df5b8088.json,requested=50
+2026-10-02T08:16:12+00:00,2026-10-02,videos,,,,,,,,,1,50,ok,videos/b_a2790635093e.json,requested=50
+2026-10-02T08:16:13+00:00,2026-10-02,videos,,,,,,,,,1,50,ok,videos/b_03938f61ae5d.json,requested=50
+2026-10-02T08:16:14+00:00,2026-10-02,videos,,,,,,,,,1,50,ok,videos/b_b66b274bee4b.json,requested=50
+2026-10-02T08:16:14+00:00,2026-10-02,videos,,,,,,,,,1,50,ok,videos/b_42b466f2e3a1.json,requested=50
+2026-10-02T08:16:15+00:00,2026-10-02,videos,,,,,,,,,1,50,ok,videos/b_4192babadf46.json,requested=50
+2026-10-02T08:16:15+00:00,2026-10-02,videos,,,,,,,,,1,50,ok,videos/b_43b8b3d12f8a.json,requested=50
+2026-10-02T08:16:16+00:00,2026-10-02,videos,,,,,,,,,1,50,ok,videos/b_b6443a4c7902.json,requested=50
+2026-10-02T08:16:16+00:00,2026-10-02,videos,,,,,,,,,1,50,ok,videos/b_1346a6f80c8a.json,requested=50
+2026-10-02T08:16:17+00:00,2026-10-02,videos,,,,,,,,,1,50,ok,videos/b_8a784a1bb9bc.json,requested=50
+2026-10-02T08:16:17+00:00,2026-10-02,videos,,,,,,,,,1,50,ok,videos/b_c562929a74ef.json,requested=50
+2026-10-02T08:16:18+00:00,2026-10-02,videos,,,,,,,,,1,50,ok,videos/b_6a653ca19def.json,requested=50
+2026-10-02T08:16:18+00:00,2026-10-02,videos,,,,,,,,,1,50,ok,videos/b_ffb1346b83c5.json,requested=50
+2026-10-02T08:16:19+00:00,2026-10-02,videos,,,,,,,,,1,50,ok,videos/b_92740d885bb6.json,requested=50
+2026-10-02T08:16:19+00:00,2026-10-02,videos,,,,,,,,,1,50,ok,videos/b_6c82a20d57d9.json,requested=50
+2026-10-02T08:16:20+00:00,2026-10-02,videos,,,,,,,,,1,50,ok,videos/b_5a03f9c443ef.json,requested=50
+2026-10-02T08:16:20+00:00,2026-10-02,videos,,,,,,,,,1,50,ok,videos/b_2a8de44eeca8.json,requested=50
+2026-10-02T08:16:21+00:00,2026-10-02,videos,,,,,,,,,1,50,ok,videos/b_a150d5dfc841.json,requested=50
+2026-10-02T08:16:21+00:00,2026-10-02,videos,,,,,,,,,1,50,ok,videos/b_d1df4190d243.json,requested=50
+2026-10-02T08:16:22+00:00,2026-10-02,videos,,,,,,,,,1,50,ok,videos/b_70ea80e11b5b.json,requested=50
+2026-10-02T08:16:22+00:00,2026-10-02,videos,,,,,,,,,1,33,ok,videos/b_a612a934e658.json,requested=33
+2026-10-05T23:55:55+00:00,2026-10-05,search,IDN_P3_YONHAPTV,IDN,P3,YONHAPTV,인도네시아,,,1,100,50,ok,search/IDN_P3_YONHAPTV/p01.json,new=50 totalResults~72403
+2026-10-05T23:55:55+00:00,2026-10-05,search,IDN_P3_YONHAPTV,IDN,P3,YONHAPTV,인도네시아,CDIQAA,,2,100,0,ok,search/IDN_P3_YONHAPTV/p02.json,new=0 totalResults~72403
+2026-10-05T23:55:55+00:00,2026-10-05,search,IDN_P3_JTBC,IDN,P3,JTBC,인도네시아,,,1,100,41,ok,search/IDN_P3_JTBC/p01.json,new=41 totalResults~71759
+2026-10-05T23:55:56+00:00,2026-10-05,search,IDN_P3_TVCHOSUN,IDN,P3,TVCHOSUN,인도네시아,,,1,100,8,ok,search/IDN_P3_TVCHOSUN/p01.json,new=8 totalResults~294
+2026-10-05T23:55:56+00:00,2026-10-05,search,IDN_P3_CHANNELA,IDN,P3,CHANNELA,인도네시아,,,1,100,0,ok,search/IDN_P3_CHANNELA/p01.json,new=0 totalResults~65
+2026-10-05T23:55:57+00:00,2026-10-05,search,IDN_P3_MBN,IDN,P3,MBN,인도네시아,,,1,100,29,ok,search/IDN_P3_MBN/p01.json,new=29 totalResults~4161
+2026-10-05T23:55:58+00:00,2026-10-05,search,IDN_P4_KBS,IDN,P4,KBS,인도네시아,,,1,100,50,ok,search/IDN_P4_KBS/p01.json,new=50 totalResults~71190
+2026-10-05T23:55:58+00:00,2026-10-05,search,IDN_P4_KBS,IDN,P4,KBS,인도네시아,CDIQAA,,2,100,3,ok,search/IDN_P4_KBS/p02.json,new=3 totalResults~71193
+2026-10-05T23:55:59+00:00,2026-10-05,search,IDN_P4_MBC,IDN,P4,MBC,인도네시아,,,1,100,50,ok,search/IDN_P4_MBC/p01.json,new=50 totalResults~106163
+2026-10-05T23:56:00+00:00,2026-10-05,search,IDN_P4_MBC,IDN,P4,MBC,인도네시아,CDIQAA,,2,100,14,ok,search/IDN_P4_MBC/p02.json,new=14 totalResults~106163
+2026-10-05T23:56:00+00:00,2026-10-05,search,IDN_P4_SBS,IDN,P4,SBS,인도네시아,,,1,100,42,ok,search/IDN_P4_SBS/p01.json,new=42 totalResults~24389
+2026-10-05T23:56:01+00:00,2026-10-05,search,IDN_P4_YTN,IDN,P4,YTN,인도네시아,,,1,100,50,ok,search/IDN_P4_YTN/p01.json,new=50 totalResults~181983
+2026-10-05T23:56:01+00:00,2026-10-05,search,IDN_P4_YTN,IDN,P4,YTN,인도네시아,CDIQAA,,2,100,16,ok,search/IDN_P4_YTN/p02.json,new=16 totalResults~181983
+2026-10-05T23:56:02+00:00,2026-10-05,search,IDN_P4_YONHAPTV,IDN,P4,YONHAPTV,인도네시아,,,1,100,50,ok,search/IDN_P4_YONHAPTV/p01.json,new=50 totalResults~54486
+2026-10-05T23:56:02+00:00,2026-10-05,search,IDN_P4_YONHAPTV,IDN,P4,YONHAPTV,인도네시아,CDIQAA,,2,100,18,ok,search/IDN_P4_YONHAPTV/p02.json,new=18 totalResults~54489
+2026-10-05T23:56:02+00:00,2026-10-05,search,IDN_P4_JTBC,IDN,P4,JTBC,인도네시아,,,1,100,25,ok,search/IDN_P4_JTBC/p01.json,new=25 totalResults~4277
+2026-10-05T23:56:03+00:00,2026-10-05,search,IDN_P4_TVCHOSUN,IDN,P4,TVCHOSUN,인도네시아,,,1,100,11,ok,search/IDN_P4_TVCHOSUN/p01.json,new=11 totalResults~5409
+2026-10-05T23:56:03+00:00,2026-10-05,search,IDN_P4_CHANNELA,IDN,P4,CHANNELA,인도네시아,,,1,100,5,ok,search/IDN_P4_CHANNELA/p01.json,new=5 totalResults~74
+2026-10-05T23:56:04+00:00,2026-10-05,search,IDN_P4_MBN,IDN,P4,MBN,인도네시아,,,1,100,26,ok,search/IDN_P4_MBN/p01.json,new=26 totalResults~6617
+2026-10-05T23:56:09+00:00,2026-10-05,videos,,,,,,,,,1,50,ok,videos/b_730514c38953.json,requested=50
+2026-10-05T23:56:09+00:00,2026-10-05,videos,,,,,,,,,1,50,ok,videos/b_6e60cc57e1ca.json,requested=50
+2026-10-05T23:56:10+00:00,2026-10-05,videos,,,,,,,,,1,50,ok,videos/b_2133ce4e674e.json,requested=50
+2026-10-05T23:56:10+00:00,2026-10-05,videos,,,,,,,,,1,50,ok,videos/b_d030863d1377.json,requested=50
+2026-10-05T23:56:11+00:00,2026-10-05,videos,,,,,,,,,1,50,ok,videos/b_f2f66ccfe371.json,requested=50
+2026-10-05T23:56:11+00:00,2026-10-05,videos,,,,,,,,,1,50,ok,videos/b_4a85c40bbc79.json,requested=50
+2026-10-05T23:56:12+00:00,2026-10-05,videos,,,,,,,,,1,50,ok,videos/b_856e7eaae1a6.json,requested=50
+2026-10-05T23:56:12+00:00,2026-10-05,videos,,,,,,,,,1,50,ok,videos/b_383d507e91e9.json,requested=50
+2026-10-05T23:56:13+00:00,2026-10-05,videos,,,,,,,,,1,50,ok,videos/b_5920bf8f7387.json,requested=50
+2026-10-05T23:56:13+00:00,2026-10-05,videos,,,,,,,,,1,36,ok,videos/b_878b2a61b43b.json,requested=36
