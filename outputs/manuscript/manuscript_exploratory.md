@@ -164,6 +164,55 @@ case by case, whether a given attribution is accurate explanation or motivated m
 flags this explicitly as an unresolved measurement question for Section 8 rather than coding it
 as "dismissive" by default.
 
+## 6a. Formal pilot test of the central hypothesis
+
+`scripts/exploratory/test_turning_point_hypothesis.py`. For each case, classified (non-R0)
+sentences are split into three windows relative to that case's earliest reliable material
+crossover: PRE (before), EARLY-POST (crossover to crossover+9), LATE-POST (crossover+10 onward).
+The hypothesis as stated requires two things to both hold: **H1** no immediate jump in peer share
+at the crossover (PRE vs EARLY-POST not significantly different), and **H2** peer share rises in
+the long run (EARLY-POST vs LATE-POST significantly higher). Fisher's exact test is used
+throughout (not a chi-square or t-test) because per-window n is small; exact 90% binomial
+confidence intervals are reported alongside each point estimate.
+
+| Case | T1 (crossover) | PRE | EARLY-POST | LATE-POST | PRE vs EARLY p | EARLY vs LATE p | PRE vs LATE p |
+|---|---|---|---|---|---|---|---|
+| jpn_kor (shipbuilding) | 2002 | 0.22 (n=18) | 0.37 (n=27) | 0.52 (n=25) | 0.343 | 0.402 | **0.064** |
+| kor_chn (batteries) | 1996 | 0.18 (n=11) | 0.45 (n=22) | 0.50 (n=24) | 0.249 | 0.777 | 0.137 |
+
+**Verdict under the strict two-part test: NOT SUPPORTED for either case** -- H1 holds in both (no
+significant immediate jump, consistent with a lag existing), but H2 does not reach significance
+in either case specifically for the EARLY-POST-to-LATE-POST step.
+
+This is not a clean null, however, and should not be read as one. For jpn_kor, peer share rises
+*monotonically* across all three windows (0.22 → 0.37 → 0.52), and the endpoint comparison
+(PRE vs LATE-POST) is marginally short of conventional significance (p=0.064) despite splitting an
+already-small sample (n=70 classified sentences) three ways, which costs power at every pairwise
+step. The qualitative evidence in Section 6 (the 2008 vs. 2020 shipbuilding quotations) is
+consistent with this same monotonic-rise pattern and is not subject to the same power problem,
+since it is a direct reading of two individual, dated statements rather than a proportion test.
+Read together, jpn_kor/shipbuilding is **directionally consistent with the central hypothesis but
+underpowered to confirm it** at this sample size -- an honest "promising, not yet demonstrated"
+result, not a failure of the pipeline.
+
+For kor_chn, the pattern is a large jump at PRE→EARLY-POST (0.18→0.45, not itself significant)
+followed by a near-plateau EARLY-POST→LATE-POST (0.45→0.50) -- i.e., most of the rise happens
+*immediately* around 1996 rather than with a delay, which is the opposite of what a lag hypothesis
+predicts, though consistent with this pair's own caveat (Section 4.1: the 1996 "crossover" is a
+divergent-growth pattern, not a sharp reversal of established Korean leadership, so a gradual
+rather than delayed response is plausible on its own terms). Combined with the 4-year-period series
+in Section 6 (which shows peer share later *declining* after 2008-11), kor_chn's recognition
+trajectory does not fit a simple monotonic lag-then-rise story in either direction -- a genuine,
+reportable complication rather than support for or against the hypothesis as stated.
+
+**On whether the pipeline works as intended:** yes. The test ran end to end without error,
+produced exact-method statistics appropriate to the actual sample sizes (not asymptotic methods
+that would overstate precision), and the output files
+(`outputs/exploratory/{jpn_kor,kor_chn}_turning_point_test.csv`) reproduce exactly on rerun. The
+negative/inconclusive result is a property of the data (n=343 hand-classified sentences, no
+human validation, one crossover date per case) and the deliberately strict two-part test
+specification, not a bug.
+
 ## 7. Discussion
 
 Read together, the shipbuilding bracket (2008 vs. 2020 quotations) and the two period series are

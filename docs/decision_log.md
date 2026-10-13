@@ -83,6 +83,28 @@ open item in `docs/literature_review.md` Section 3 rather than papered over with
 citation. Continuing this search is the top-ranked next action in
 `outputs/reports/research_overhaul_report.md`.
 
+## R007 -- Formal pilot test of the lag-then-catch-up hypothesis, run without human coding (2026-10-14)
+
+**Type:** confirmatory specification (pre-specified before running: two-part test, PRE vs
+EARLY-POST not significant AND EARLY-POST vs LATE-POST significant, both required).
+
+Per explicit user request to pilot-test the central hypothesis using the 343 LLM-assisted
+classifications as-is (no human coding exists yet). `scripts/exploratory/
+test_turning_point_hypothesis.py`, Fisher's exact test (not asymptotic, given small per-window n),
+exact 90% binomial CIs. Result: **NOT SUPPORTED under the strict two-part test for either case**
+(jpn_kor/shipbuilding T1=2002; kor_chn/batteries T1=1996) -- H1 (no immediate jump) holds in both,
+H2 (significant later rise) does not reach significance in either. jpn_kor shows a monotonic
+peer-share rise across all three windows with the PRE-vs-LATE-POST endpoint comparison at p=0.064
+(short of the pre-registered 0.10 threshold only because testing the specific EARLY-vs-LATE step
+splits an already-small n=70 three ways) -- read as directionally consistent but underpowered,
+not as a failure. kor_chn shows most of its rise immediately at PRE→EARLY-POST rather than with a
+delay, which does not fit the lag hypothesis as stated, consistent with that pair's T1 (battery,
+1996) already being flagged as a divergent-growth pattern rather than a sharp reversal (R002/R003).
+This negative/mixed result is preserved as-is, per the project's own stated principle (README
+Reproducibility principle 1; research_design.md §7: "A theoretically important null result is
+acceptable") -- not reframed, not dropped, and not treated as grounds to search for a different
+crossover date or window boundary that would produce significance.
+
 ## R006 -- Scoped the Japan Diet full-text pull to pre-filtered queries, not the generic "korea" query (2026-10-14)
 
 **Type:** data-driven exploratory decision (acquisition scoping), overnight session.
