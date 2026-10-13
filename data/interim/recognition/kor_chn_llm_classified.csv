@@ -1,0 +1,170 @@
+﻿item_id,year,R,dismissive,stereotyping,threat_coexists,direction_mismatch,notes
+korchn_0000,1988,R0,0,0,0,0,describes CHN pursuing reform/opening generally; no KOR-CHN comparative evaluation
+korchn_0001,1988,R0,0,0,0,0,mutual-benefit framing of trade normalization; not a status claim
+korchn_0002,1988,R1,0,0,0,0,"""we have some of what China's economy needs"" -- positions KOR as provider, CHN as needing recipient"
+korchn_0003,1988,R0,0,0,0,0,"interviewer question grouping CHN among Asian """"dragons""""; no KOR evaluative stance in this sentence"
+korchn_0004,1988,R0,0,0,0,0,factual trade growth description
+korchn_0005,1988,R0,0,0,0,0,factual
+korchn_0006,1988,R0,0,0,0,0,factual trade-office exchange plan
+korchn_0007,1989,R0,0,0,0,0,"journalist question, factual"
+korchn_0008,1989,R0,0,0,0,0,factual
+korchn_0009,1989,R1,0,0,0,0,KOR firms relocating to lower-wage CHN/SE Asia -- CHN framed as cheap production base
+korchn_0010,1989,R0,0,0,0,0,factual
+korchn_0011,1989,R1,0,0,0,0,"""market economy's superiority opened communist states' (incl. CHN) eyes"" -- KOR's (Western-aligned) model framed as superior, CHN as catching on"
+korchn_0012,1990,R0,0,0,0,0,factual
+korchn_0013,1990,R1,0,1,0,0,implies CHN destined to follow the (Western/KOR-aligned) reform path despite Tiananmen setback -- teleological developmental-hierarchy framing
+korchn_0014,1990,R1,0,0,0,0,"KOR claims CHN/USSR/E.Europe """"recognize the reality of"""" KOR's prosperity -- KOR self-positions as the one being recognized (implicitly superior)"
+korchn_0015,1990,R0,0,0,0,0,factual diplomatic
+korchn_0016,1990,R0,0,0,0,0,factual diplomatic
+korchn_0017,1991,R0,0,0,0,0,"historical reference (Sejong era), not contemporary CHN status -- off-topic for current economic recognition"
+korchn_0018,1991,R0,0,0,0,0,factual
+korchn_0019,1991,R0,0,0,0,0,factual trade volume
+korchn_0020,1992,R0,0,0,0,0,factual APEC membership
+korchn_0021,1992,R1,0,1,0,0,Chinese-Korean laborers coming to KOR due to wage gap -- CHN framed as lower-wage labor source for wealthier KOR
+korchn_0022,1992,R1,0,0,0,0,same framing as above
+korchn_0023,1992,R0,0,0,0,0,factual trade-partner ranking
+korchn_0024,1992,R0,0,0,0,0,speech opening pleasantries
+korchn_0025,1992,R2,0,0,0,0,"explicit achievement acknowledgment: CHN's 5-year plan """"successfully"""" implemented"
+korchn_0026,1994,R4,0,0,0,0,"hopes KOR and CHN firms """"develop together"""" -- cooperative/co-equal framing"
+korchn_0027,1994,R0,0,0,0,0,factual (JPN+CHN science-tech agreement)
+korchn_0028,1994,R4,0,0,0,0,KOR region + CHN eastern region to emerge together as world-class economic zone -- co-equal regional partnership
+korchn_0029,1995,R0,0,0,0,0,factual
+korchn_0030,1995,R0,0,0,0,0,factual
+korchn_0031,1995,R2,0,0,0,0,"strong achievement acknowledgment: CHN's growth ""amazing the whole world"" -- admiring tone, still growth-rate not peer-status claim"
+korchn_0032,1995,R0,0,0,0,0,"factual (CHN = KOR's top investment destination) -- magnitude statement, not status evaluation"
+korchn_0033,1996,R0,0,0,0,0,factual cooperation statement
+korchn_0034,1997,R0,0,0,0,0,"about NK-CHN/USSR relations, not CHN's own status"
+korchn_0035,1997,R1,0,0,0,0,CHN described acquiring advanced weapons/tech FROM Russia -- dependent/still-catching-up framing
+korchn_0036,1998,R4,0,0,1,0,"CHN grouped with JPN as systemically important; their troubles ""could trigger crisis"" for world economy -- strong implicit peer-level acknowledgment of CHN's economic weight"
+korchn_0037,1998,R0,0,0,0,0,factual meeting agenda
+korchn_0038,1998,R0,0,0,0,0,factual meeting agenda
+korchn_0039,1998,R0,0,0,0,1,"long multi-topic excerpt (nuclear plant request, Daewoo factory) -- predominantly CHINA's officials praising KOREA's achievements; wrong direction for KOR-recognizes-CHN coding"
+korchn_0040,1998,R1,0,0,0,0,KOR positions itself as tech EXPORTER negotiating sales TO China -- CHN framed as recipient/customer market for KOR's indigenous tech
+korchn_0041,1998,R0,0,0,0,0,factual export statistics by region
+korchn_0042,1998,R3,0,0,1,0,"formal anti-dumping/injury ruling against Chinese silicon-manganese imports -- explicit finding that CHN imports are harming KOR industry (competitive threat, legal finding)"
+korchn_0043,1998,R0,0,0,0,0,factual
+korchn_0044,1998,R0,0,0,0,0,"factual business exchange (KOR conglomerates host CHN firms for trade talks, selling manufactured goods for CHN raw/agricultural goods)"
+korchn_0045,1998,R0,0,0,0,0,exhibition announcement (partial text)
+korchn_0046,1998,R5,0,0,0,0,govt comparative trade-statistics table: explicitly shows CHN's export growth (2.15x) exceeding KOR's (1.82x) and CHN running trade SURPLUS while KOR crisis-deficit -- plain acknowledgment of CHN outperforming KOR on named metrics
+korchn_0047,1998,R3,0,0,1,0,final anti-dumping ruling against Chinese ferrosilicomanganese (17.95-24.68% duty) -- trade-injury finding
+korchn_0048,1998,R1,0,0,0,0,"""even in communist China, market economy now rules"" -- CHN framed as converging to KOR-aligned model (exception framing)"
+korchn_0049,1998,R0,0,0,0,0,historical note (CHN abolished feudalism 2000yr before West); not about contemporary status
+korchn_0050,1998,R0,0,0,0,0,factual trade-volume growth
+korchn_0051,1998,R5,0,0,0,0,"CHN withstood yuan-devaluation pressure, ""preventing other countries' currency collapse"" -- CHN credited as the stabilizing actor protecting the region (incl. crisis-hit KOR) during the 1997-98 crisis"
+korchn_0052,1998,R4,0,0,0,0,"KOR president """"highly values"""" CHN's """"courageous decision"""" that """"importantly contributed to"""" Asian economic stability -- explicit high praise at systemic level"
+korchn_0053,1998,R4,0,0,0,0,"""I regard China as a true friend"" -- elevated relational/diplomatic framing"
+korchn_0054,1998,R0,0,0,0,0,factual (trade declining)
+korchn_0055,1998,R0,0,0,0,0,factual cooperation plan
+korchn_0056,1998,R2,0,0,0,0,acknowledges CHN's continued 8-9% growth ambition
+korchn_0057,1998,R0,0,0,0,0,factual geography/business note
+korchn_0058,1998,R0,0,0,0,0,"about Hong Kong as Asia's finance hub, not mainland CHN"
+korchn_0059,1998,R0,0,0,0,0,factual trip summary
+korchn_0060,1998,R0,0,0,0,0,factual trip summary
+korchn_0061,1998,R0,0,0,0,0,"""6 years of cooperation but no progress"" -- critical of relationship pace, not of CHN's capability/status"
+korchn_0062,1999,R0,0,0,0,0,factual investment fair
+korchn_0063,1999,R1,0,0,0,0,"CHN grouped among ""emerging markets"" (신흥시장) in slowdown -- developing-market categorization"
+korchn_0064,1999,R1,0,0,0,0,"export-structure stats explicitly categorize CHN within ""개도국"" (developing countries) region, contrasted with ""선진국"" (developed countries)"
+korchn_0075,2000,R4,0,0,0,0,"CHN grouped among KOR's ""4 major powers"" (US/JPN/Russia/CHN) to leverage as a ""strategic base"" -- peer-level great-power categorization"
+korchn_0076,2001,R0,0,0,0,0,factual trade fair
+korchn_0077,2001,R0,0,0,0,0,factual APEC prep
+korchn_0078,2001,R0,0,0,0,0,factual trade negotiation
+korchn_0079,2001,R0,0,0,0,0,"CHN mentioned only as a manufacturing location for a KOR toy firm; the status comparison in this passage is KOR firm vs JPN firms, not about CHN"
+korchn_0080,2002,R3,0,0,1,0,"CHN named as ""fierce competitor"" for the 2010 World Expo hosting bid"
+korchn_0081,2002,R0,0,0,0,0,factual
+korchn_0082,2002,R0,0,0,0,0,factual APEC (notes last year's summit was hosted in CHN)
+korchn_0083,2002,R0,0,0,0,0,procedural market-access request listing
+korchn_0084,2002,R5,0,0,0,0,"""despite the global FDI downturn, FDI into China ALONE kept rising"" -- explicit standout-achievement framing"
+korchn_0085,2002,R0,0,1,0,0,"advice to KOR firms on CHN's ""guanxi"" business culture; implicit stereotype (CHN business as less rule-based/transparent) but not a capability/status claim -- flagged stereotyping, not scored on the R-scale"
+korchn_0086,2002,R3,0,0,1,0,KOR-JPN joint steel-industry meeting explicitly convened to coordinate response to CHN's safeguard measures -- established producers aligning against rising CHN's trade action (relevant to M2/M5 discussion)
+korchn_0087,2002,R0,0,0,0,0,factual
+korchn_0088,2002,R5,0,0,1,0,"""China too is developing at a FRIGHTENING pace"" thanks to ""outstanding leadership"" -- strong achievement language, but ""무서운"" (frightening) carries threat undertone alongside the admiration"
+korchn_0089,2002,R4,0,0,0,0,"""China has now emerged as the world's 6th-largest economy"" -- explicit global ranking, admiring tone (""diligent and excellent workforce,"" ""outstanding leadership"")"
+korchn_0090,2003,R2,0,0,0,0,"CHN cited as the precedent ""emerging market"" that has ""greatly risen,"" now followed by India"
+korchn_0091,2003,R0,0,0,0,0,factual ASEAN+3 meeting
+korchn_0092,2003,R2,0,0,0,0,acknowledges CHN's high growth expected to continue through 2008/2010
+korchn_0093,2003,R0,0,0,0,0,factual FTA landscape
+korchn_0094,2003,R0,0,0,0,0,factual regulatory detail
+korchn_0095,2003,R0,0,0,0,0,counterfeit/mislabeled-goods enforcement; not evaluative of CHN's capability
+korchn_0096,2003,R4,0,0,0,0,"""China and Japan ... dreaming of 21st-century superpower status"" -- CHN explicitly grouped WITH Japan as an aspiring great power, strong peer framing"
+korchn_0150,2010,R0,0,0,0,0,factual quarantine issue
+korchn_0151,2010,R0,0,0,0,0,factual FTA meeting
+korchn_0152,2010,R0,0,0,0,0,factual
+korchn_0153,2010,R0,0,0,0,0,factual meeting participants
+korchn_0154,2010,R0,0,0,1,0,KOR firms worried about losing ground to TAIWAN (not CHN) in the Chinese market after Taiwan-China ECFA -- competitive concern present but not about CHN's own status
+korchn_0155,2010,R0,0,0,0,0,"descriptive of CHN's OWN strategic doctrine (Deng Xiaoping's ""hide brightness, nurture strength""); not KOR's evaluation of CHN capability"
+korchn_0156,2010,R0,0,0,0,0,"off-topic (ethnic-Korean restaurant district signage), not economic"
+korchn_0157,2010,R4,0,0,0,0,"explicit prediction CHN GDP will ""catch up to"" the US by ~2030"
+korchn_0158,2010,R4,0,0,0,0,"""China, now the world's 2nd-largest economy"" actively expanding overseas investment -- explicit major-power ranking"
+korchn_0159,2010,R3,0,0,1,0,new law targets counterfeit-goods suppliers after a Korean firm's patent was infringed by Chinese knockoffs for years with no remedy -- CHN framed as IP-infringement source harming KOR industry
+korchn_0160,2010,R0,0,0,0,0,"factual, CHN listed among G20/APLAC member states"
+korchn_0161,2010,R0,0,0,0,0,"factual, investment-promotion ambassador program (CHN/JPN/UK/USA)"
+korchn_0162,2010,R0,0,0,0,0,factual export-fair support
+korchn_0163,2011,R0,0,0,0,0,factual
+korchn_0164,2011,R0,0,0,0,0,factual (CSR support for KOR firms in CHN)
+korchn_0165,2011,R0,0,0,0,0,factual (journalist question)
+korchn_0166,2011,R0,0,0,0,0,factual FTA status
+korchn_0167,2011,R0,0,0,0,0,factual
+korchn_0168,2011,R0,0,0,0,0,factual
+korchn_0169,2011,R4,0,0,0,0,formal KOR-CHN-JPN joint FTA research committee statement -- CHN treated as an equal co-negotiating party alongside KOR and JPN
+korchn_0170,2011,R2,0,0,0,0,"""rising Chinese economy"" named as a subject warranting dedicated analysis training for KOR diplomats"
+korchn_0171,2011,R4,0,0,0,0,CHN's foreign/commerce ministers listed alongside US Sec. of State/USTR and JPN/Russia ministers at a major meeting -- peer-level diplomatic protocol listing
+korchn_0172,2011,R5,0,0,0,0,"""China's GDP, growing at a phenomenal 9.8% annual average for 30 years, SURPASSED JAPAN last year to become the world's 2nd-largest economy"" -- explicit, unambiguous challenger-surpasses-(prior)-incumbent statement, directly cross-referencing the JPN-CHN relationship from KOR's own MOFA text"
+korchn_0173,2011,R5,0,0,0,0,"""China surpassed Japan to become the world's #2 economy; catching up to the US is just a matter of time"" -- explicit, repeats and extends the R5 finding above"
+korchn_0177,2012,R0,0,0,0,0,factual 20th-anniversary diplomatic events
+korchn_0178,2012,R0,0,0,0,0,"statistical listing of countries' trade-remedy actions (CHN among them), not specifically CHN-vs-KOR"
+korchn_0179,2012,R0,0,0,0,0,factual negotiation
+korchn_0180,2012,R0,0,0,0,0,"KOR ranked #1 in Far East Russia trade, ahead of CHN and JPN -- about KOR's own ranking, not an evaluation of CHN"
+korchn_0181,2012,R4,0,0,1,0,"""battery core-tech is key to future EV market dominance; competition among Japan, US, China etc. in battery tech/market share will intensify"" -- CHN explicitly named alongside US/JPN as a top battery-tech competitor (directly relevant to the batteries crossover ~2010)"
+korchn_0182,2012,R0,0,0,0,0,factual FTA round
+korchn_0183,2012,R0,0,0,0,0,factual FTA round
+korchn_0184,2012,R0,0,0,0,0,CHN framed as a booming consumer market for quality KOR seafood; mild hierarchy (KOR=quality supplier) but primarily a market-opportunity statement
+korchn_0185,2013,R0,0,0,0,0,factual think-tank meeting roster
+korchn_0186,2013,R0,0,0,0,0,factual conference
+korchn_0187,2013,R4,0,0,0,0,"Korean MOFA document summarizes an Australian academic's analysis of US-China-Japan ""relative redistribution"" of military/economic power over 20 years -- engages with a great-power-shift framing that includes CHN"
+korchn_0188,2013,R0,0,0,0,0,"factual, notes ""China's economic reform"" period as context"
+korchn_0189,2013,R0,0,0,0,0,factual
+korchn_0190,2013,R0,0,0,0,0,"KOR firms ""U-turning"" (relocating) FROM China back to KOR regions -- implicit commentary on CHN's rising costs/reduced attractiveness as a low-cost base, not directly status-evaluative"
+korchn_0191,2013,R0,0,0,0,0,factual expo roster
+korchn_0192,2013,R2,0,0,0,0,"acknowledges CHN's rising ""new middle class""/""value consumers"" with evolving sophistication -- genuine socioeconomic-development acknowledgment"
+korchn_0258,2020,R0,0,0,0,0,factual COVID fast-track procedure
+korchn_0259,2020,R0,0,0,0,0,factual COVID travel restriction
+korchn_0260,2020,R1,0,0,0,0,journalist question about CHN criticizing BTS and KOR firms reportedly reacting cautiously -- reveals asymmetric CHN market leverage over KOR corporate behavior
+korchn_0261,2020,R0,0,0,0,0,factual COVID response exchange
+korchn_0262,2020,R0,0,0,0,0,factual COVID consular protocol
+korchn_0263,2020,R0,0,0,0,0,"factual, Economic Joint Committee since 1993"
+korchn_0264,2020,R0,0,0,0,0,factual public-diplomacy forum
+korchn_0265,2020,R0,0,0,0,0,"factual, cooperation meeting since 1993"
+korchn_0266,2020,R0,0,0,0,0,"diplomatic courtesy, CHN thanks KOR for humanitarian treatment of fishing vessels"
+korchn_0267,2020,R3,0,0,1,0,CHN's anti-dumping measures against KOR chemical/steel products (17 cases) -- notable DIRECTIONAL REVERSAL from the 1990s-2000s pattern where KOR/JPN imposed remedies on CHN: by 2020 CHN has enough market power to impose its own trade remedies on KOR
+korchn_0268,2021,R0,0,0,0,0,factual IP-protection office listing
+korchn_0269,2021,R0,0,0,0,0,factual forum agenda
+korchn_0270,2021,R3,0,0,1,0,"KOR anti-dumping investigation against Chinese/Indonesian/Taiwanese steel -- KOR-as-incumbent policing CHN trade practices, continuing pattern"
+korchn_0271,2021,R4,0,0,0,0,"CHN is KOR's #1 trading partner ($241.5B), vastly ahead of ASEAN ($143.8B) and USA ($131.7B) -- explicit, quantified major-economic-weight acknowledgment"
+korchn_0272,2021,R0,0,0,0,0,factual ASEAN supply-chain context
+korchn_0273,2021,R0,0,0,0,0,factual ASEAN partnership context
+korchn_0274,2022,R0,0,0,0,0,factual 30th-anniversary conference
+korchn_0275,2022,R4,0,0,0,0,seminar tracks US AND China industrial-trade legislation together -- implicit peer grouping of CHN with the US as a major power whose legislation warrants dedicated tracking
+korchn_0276,2022,R0,0,0,0,0,factual China-ASEAN expo
+korchn_0277,2023,R1,0,0,0,0,urea supply-chain disruption from Chinese customs -- reveals KOR dependency/vulnerability to Chinese export decisions
+korchn_0278,2023,R0,0,0,0,0,"about US CHIPS Act impact on KOR firms' China operations, not directly evaluating CHN"
+korchn_0279,2023,R1,0,0,0,0,journalist question notes CHN's informal content restriction (한한령) on KOR culture still unresolved -- asymmetric pressure still in effect
+korchn_0280,2023,R0,0,0,0,0,"security monitoring, NK oil tanker near China"
+korchn_0281,2023,R1,0,0,0,0,KOR formally requesting Chinese customs cooperation on urea supply -- dependency/vulnerability framing
+korchn_0282,2023,R0,0,0,0,0,factual APEC structure
+korchn_0283,2023,R0,0,0,0,0,factual EAS/ASEAN+3 structure
+korchn_0284,2023,R0,0,0,0,0,factual trade-support services
+korchn_0285,2023,R3,0,0,1,0,regional cooperation resuming after 4 years; also notes China's graphite export controls -- export-control friction
+korchn_0286,2023,R0,0,0,0,0,"factual, KOR firms using Shanghai expo amid ""difficult global conditions"""
+korchn_0287,2023,R0,0,0,0,0,"diplomatic boilerplate, mutual-benefit cooperation language"
+korchn_0288,2024,R4,0,0,1,0,"candid policy memo: avoiding China-consciousness would strain US-KOR relations; the reverse ""would provoke China's FIERCE BACKLASH"" -- explicit acknowledgment of CHN's coercive capacity constraining KOR's strategic choices, alongside the US"
+korchn_0289,2024,R0,0,0,0,0,"factual, president's China visit framed as yielding results"
+korchn_0290,2024,R3,0,0,1,0,"IMPORTANT: growing cases of Korean semiconductor/display/battery researchers receiving ""strikingly generous"" joint-research offers from Chinese universities, raising serious TECH-LEAKAGE concern -- direct 2024 evidence of intensifying Chinese catch-up pressure precisely in the three audited industries (shipbuilding/semiconductors/batteries), via active talent acquisition"
+korchn_0291,2024,R0,0,0,0,0,"factual, Mekong supply-chain diversification amid US-China competition"
+korchn_0292,2024,R4,0,0,0,0,"academic forum on ""hegemonic structure change: US-China competition and the rise of the Global South"" features US/China/Japan/India/Korea perspectives -- KOR included among major-power perspective-holders"
+korchn_0293,2025,R0,0,0,0,0,"maritime security symposium, US-China competition context"
+korchn_0294,2025,R3,0,0,0,0,"""an opportunity for our companies to SHAKE OFF China's economic catch-up (추격)"" -- explicit, recent, direct catch-up acknowledgment"
+korchn_0295,2026,R0,0,0,0,0,"factual, presidential China visit diplomatic exchange"
+korchn_0296,2026,R0,0,0,0,0,"factual, KOR-CHN startup ecosystem event"
+korchn_0297,2026,R0,0,0,0,0,"factual, supply-chain monitoring response"
+korchn_0298,2026,R0,0,0,0,0,"factual, presidential startup summit attendance"
+korchn_0299,2026,R0,0,0,0,0,"Korean community leader in China describes ""years of enduring hardship while waiting for Korea-China relations to improve"" -- notable context on relationship-strain/recovery cycle, not itself a capability claim"

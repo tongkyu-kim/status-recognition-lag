@@ -83,6 +83,23 @@ open item in `docs/literature_review.md` Section 3 rather than papered over with
 citation. Continuing this search is the top-ranked next action in
 `outputs/reports/research_overhaul_report.md`.
 
+## R006 -- Scoped the Japan Diet full-text pull to pre-filtered queries, not the generic "korea" query (2026-10-14)
+
+**Type:** data-driven exploratory decision (acquisition scoping), overnight session.
+
+The existing `jp_diet` source had only yearly mention *counts* (via `acq_jp_diet_counts.py`), not
+full text, across four queries: "korea" (32,521 speeches, 1980-2010), "korea_economy" (6,603),
+"korea_competition" (1,541), "korea_catchup" (101). Pulling full text for all four across
+1980-2024 would require ~325+ API calls dominated by the generic "korea" query, most of which is
+not about industrial/economic status at all (fisheries disputes, territorial issues, unrelated
+diplomatic news, etc., based on inspection of the existing counts-stage sample). Full text was
+pulled only for the three pre-filtered, already-topically-scoped queries
+(`scripts/acquire/acq_jp_diet_fulltext.py`), yielding 10,742 deduplicated speeches and, after
+sentence-level filtering, 5,594 Korea-mentioning + economically/industrially relevant sentences --
+judged sufficient for a first classification pass. The generic "korea" query remains available as
+a future acquisition target if broader (non-economic) recognition framing becomes relevant (e.g.
+political/security recognition, which this project's current scope does not cover).
+
 ## R004 -- Repository restructuring is additive, not a rewrite (2026-10-13)
 
 **Type:** theoretically motivated (engineering decision).

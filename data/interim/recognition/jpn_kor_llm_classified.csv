@@ -1,0 +1,176 @@
+﻿item_id,year,R,dismissive,stereotyping,threat_coexists,direction_mismatch,notes
+jpnkor_0000,1980,R3,0,0,1,0,"gov't official: Korea is ""catching up"" (追い上げ) to Japan in fishing grounds; vivid ""Korea wears armor, Japan is naked"" (regulatory asymmetry) framing -- early (1980), direct catch-up acknowledgment in a specific sector"
+jpnkor_0001,1980,R0,0,0,0,0,"about a political death-penalty case (Kim Dae-jung), not economic/industrial status"
+jpnkor_0002,1980,R1,1,0,0,0,"opposition MP criticizes government for ""doing whatever Korea demands"" on aid -- aid-recipient framing with a critical/dismissive edge toward Korea's posture"
+jpnkor_0003,1981,R0,0,0,0,0,skeptical of aid efficacy given Korea's political system; not a capability evaluation
+jpnkor_0004,1981,R0,0,0,0,0,factual (aid request amount)
+jpnkor_0005,1981,R0,0,0,0,0,factual
+jpnkor_0006,1981,R0,0,0,0,0,"factual, US non-interference stance"
+jpnkor_0007,1981,R0,0,0,0,0,factual (security context for aid request)
+jpnkor_0008,1981,R1,0,0,0,0,"""not meant as shouldering Korea's defense costs, but for Korea's economic/social development as a friendly neighbor"" -- paternalistic aid framing"
+jpnkor_0009,1981,R0,0,0,0,0,factual negotiation-method difference
+jpnkor_0010,1982,R0,0,0,0,0,factual
+jpnkor_0011,1982,R0,0,0,0,0,factual
+jpnkor_0012,1982,R1,0,0,0,0,"aid aimed at Korea's """"livelihood stability"""" -- aid/developmental framing"
+jpnkor_0013,1982,R0,0,0,0,0,factual question
+jpnkor_0014,1982,R0,0,0,0,0,"factual, questioning basis for Korea's $6B aid request"
+jpnkor_0015,1982,R0,0,0,0,0,"geopolitical strategy debate, not a KOR capability claim"
+jpnkor_0016,1982,R0,0,0,0,0,factual
+jpnkor_0017,1982,R3,0,0,1,0,"opposition MP notes pressure on Japanese SMEs FROM Korean economic competition (""韓国経済の圧迫"") -- early (1982) explicit competitive-pressure acknowledgment"
+jpnkor_0018,1982,R1,0,0,0,0,"minister frames Korea's aid request sympathetically (oil shock, poor harvests, ""neighboring country"") -- sympathetic but hierarchy-reinforcing"
+jpnkor_0019,1983,R0,0,0,0,0,"security/military politics (Chun Doo-hwan's ""first line of defense"" framing), not economic status"
+jpnkor_0020,1983,R0,0,0,0,0,security politics
+jpnkor_0021,1983,R3,0,0,1,0,"vivid example: trading firms exported Nishijin TEXTILE TECH to Korea; Korean-made goods then reverse-imported to Japan, causing ""major damage"" to Japan's silk-textile region -- explicit tech-transfer-enables-competition narrative"
+jpnkor_0022,1984,R0,0,0,0,1,"quotes a Korean family member praising JAPAN as ""the world's best developed, splendid country"" -- wrong direction (KOR view of JPN, not JPN view of KOR)"
+jpnkor_0023,1984,R1,0,0,0,0,"Korea (grouped with ASEAN) complains Japan's market-opening favors developed countries, insufficient Asia consideration -- developing-country-grouping framing, Korea's own voice of complaint relayed"
+jpnkor_0024,1984,R0,0,0,0,0,factual rice-import issue
+jpnkor_0025,1984,R0,0,0,0,0,"inter-Korean (South vs North) GNP comparison, not JPN's view of KOR"
+jpnkor_0026,1985,R0,0,0,0,0,factual emergency rice import
+jpnkor_0027,1985,R1,0,0,0,0,"""Japan compelled to keep exporting... e.g. car engines to Korea"" -- KOR framed as recipient/customer of advanced JPN components"
+jpnkor_0028,1986,R3,0,0,0,0,"Finance Minister Takeshita: ""at the time of the 1978 yen shock, Korea/Taiwan's catch-up (追い上げ) hadn't progressed that far yet"" -- explicit, named, top-official acknowledgment of catch-up, with an implicit ""further along now"" comparison"
+jpnkor_0029,1986,R5,0,0,1,0,"Takeshita again: market share ""completely reversed"" (完全に逆転), ""taken away"" by Korea/Taiwan/HK/Singapore, ""major damage"" -- explicit reversal/superiority language from a top official"
+jpnkor_0030,1986,R5,0,0,1,0,"PM Nakasone to Reagan: due to yen appreciation, goods now ""flow in from Taiwan and Korea just like [Japan once flowed into] America"" -- EXPLICIT self-aware historical-role-reversal framing (Japan now occupies the position the US once occupied relative to Japan) -- directly evokes the USA-JPN-KOR hierarchy-reproduction theme"
+jpnkor_0031,1986,R1,0,0,0,0,"""Japan transferred technology to Korea, helped it, and Korea's steel industry was born"" -- paternalistic/mentor framing emphasizing Japan's agency; implicitly acknowledges Korea now HAS a steel industry"
+jpnkor_0032,1986,R2,0,0,0,0,"""as Korea's growth rate rises..."" -- neutral growth acknowledgment"
+jpnkor_0033,1987,R5,0,0,1,0,"""Korea and Taiwan are running FEROCIOUS trade surpluses... Japan significantly affected"" -- explicit strong achievement/impact language"
+jpnkor_0034,1987,R0,0,0,0,0,"factual, need to expand imports from Taiwan/Korea/ASEAN under US/Europe pressure"
+jpnkor_0035,1987,R2,0,0,1,0,"explicit but QUALIFIED acknowledgment: Korean steel imports exist but are ""not yet a decisive factor"" for Japan's steel industry -- useful as an early, explicitly-limited baseline before later stronger claims"
+jpnkor_0036,1988,R2,0,0,0,0,quantified achievement: Korean knit-apparel imports +68% YoY
+jpnkor_0037,1990,R4,0,0,0,0,"Japanese official says they ""highly value"" (大いに評価) Korea's proactive land-policy legislation as worth learning from, even if not directly adoptable -- rare reversal: Japan praising/learning from a Korean POLICY innovation"
+jpnkor_0038,1991,R0,0,0,0,0,"geopolitical context, not economic status"
+jpnkor_0039,1991,R0,0,0,0,0,off-topic (ethnic Koreans working for JPN firms overseas)
+jpnkor_0040,1991,R0,0,0,0,0,"factual stat, sweater imports DECLINING -28.6%"
+jpnkor_0041,1991,R0,0,0,0,0,off-topic legal/consumer matter (pyramid scheme)
+jpnkor_0042,1991,R0,0,0,0,0,"general aspirational statement, not KOR-specific evaluation"
+jpnkor_0043,1992,R0,0,0,0,0,procedural regional-exchange proposal
+jpnkor_0044,1993,R0,0,0,0,0,"off-topic (ethnic-Korean repatriation), not KOR capability"
+jpnkor_0045,1993,R0,0,0,0,0,"historical/legal (1965 treaty framework), backward-looking"
+jpnkor_0046,1993,R0,0,0,0,0,"procedural, Korea grouped with ASEAN in a trade-management discussion"
+jpnkor_0047,1994,R0,0,0,0,0,"economic journalist admits his OWN interest in Korea is recent despite proximity -- notable as evidence of past elite inattention/neglect (musi component 1), though not itself a status evaluation"
+jpnkor_0048,1994,R0,0,0,0,1,"describes KOREAN press commentary ABOUT CHINA, not JPN's view of KOR -- off-topic/wrong subject"
+jpnkor_0049,1994,R0,0,0,0,0,"factual, Korea among WTO director-general candidates"
+jpnkor_0050,1995,R0,0,0,0,0,"South-vs-North Korea comparison, not JPN's view of South Korea"
+jpnkor_0051,1995,R0,0,0,0,0,factual EEZ question
+jpnkor_0052,1996,R0,0,0,0,0,"Dokdo/Takeshima territorial dispute, not economic status"
+jpnkor_0053,1996,R0,0,0,0,0,"Dokdo/Takeshima, same"
+jpnkor_0076,2002,R0,0,0,0,0,"about Japan's OWN FTA strategy lagging globally, not evaluating Korea"
+jpnkor_0077,2002,R0,0,0,0,0,"about Japan's historically dominant regional position, not evaluating Korea"
+jpnkor_0078,2002,R5,0,0,0,0,"""Korea's recovery is clear -- in IMD's 2002 international competitiveness ranking, Japan is 30th while Korea is 27th"" -- explicit, quantified superiority on a named international index"
+jpnkor_0079,2002,R0,0,0,0,0,factual food-import negotiation
+jpnkor_0080,2002,R0,0,0,0,0,factual FTA roadmap
+jpnkor_0081,2002,R0,0,0,0,0,"not about KOR capability, DPRK policy context"
+jpnkor_0082,2002,R0,0,0,0,0,KOR as export market for quality JPN apples; simple trade fact
+jpnkor_0083,2002,R0,0,0,0,0,factual negotiation priority
+jpnkor_0084,2003,R0,0,0,0,0,"needing KOR's cooperation for NK sanctions, not a capability evaluation"
+jpnkor_0085,2003,R1,0,0,0,0,JPN manufacturers shifted mold/die procurement to China/Taiwan/Korea as lower-cost alternative
+jpnkor_0086,2003,R0,0,0,0,0,"historical note, CHN/KOR previously proposed regional frameworks to JPN"
+jpnkor_0087,2003,R5,0,0,1,0,"REMARKABLE quote: ""If we'd lost to Korea in ADSL, we might still be stuck with painfully slow ISDN... losing to America isn't much of a shock, but losing to a NEIGHBORING country is a big shock"" -- explicit challenger-surpasses-incumbent (broadband) PLUS a named, self-aware articulation of the status-threat (M2) psychology itself, from a policy expert -- flag for manuscript"
+jpnkor_0088,2004,R0,0,0,0,0,KOR economy in recession/inflation -- negative but not a hierarchy claim
+jpnkor_0089,2004,R4,0,0,0,0,"""Korea's system is democracy and market economy, same as us"" -- explicit same-system peer framing"
+jpnkor_0090,2004,R2,0,0,0,0,"KOR built its own 2,500km gas pipeline -- infrastructure achievement"
+jpnkor_0091,2004,R0,0,0,0,0,"about Kyushu's own regional trade intensity, not evaluating KOR"
+jpnkor_0092,2004,R2,0,0,0,0,"JPN's anime/game quality called ""outstanding,"" but production increasingly outsourced TO Korea due to JPN creator shortage -- acknowledges KOR's capability to handle outsourced creative production"
+jpnkor_0093,2004,R0,0,0,0,0,needing CHN/KOR cooperation for sanctions
+jpnkor_0094,2005,R3,0,0,1,0,"JPN industrial competitiveness faces ""severe international competition starting with China, Korea"""
+jpnkor_0095,2005,R1,0,0,0,0,"Malaysia/Thailand/Korea/Philippines framed as JPN's essential economic ""backyard"" in East Asia"
+jpnkor_0096,2005,R0,0,0,0,0,"about KOR's domestic market structure (one firm 80-90% share), not international status"
+jpnkor_0097,2005,R4,0,0,0,0,"KOR's nationally-backed ""film village"" cited as a model JPN's content strategy should learn from"
+jpnkor_0098,2005,R4,0,0,0,0,KOR's unfair-competition-law precedent (3-yr statute) cited as a comparable reference for JPN's own legislation
+jpnkor_0099,2005,R0,0,0,0,0,historical Uruguay Round compensation context
+jpnkor_0100,2006,R0,0,0,0,0,factual Korea-Chile FTA detail
+jpnkor_0101,2006,R3,0,0,1,0,"explicit ""intensifying competition"" with China Exim Bank AND Korea Exim Bank in finance sector"
+jpnkor_0102,2006,R0,0,0,0,0,"diplomatic, KOR raising abduction issue with NK"
+jpnkor_0103,2006,R0,0,0,0,0,whether CHN/KOR might undermine sanctions effectiveness
+jpnkor_0104,2006,R3,0,0,1,0,"Patent Office report: counterfeit damage to JPN firms from CHN/Taiwan/Korea/Thailand, quantified (KOR ¥185.3B, CHN ¥562.7B)"
+jpnkor_0105,2006,R0,0,0,0,0,"factual, CHN/KOR FTA approach vs JPN's broader EPA"
+jpnkor_0106,2006,R2,0,0,0,0,"trade with Korea ""more than doubled in 10 years... rapidly growing"""
+jpnkor_0107,2006,R0,0,0,0,0,about preventing circumvented NK trade via CHN/KOR
+jpnkor_0108,2007,R0,0,0,0,0,"meta/diplomatic, other countries asking about JPN-CHN/KOR relations"
+jpnkor_0109,2007,R0,0,0,0,0,"factual, JPN-KOR EEZ boundary stalemate"
+jpnkor_0110,2007,R0,0,0,0,0,"factual, JPN-CHN-KOR customs cooperation meeting"
+jpnkor_0111,2008,R0,0,0,0,0,factual question about discussing NK sanctions with new KOR government
+jpnkor_0112,2008,R4,0,1,0,0,"EXPLICIT recognition-TRANSITION quote: Korean/Chinese firms initially dismissed as ""cheap but poor quality"" and couldn't win contracts, but ""gradually built track record"" and now ""make proposals that hold up to evaluation"" -- rare explicit before/after acknowledgment of a status transition within one quote"
+jpnkor_0113,2008,R3,0,0,1,0,"SHIPBUILDING, Komeito MP: Korea ""catching up,"" is ""right behind us now""... must preserve JPN's advanced shipbuilding tech while competing -- IMPORTANT: by this 2008 date, trade data already shows Korea's export share clearly EXCEEDING Japan's (see data/processed/industrial_crossover_candidates.csv, ~2002 crossover) -- this elite quote still frames Korea as merely ""catching up""/""right behind,"" understating the already-passed material crossover -- directly relevant recognition-lag evidence, flag for manuscript"
+jpnkor_0114,2008,R0,0,0,0,1,"cites Korean newspaper quoting George Soros -- off-topic, not evaluative of KOR"
+jpnkor_0115,2009,R0,0,0,0,0,factual investment-agreement list
+jpnkor_0116,2009,R0,0,0,0,0,factual competition-policy cooperation listing
+jpnkor_0117,2010,R3,0,0,0,0,"""competing with China/Korea, but without a level playing field"" -- competitive framing with grievance about domestic constraints"
+jpnkor_0118,2010,R0,0,0,0,0,"factual, East Asian Community strategy"
+jpnkor_0119,2010,R3,0,0,0,0,"""Japan's competitors in many places worldwide are often Korean companies"" -- explicit, direct competitive framing"
+jpnkor_0120,2010,R4,0,0,0,0,KOR's agricultural-support-while-liberalizing approach cited as a POLICY MODEL for Japan
+jpnkor_0121,2010,R3,0,0,0,0,"""domestic firms' rivals [are] rapidly-grown Korea""; notes KOR's lower (24%) corporate tax -- competitive framing with growth acknowledgment"
+jpnkor_0122,2010,R0,0,0,0,0,"trade-control circumvention via CHN/KOR, not a status claim"
+jpnkor_0123,2010,R0,0,0,0,0,reports KOR President Lee's own G20 statement; mostly reportage
+jpnkor_0124,2011,R0,0,0,0,0,KOR/NK grouped in ASEAN regional framework discussion
+jpnkor_0125,2011,R0,0,0,0,0,"CHN/KOR tourists important to JPN regional economy -- economic-benefit framing, not capability evaluation"
+jpnkor_0126,2011,R4,0,0,0,0,"""Right now, Japanese companies' BIGGEST rival is Korea"" -- blunt, unambiguous, top-line statement"
+jpnkor_0127,2011,R1,0,0,0,0,"highlights KOR's 2008-crisis vulnerability (high short-term external debt, won depreciation) -- counter-example showing recognition isn't monotonically rising"
+jpnkor_0128,2011,R2,0,0,0,0,JPN electricity prices ~2x US/Korea's -- acknowledges KOR cost advantage on a specific input
+jpnkor_0129,2011,R1,0,0,0,0,wage gap with China/Korea/ASEAN framed as up to 20-30x -- groups KOR among lower-wage countries (somewhat dated characterization by 2011)
+jpnkor_0130,2011,R4,0,0,0,0,"notes KOR government produced thousands of reports THOROUGHLY STUDYING why Japan stagnated for 20 years as a cautionary ""catch-up economy"" lesson -- KOR implicitly analyzing JPN almost as a predecessor case study, a notable near-peer research posture"
+jpnkor_0131,2011,R0,0,0,0,0,"factual, JPN-CHN-KOR tourism ministers meeting"
+jpnkor_0132,2011,R4,1,0,0,0,"CHN/KOR grouped with US/Europe as pursuing aggressive state-led export promotion (""nationalistic"" trend) -- peer-level grouping with a mildly critical label"
+jpnkor_0133,2011,R3,0,0,1,0,"explicit ""not falling behind China, Korea"" framing for port competitiveness"
+jpnkor_0134,2011,R2,0,0,0,0,KOR/HK's small domestic market forces export-oriented strategy from the start -- nuanced structural-adaptation acknowledgment
+jpnkor_0135,2012,R0,0,0,0,0,"descriptive of KOR monetary policy, not evaluative"
+jpnkor_0136,2012,R0,0,0,0,0,"factual, JPN launched a KOR commercial satellite"
+jpnkor_0137,2012,R2,0,0,0,0,KOR K-pop CDs widely available in JPN music stores -- cultural-penetration acknowledgment
+jpnkor_0138,2012,R0,0,0,0,0,"historical CD-market-size comparison (1998: JPN ¥600B vs KOR ¥80B), sets up a later point; not itself a current-status claim"
+jpnkor_0139,2012,R2,0,0,0,0,JPN corporate tax unfavorably compared to KOR's -- acknowledges KOR policy/competitive advantage
+jpnkor_0140,2013,R0,0,0,0,0,factual investment-agreement listing
+jpnkor_0141,2013,R0,0,0,0,0,factual investment-agreement listing
+jpnkor_0142,2013,R0,0,0,0,0,factual tax-treaty status
+jpnkor_0143,2013,R1,0,0,0,0,"""Japan is genuinely supported by domestic demand, NOT like Korea's highly export-dependent economy"" -- JPN positions itself as more structurally stable"
+jpnkor_0144,2013,R0,0,0,0,0,"about Korea's US market-access concessions, not JPN's evaluation"
+jpnkor_0145,2014,R0,0,0,0,0,factual trade-relations context
+jpnkor_0146,2014,R5,0,0,0,0,"""Japan, said to have weak international competitiveness, is SIGNIFICANTLY BEHIND China and Korea"" (port competitiveness context) -- explicit, direct inferiority admission"
+jpnkor_0147,2015,R4,0,0,0,0,"Korea grouped with Australia/ASEAN/India as sharing ""universal values and strategic interests"" with Japan -- peer/partner-tier diplomatic categorization"
+jpnkor_0148,2015,R0,0,0,0,0,"encouraging CHN/KOR investment into Japan as beneficial, not evaluative"
+jpnkor_0149,2015,R2,0,0,1,0,"Japan needs FLNG maritime tech given China/Korea's strong focus there -- acknowledges their strength, implies JPN catch-up need"
+jpnkor_0150,2016,R2,0,0,0,0,"Korea's electricity rates ""overwhelmingly cheaper"" than Japan's -- clear cost-advantage acknowledgment"
+jpnkor_0151,2016,R0,0,0,0,0,EEZ/waste-dumping territorial dispute
+jpnkor_0152,2016,R0,0,0,0,0,factual agricultural-machinery pricing
+jpnkor_0153,2016,R0,0,0,0,0,"factual, Korea-US tariff elimination on autos"
+jpnkor_0154,2017,R0,0,0,0,0,"Korean casino industry social-cost data, domestic policy not status"
+jpnkor_0155,2017,R0,0,0,0,0,Dokdo/Takeshima dispute
+jpnkor_0156,2017,R0,0,0,0,0,meta-commentary: JPN Korea-experts who once argued relations matter increasingly express fatigue -- relevant to relationship dynamics but not itself a capability claim
+jpnkor_0157,2018,R4,0,0,0,0,"Foreign Minister Kono: China and Korea occupy ""very large economic AND political positions"" in East Asia -- explicit high-level acknowledgment of KOR's major standing"
+jpnkor_0158,2018,R0,0,0,0,0,"procedural, Korean steel imports to US under tariffs"
+jpnkor_0159,2018,R0,0,0,0,0,Korean gambling-industry statistics
+jpnkor_0160,2018,R0,0,0,0,0,"same, gambling-addiction cost data"
+jpnkor_0161,2018,R0,0,0,0,0,"factual, sanctions cooperation"
+jpnkor_0162,2018,R0,0,0,0,0,factual export statistics
+jpnkor_0163,2018,R3,0,01,0,"SHIPBUILDING: formal, repeated JPN govt complaint (OECD shipbuilding committee, bilateral meetings) that Korean government subsidies ""distort the market"" and impede resolving overcapacity -- implicitly acknowledges KOR shipbuilding is powerful enough to warrant formal international grievance",
+jpnkor_0164,2019,R3,0,0,0,0,"Korea's competitiveness attributed to government covering losses/deficits -- competitive acknowledgment with subsidy attribution (not blanket dismissal, a documented real factor)"
+jpnkor_0165,2019,R0,0,0,0,0,"notes Korea ""getting quite tough"" economically alongside China slowdown -- factual, not a hierarchy claim"
+jpnkor_0166,2019,R0,0,0,0,0,"wartime forced-labor dispute/export controls, diplomatic friction not capability"
+jpnkor_0167,2019,R0,0,0,0,0,same dispute context
+jpnkor_0168,2019,R3,0,0,1,0,explicit competitive framing naming Busan port specifically as a rival requiring JPN tax relief to compete
+jpnkor_0169,2020,R0,0,0,0,0,COVID policy context
+jpnkor_0170,2020,R5,0,0,0,0,"SHIPBUILDING, MAJOR FINDING: Japan's shipbuilding ""proudly held TOP SHARE in the world market until the 1990s,"" but has recently had its commercial-vessel market share ""LARGELY TAKEN"" by state-supported China and Korea firms, now ""struggling badly"" in world competition -- the most explicit, detailed admission of lost industry leadership found in this sample; dates the JPN narrative of decline as ""until the 1990s,"" contrast with item jpnkor_0113 (2008) which still framed KOR as merely ""catching up"" -- together these suggest the recognition transition in shipbuilding lagged the material crossover (~2002) by roughly a decade or more"
+jpnkor_0171,2020,R0,0,0,0,0,"factual, RCEP significance (first framework incl. both CHN/KOR)"
+jpnkor_0172,2020,R4,0,0,0,0,Korea/Taiwan/Vietnam's COVID response cited as a model worth comparing/learning from -- policy-model framing
+jpnkor_0173,2020,R5,0,0,1,0,"SHIPBUILDING: ""as this committee knows well, we face severe international competition right now, especially Korea and China, which have grown considerably in shipbuilding"" -- explicit sector-specific growth acknowledgment, third shipbuilding hit in this window alongside jpnkor_0170"
+jpnkor_0174,2021,R0,0,0,0,0,"factual, RCEP participant list (ASEAN10+JPN+CHN+KOR+AUS+NZ)"
+jpnkor_0175,2021,R0,0,0,0,0,"semiconductor-material export-control dispute, procedural"
+jpnkor_0176,2021,R2,0,0,0,0,"SHIPBUILDING, nuanced: ""Japan's advantage in internal ship quality (steel etc.) remains unshaken, but in headline PRICE comparison this is a bottleneck against China/Korea in order-winning"" -- achievement acknowledged on price/orders while asserting continued quality edge; a defensible, non-dismissive qualified claim (matches the brief's own ""achievement in one dimension, parity claimed in another"" caution)"
+jpnkor_0177,2021,R5,0,0,0,0,"SHIPBUILDING: explicit call to challenge Korean subsidies at WTO ""so Japan's shipbuilding industry can REGAIN ITS FORMER GLORY"" -- ""regain"" explicitly concedes the glory was LOST"
+jpnkor_0178,2021,R0,0,0,0,0,factual RCEP structure
+jpnkor_0179,2021,R0,0,0,0,0,factual hydrogen-fluoride trade data
+jpnkor_0180,2021,R0,0,0,0,0,"factual, RCEP as first CHN/KOR EPA"
+jpnkor_0181,2021,R5,0,0,0,0,"SHIPBUILDING: downturn hits China/Korea too, but both get large state-led rescue mergers/consolidation, so ""Japan's shipbuilding industry is RELATIVELY increasingly in a difficult position"" -- explicit relative-decline acknowledgment (subsidy-attributed)"
+jpnkor_0182,2021,R0,0,0,0,0,"factual, maritime-education focus comparison"
+jpnkor_0183,2021,R4,0,0,0,0,Taiwan/Korea cited as sharing democratic/human-rights values for a proposed Northeast Asian economic community -- peer/values framing
+jpnkor_0184,2022,R0,0,0,0,0,"Korea matching JPN's own economic-security research center setup -- parallel capability, neutral"
+jpnkor_0185,2022,R4,0,0,0,0,"Korea's evacuation operation cited as the explicit successful benchmark JPN's own (criticized, delayed) response fell short of"
+jpnkor_0186,2022,R5,0,0,0,0,"STRIKING: ""in global digital competitiveness rankings, Japan isn't just losing to the West/Singapore, but LOSING TO China AND Korea too, and continuing to decline"" -- blunt, explicit, named ranking"
+jpnkor_0187,2022,R2,0,0,0,0,"""Korea has been growing economically"" -- simple growth acknowledgment"
+jpnkor_0188,2022,R0,0,0,0,0,"factual, China's fish-export destinations"
+jpnkor_0189,2022,R3,0,0,1,0,"China/Korea/Taiwan described as acting ""TOGETHER,"" desperately nurturing industries with state funding/tax breaks -- competitive bloc framing, mild dismissive undertone (effort described as ""desperate"")"
+jpnkor_0190,2023,R0,0,0,0,0,Africa-diplomacy comparison context
+jpnkor_0191,2023,R0,0,0,0,0,Fukushima water-release diplomatic verification issue
+jpnkor_0192,2023,R0,0,0,0,0,export-control cooperation difficulty with Korea
+jpnkor_0193,2023,R2,0,0,0,0,"""even if the plan's content is excellent, Japan falls behind China/Korea on COST"" -- cost-disadvantage acknowledgment while asserting quality edge (same nuanced pattern as jpnkor_0176)"
+jpnkor_0194,2024,R0,0,0,0,0,forced-labor court-ruling diplomatic protest
+jpnkor_0195,2024,R5,0,0,0,0,"LNG-carrier tech narrative: Japan's ""proud/vaunted technology"" (first built 1981) later had its underlying LICENSE (held by Europe) and detailed technical data ""mostly leak overseas"" to China/Korea due to JPN's own disclosure rules -- explicit acknowledgment of lost tech edge, attributed to external licensing/regulatory factors rather than KOR/CHN's own merit (a recurring attributional pattern worth flagging for the manuscript, alongside the subsidy-attribution pattern in the shipbuilding/battery items)"
+jpnkor_0196,2024,R5,0,0,0,0,"""something Korea and Taiwan did 10 years ago"" (mid-sized-company legal designation) -- explicit acknowledgment JPN is implementing a policy KOR/Taiwan adopted a decade earlier"

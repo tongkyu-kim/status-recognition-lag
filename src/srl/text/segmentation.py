@@ -17,6 +17,22 @@ _PLACEHOLDER = "\u0000"
 _BOUNDARY = re.compile(r"(?<=[.!?。])[\"'”’)\]]*\s+|\n{2,}")
 
 
+_JA_BOUNDARY = re.compile(r"(?<=[。！？])[」』）\)]*|\n{2,}")
+
+
+def split_sentences_ja(text: str, *, min_chars: int = 5) -> list[str]:
+    """Split Japanese ``text`` into sentences on ``。！？`` directly (no trailing-space
+    requirement, since Japanese does not space after sentence-final punctuation -- the shared
+    :func:`split_sentences` pattern only catches paragraph breaks for this language, not sentence
+    boundaries within a paragraph). Added 2026-10-14 for the jp_diet corpus; does not change
+    :func:`split_sentences` or any Korean-language reproducibility path."""
+    if not text:
+        return []
+    pieces = _JA_BOUNDARY.split(text)
+    sentences = [p.strip(" 　\n\r") for p in pieces]
+    return [s for s in sentences if len(s) >= min_chars]
+
+
 def split_sentences(text: str, *, min_chars: int = 1) -> list[str]:
     """Split ``text`` into sentences; drops fragments shorter than ``min_chars``."""
     if not text:
