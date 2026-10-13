@@ -25,6 +25,11 @@ outputs/*/*
 # Narrative reports and manuscripts are authored once, not mechanically regenerated -- tracked:
 !outputs/reports/*
 !outputs/manuscript/*
+# outputs/*/* only reaches one level into each outputs subdirectory, so a nested pilot directory
+# like outputs/exploratory/new_mechanisms/ is NOT caught by it and must be excluded explicitly,
+# then have only its hand-authored reports (not its regenerable csv/png) re-included:
+outputs/exploratory/new_mechanisms/*
+!outputs/exploratory/new_mechanisms/*.md
 
 # ---- Secrets / credentials ------------------------------------------------------------
 .env
