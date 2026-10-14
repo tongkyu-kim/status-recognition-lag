@@ -1,0 +1,92 @@
+iso_a,iso_b,dist_cap_km,contig_land,same_colonizer,territorial_dispute,source_note_dispute
+BRN,CHN,3894.7,0,0,1,South China Sea EEZ overlap (nine-dash line)
+BRN,IDN,1527.8,0,0,0,
+BRN,JPN,4255.6,0,0,0,
+BRN,KHM,1326.5,0,0,0,
+BRN,KOR,3832.2,0,0,0,
+BRN,LAO,1975.6,0,0,0,
+BRN,MMR,2437.9,0,1,0,
+BRN,MYS,1483.0,1,1,1,Limbang (settled by 2009 exchange of letters)
+BRN,PHL,1265.0,0,0,0,
+BRN,SGP,1296.1,0,1,0,
+BRN,THA,1863.6,0,0,0,
+BRN,TLS,1904.4,0,0,0,
+BRN,VNM,2044.7,0,0,0,
+CHN,IDN,5220.5,0,0,1,Natuna EEZ overlap with nine-dash line (Indonesia does not recognise a dispute)
+CHN,JPN,2089.4,0,0,1,Senkaku/Diaoyu islands; East China Sea EEZ
+CHN,KHM,3348.3,0,0,0,
+CHN,KOR,952.3,0,0,1,Ieodo/Socotra Rock EEZ overlap (maritime jurisdiction)
+CHN,LAO,2774.5,1,0,0,
+CHN,MMR,3222.8,1,0,0,
+CHN,MYS,4348.7,0,0,1,Spratly claims overlap
+CHN,PHL,2848.8,0,0,1,"Spratlys, Scarborough Shoal (PCA case 2013-2016)"
+CHN,SGP,4471.9,0,0,0,
+CHN,THA,3296.0,0,0,0,
+CHN,TLS,5470.4,0,0,0,
+CHN,VNM,2326.5,1,0,1,Paracel and Spratly islands
+IDN,JPN,5781.8,0,0,0,
+IDN,KHM,1986.8,0,0,0,
+IDN,KOR,5296.3,0,0,0,
+IDN,LAO,2728.7,0,0,0,
+IDN,MMR,2818.8,0,0,0,
+IDN,MYS,1186.8,1,0,1,"Sipadan/Ligitan (ICJ 2002), Ambalat"
+IDN,PHL,2790.0,0,0,0,
+IDN,SGP,905.4,0,0,0,
+IDN,THA,2327.8,0,0,0,
+IDN,TLS,2079.9,1,0,1,unresolved land-border segments
+IDN,VNM,3030.6,0,0,0,
+JPN,KHM,4398.8,0,0,0,
+JPN,KOR,1149.4,0,0,1,Dokdo/Takeshima
+JPN,LAO,4132.2,0,0,0,
+JPN,MMR,4764.6,0,0,0,
+JPN,MYS,5317.7,0,0,0,
+JPN,PHL,2991.8,0,0,0,
+JPN,SGP,5311.2,0,0,0,
+JPN,THA,4599.0,0,0,0,
+JPN,TLS,5135.5,0,0,0,
+JPN,VNM,3663.0,0,0,0,
+KHM,KOR,3631.3,0,0,0,
+KHM,LAO,755.2,1,1,0,
+KHM,MMR,1111.3,0,0,0,
+KHM,MYS,1001.8,0,0,0,
+KHM,PHL,1771.1,0,0,0,
+KHM,SGP,1141.2,0,0,0,
+KHM,THA,538.9,1,0,1,Preah Vihear temple area (armed clashes 2008-2011; ICJ 2013)
+KHM,TLS,3194.9,0,0,0,
+KHM,VNM,1057.6,1,1,1,land-border demarcation
+KOR,LAO,3218.7,0,0,0,
+KOR,MMR,3789.5,0,0,0,
+KOR,MYS,4614.4,0,0,0,
+KOR,PHL,2621.4,0,0,0,
+KOR,SGP,4672.0,0,0,0,
+KOR,THA,3722.1,0,0,0,
+KOR,TLS,5130.8,0,0,0,
+KOR,VNM,2741.8,0,0,0,
+LAO,MMR,696.8,1,0,0,
+LAO,MYS,1653.0,0,0,0,
+LAO,PHL,1993.3,0,0,0,
+LAO,SGP,1853.0,0,0,0,
+LAO,THA,521.6,1,0,0,
+LAO,TLS,3878.2,0,0,0,
+LAO,VNM,477.2,1,1,0,
+MMR,MYS,1638.3,0,1,0,
+MMR,PHL,2665.6,0,0,0,
+MMR,SGP,1914.8,0,1,0,
+MMR,THA,577.1,1,0,0,
+MMR,TLS,4291.6,0,0,0,
+MMR,VNM,1117.3,0,0,0,
+MYS,PHL,2470.2,0,0,1,Sabah claim; Spratlys
+MYS,SGP,309.3,0,1,1,Pedra Branca (ICJ 2008)
+MYS,THA,1187.7,1,0,0,
+MYS,TLS,2949.2,0,0,0,
+MYS,VNM,2039.2,0,0,1,Spratly claims overlap
+PHL,SGP,2392.7,0,0,0,
+PHL,THA,2209.4,0,0,0,
+PHL,TLS,2623.9,0,0,0,
+PHL,VNM,1754.5,0,0,1,Spratly claims overlap
+SGP,THA,1426.8,0,0,0,
+SGP,TLS,2649.5,0,0,0,
+SGP,VNM,2198.7,0,0,0,
+THA,TLS,3715.4,0,0,0,
+THA,VNM,986.6,0,0,0,
+TLS,VNM,3932.6,0,0,0,
